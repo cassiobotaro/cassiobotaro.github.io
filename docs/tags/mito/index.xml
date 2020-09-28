@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mito on Import None</title>
+    <link>http://cassiobotaro.dev/tags/mito/</link>
+    <description>Recent content in mito on Import None</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 25 Jul 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://cassiobotaro.dev/tags/mito/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mito ou Verdade: Destrutor</title>
+      <link>http://cassiobotaro.dev/post/mito-ou-verdade-destrutor/</link>
+      <pubDate>Sat, 25 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/mito-ou-verdade-destrutor/</guid>
+      <description>O problema Linguagens de programação mais antigas traziam a capacidade de manipulação da memória.</description>
+    </item>
+    
+    <item>
+      <title>Mito ou Verdade: Importação</title>
+      <link>http://cassiobotaro.dev/post/mito-ou-verdade-importacao/</link>
+      <pubDate>Thu, 11 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/mito-ou-verdade-importacao/</guid>
+      <description>O problema Vamos supor que temos uma função em um determinado módulo que precisa de utilizar de recursos de outro módulo.</description>
+    </item>
+    
+  </channel>
+</rss>

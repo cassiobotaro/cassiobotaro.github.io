@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python3 on Import None</title>
+    <link>http://cassiobotaro.dev/categories/python3/</link>
+    <description>Recent content in python3 on Import None</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 28 Mar 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://cassiobotaro.dev/categories/python3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Argumentos somente por palavra chave</title>
+      <link>http://cassiobotaro.dev/post/argumentos-somente-por-palavra-chave/</link>
+      <pubDate>Sat, 28 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/argumentos-somente-por-palavra-chave/</guid>
+      <description>Por que falar sobre isto? Python 3 ainda possui uma névoa sobre ele, e o movimento de resistência ainda é grande.</description>
+    </item>
+    
+    <item>
+      <title>Por que Python 3?</title>
+      <link>http://cassiobotaro.dev/post/porque-python-3/</link>
+      <pubDate>Tue, 10 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/porque-python-3/</guid>
+      <description>Um pouco de história O Python 3.0 foi uma decisão tomada em 2008, e decidiu-se assim por causa da incompatibilidade de alguns novos recursos com a versão 2.</description>
+    </item>
+    
+  </channel>
+</rss>

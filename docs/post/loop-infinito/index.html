@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.74.3" />
+
+  <title>Loop Infinito &middot; Import None</title>
+
+  <meta name="description" content="Entendendo o comportamento da linguagem, detectando um problema e apresentando a solução." />
+
+  
+
+<meta itemprop="name" content="Loop Infinito">
+<meta itemprop="description" content="Entendendo o comportamento da linguagem, detectando um problema e apresentando a solução.">
+<meta itemprop="datePublished" content="2015-06-27T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2015-06-27T00:00:00+00:00" />
+<meta itemprop="wordCount" content="498">
+<meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
+
+
+
+<meta itemprop="keywords" content="python,POO," />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://cassiobotaro.dev/images/profile.png"/>
+
+<meta name="twitter:title" content="Loop Infinito"/>
+<meta name="twitter:description" content="Entendendo o comportamento da linguagem, detectando um problema e apresentando a solução."/>
+
+
+<meta property="og:title" content="Loop Infinito" />
+<meta property="og:description" content="Entendendo o comportamento da linguagem, detectando um problema e apresentando a solução." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cassiobotaro.dev/post/loop-infinito/" />
+<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="article:published_time" content="2015-06-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-06-27T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+<style type="text/css">
+  .sidebar {
+    background-color: #333333;
+  }
+
+  .read-more-link a {
+    border-color: #333333;
+  }
+
+  .pagination li a {
+    color: #333333;
+    border: 1px solid #333333;
+  }
+
+  .pagination li.active a {
+    background-color: #333333;
+  }
+
+  .pagination li a:hover {
+    background-color: #333333;
+    opacity: 0.75;
+  }
+
+  footer a,
+  .content a,
+  .related-posts li a:hover {
+    color: #333333;
+  }
+</style>
+
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>Import None</h1>
+
+      
+      <p class="lead">...</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="http://cassiobotaro.dev/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/categories/">Categories</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/c%C3%A1ssio-botaro-6a2043b1/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="http://github.com/cassiobotaro" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="http://twitter.com/cassiobotaro" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>Loop Infinito</h1>
+
+  <div class="post-date">
+    <time datetime="2015-06-27T00:00:00Z">Jun 27, 2015</time> &middot; 3 min read
+  </div>
+
+  <p><img src="/images/infinite_loop.png" alt="loop" title="Loop infinito"></p>
+<h2 id="o-problema">O problema</h2>
+<p>Vamos começar analisando o seguinte código:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Exemplo</span>(object):
+
+    <span style="color:#66d9ef">def</span> __init__(self):
+        super(Exemplo, self)<span style="color:#f92672">.</span>__init__()
+        self<span style="color:#f92672">.</span>interno <span style="color:#f92672">=</span> {}
+
+    <span style="color:#66d9ef">def</span> __getitem__(self, chave, default<span style="color:#f92672">=</span>None):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>interno<span style="color:#f92672">.</span>get(chave, default)
+
+    <span style="color:#66d9ef">def</span> __setitem__(self, chave, valor):
+        self<span style="color:#f92672">.</span>interno[chave] <span style="color:#f92672">=</span> valor
+</code></pre></div><p>Criando uma instância do exemplo e manipulando-a, as coisas parecem legais:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; instancia_exemplo <span style="color:#f92672">=</span> Exemplo<span style="color:#f92672">()</span>
+&gt;&gt;&gt; instancia_exemplo<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;chave1&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;valor1&#39;</span>
+&gt;&gt;&gt; instancia_exemplo<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;chave2&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;valor2&#39;</span>
+&gt;&gt;&gt; instancia_exemplo.get<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;chave1&#39;</span><span style="color:#f92672">)</span>
+    <span style="color:#e6db74">&#39;valor1&#39;</span>
+</code></pre></div><p>Até que você decide mudar a notação para se recuperar um valor:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; instancia_exemplo<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;chave1&#39;</span><span style="color:#f92672">]</span>
+    <span style="color:#e6db74">&#39;valor1&#39;</span>
+&gt;&gt;&gt; instancia_exemplo<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;chave3&#39;</span><span style="color:#f92672">]</span>
+&gt;&gt;&gt; instancia_exemplo<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;chave2&#39;</span><span style="color:#f92672">]</span>
+    <span style="color:#e6db74">&#39;valor2&#39;</span>
+</code></pre></div><p>Opa! Uma chave não existente não deveria dar um erro?</p>
+<p>Se reparar a implementação de <em>dunder</em> <code>getitem</code> (<code>__getitem__</code>) vai ver que eu tenho um valor <em>default</em> que é retornado quando eu não encontro essa chave e este valor por padrão é <code>None</code>.</p>
+<p>Mas tudo bem, quando esta classe foi implementada, talvez essa seja o intuito.</p>
+<p>No código onde utilizo essa instancia eu simplesmente verifico se chave passada retorna valor nulo(<code>None</code>).</p>
+<p>Mas ai vem um desavisado, e vendo o <code>__getitem__</code> na classe decidi iterá-la.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; <span style="color:#66d9ef">for</span> indice in instancia_exemplo:
+...    print indice
+&gt;&gt;&gt;
+</code></pre></div><p>E Pam!</p>
+<p><img src="/images/panic.gif" alt="Pane" title="Pane no sistema"></p>
+<p>Seu programa entra em <em>loop</em> infinito.</p>
+<h2 id="como-funciona-o-python-em-termos-de-iteração">Como funciona o Python em termos de iteração?</h2>
+<p>Vamos  começar por conceitos. Iterável, é tudo aquilo que pode ser percorrido, não confunda com iterador que é um padrão de projeto. Em Python, listas, tuplas, geradores e dicionários podem ser percorridos.</p>
+<p>Mas como posso definir para o interpretador que algo pode ser percorrido?</p>
+<p>Algo que pode ser percorrido em Python, possui uma função <code>__iter___</code> que retorna um iterador. Um iterador é um padrão de projeto aplicado em contêiner e seguem um protocolo para este contêiner ser percorrido.</p>
+<p>Uma outra opção é  a existência da função <code>__getitem__</code> <strong>que aceite itens numéricos e lançam IndexError indicando que o percurso foi finalizado</strong>.</p>
+<p>Dito isso já dá pra se ter uma ideia do que aconteceu em nosso código. Quando o laço de repetição(for) foi iniciado o interpretador tentou atribuir exaustivamente valores de 0..n para <code>__getitem__</code> que continuava responder <code>None</code> e nenhuma exceção foi lançada.</p>
+<h2 id="a-solução">A solução</h2>
+<p>Não há solução, porque não é um problema, apenas uma confusão causada sobre interpretação de iteráveis.</p>
+<p>Porém analisando o código acima, acho que o grande problema neste código é a tentativa de suprimir uma exceção. Para casos em que isto ocorre o próprio dicionário já nos fornece um método chamado <code>get</code>.</p>
+<p>É até difícil falar que a solução é o método <code>get</code>, pois este exemplo também nos faz pensar sobre a classe Exemplo que é basicamente um dicionário e caso algum estado ou ação seja adicionado ao objeto, talvez uma melhor reescrita seria através de herança.</p>
+<h2 id="moral-da-história">Moral da história</h2>
+<p>Seja cuidadoso ao reescrever os <code>special methods</code>, lembrem-se que o maquinário para a execução destes métodos está presente no interpretador e que existe um protocolo estabelecido.</p>
+<p>Lembre-se também que suprimir exceções podem fazer com que erros sejam silenciados e isto não é pythônico.</p>
+<h2 id="créditos">Créditos</h2>
+<p>Este <em>post</em> só se tornou possível após consulta de duas fontes:</p>
+<p><a href="http://stackoverflow.com/questions/926574/why-does-defining-getitem-on-a-class-make-it-iterable-in-python">Resposta do Alex Martelli</a></p>
+<p><a href="https://www.youtube.com/watch?v=ULj7ejvuzI8">Palestra do Luciano Ramalho</a></p>
+<p>Então é isso pessoal!</p>
+<p>Até a próxima!</p>
+<p>{}&rsquo;s</p>
+
+</div>
+
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "importnone" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </main>
+
+  <footer>
+  <div>
+    &copy; Cássio Botaro 2020
+
+    &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+    &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-59964005-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

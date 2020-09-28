@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim on Import None</title>
+    <link>http://cassiobotaro.dev/categories/vim/</link>
+    <description>Recent content in vim on Import None</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 11 Feb 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://cassiobotaro.dev/categories/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Corrigindo o vim bootstrap</title>
+      <link>http://cassiobotaro.dev/post/corrigindo-vim-bootstrap/</link>
+      <pubDate>Thu, 11 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/corrigindo-vim-bootstrap/</guid>
+      <description>Introdução O intuito deste post é trazer problemas que tive durante a instalação do vim-bootstrap e a solução dos mesmos.</description>
+    </item>
+    
+  </channel>
+</rss>

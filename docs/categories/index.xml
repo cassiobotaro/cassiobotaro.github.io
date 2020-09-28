@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Import None</title>
+    <link>http://cassiobotaro.dev/categories/</link>
+    <description>Recent content in Categories on Import None</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 19 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://cassiobotaro.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>tests</title>
+      <link>http://cassiobotaro.dev/categories/tests/</link>
+      <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/categories/tests/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>http://cassiobotaro.dev/categories/vim/</link>
+      <pubDate>Thu, 11 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/categories/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>http://cassiobotaro.dev/categories/python/</link>
+      <pubDate>Mon, 14 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web2py</title>
+      <link>http://cassiobotaro.dev/categories/web2py/</link>
+      <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/categories/web2py/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python3</title>
+      <link>http://cassiobotaro.dev/categories/python3/</link>
+      <pubDate>Sat, 28 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/categories/python3/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

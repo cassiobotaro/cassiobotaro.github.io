@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.74.3" />
+
+  <title>Conceitos de linguagem de programação - Parte 2 &middot; Import None</title>
+
+  <meta name="description" content="Conceitos de linguagens de programação aplicados em Python" />
+
+  
+
+<meta itemprop="name" content="Conceitos de linguagem de programação - Parte 2">
+<meta itemprop="description" content="Conceitos de linguagens de programação aplicados em Python">
+<meta itemprop="datePublished" content="2015-11-29T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2015-11-29T00:00:00+00:00" />
+<meta itemprop="wordCount" content="462">
+<meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
+
+
+
+<meta itemprop="keywords" content="python3,iniciantes,python," />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://cassiobotaro.dev/images/profile.png"/>
+
+<meta name="twitter:title" content="Conceitos de linguagem de programação - Parte 2"/>
+<meta name="twitter:description" content="Conceitos de linguagens de programação aplicados em Python"/>
+
+
+<meta property="og:title" content="Conceitos de linguagem de programação - Parte 2" />
+<meta property="og:description" content="Conceitos de linguagens de programação aplicados em Python" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cassiobotaro.dev/post/conceitos-linguagem-parte-2/" />
+<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="article:published_time" content="2015-11-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-11-29T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+<style type="text/css">
+  .sidebar {
+    background-color: #333333;
+  }
+
+  .read-more-link a {
+    border-color: #333333;
+  }
+
+  .pagination li a {
+    color: #333333;
+    border: 1px solid #333333;
+  }
+
+  .pagination li.active a {
+    background-color: #333333;
+  }
+
+  .pagination li a:hover {
+    background-color: #333333;
+    opacity: 0.75;
+  }
+
+  footer a,
+  .content a,
+  .related-posts li a:hover {
+    color: #333333;
+  }
+</style>
+
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>Import None</h1>
+
+      
+      <p class="lead">...</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="http://cassiobotaro.dev/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/categories/">Categories</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/c%C3%A1ssio-botaro-6a2043b1/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="http://github.com/cassiobotaro" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="http://twitter.com/cassiobotaro" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>Conceitos de linguagem de programação - Parte 2</h1>
+
+  <div class="post-date">
+    <time datetime="2015-11-29T00:00:00Z">Nov 29, 2015</time> &middot; 3 min read
+  </div>
+
+  <p><img src="/images/logopython2.png" alt="logo-python" title="Logo Python"></p>
+<h2 id="introdução">Introdução</h2>
+<p>Este post está relacionado a uma palestra ministrada no XVI encontro da comunidade mineira de Python, e aqui foi divida em partes para evitar que fique massante e cansativa.</p>
+<p>Cada parte será postada em uma semana.</p>
+<p>Existe um <a href="https://github.com/cassiobotaro/conceitos_linguagens">repositório</a> onde exemplifico tudo que for colocado aqui além de explicar mais detalhadamente como e por que as coisas acontecem.</p>
+<p>A parte 1 pode ser encontrada <a href="/post/conceitos-linguagem-parte-1">aqui</a>.</p>
+<h2 id="métodos-e-funções">Métodos e funções</h2>
+<p>Como segundo assunto falaremos sobre coisas associadas a funções.</p>
+<h3 id="escopo">Escopo</h3>
+<p>A resolução de nomes é sempre do interior(escopo local) para o exterior(escopo global) das funções a menos que explicitamente modificado.</p>
+<p>Caso um nome seja invocado dentro de uma função, primeiro se procura dentro do escopo da funão esta variável, em seguida no escopo de quem invocou a função e assim por diante até chegar ao escopo global.</p>
+<h3 id="passagem-de-parâmetro-por-valor-ou-referência">Passagem de parâmetro por valor ou referência?</h3>
+<p>A passagem de parâmetro em python se dar por referência em Python.</p>
+<p>Isto leva a duas considerações, quando há atribuição daquele nome a um outro
+objeto, repare que isto não afeta o objeto externo.
+E isto leva a um efeito colateral com objetos mutáveis como listas e dicionários.</p>
+<p>Sua alteração dentro da função é refletida no objeto externo.</p>
+<h4 id="namespaces">Namespaces</h4>
+<p>Eventualmente há uma colisão na vinculação de nomes, e a resolução disto
+pelo interpretador é considerar a ultima atribuição ou importação daquele nome.
+Para solucionar isto, a utilização de namespaces é importante.
+Por exemplo a função open é builtin do Python, ou seja já vem por padrão no escopo global, mas caso eu quero utilizar a open do modulo io eu devo fazer utilização de namespaces.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> io
+
+io<span style="color:#f92672">.</span>open(<span style="color:#f92672">...</span>)
+</code></pre></div><h3 id="métodos-anônimos">Métodos anônimos</h3>
+<p>Pode ser definida basicamente como: &ldquo;Dado uma entrada, me retorne uma saída.&rdquo;
+São funções que não possuem nome, sua representação é através da palavra reservada lambda.</p>
+<p>Exemplo: Função que retorna o cubo de um número</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">lambda</span> x: x<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span>
+</code></pre></div><p>A função deixa de existir quando não há mais referências a ela.</p>
+<h3 id="closure">Closure</h3>
+<p>Closure é o registro de uma função associado a variáveis livre dentro
+de um contexto léxico em funções de primeira classe.
+Exemplo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">makeInk</span>(x):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inc</span>(y):
+        <span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y
+    <span style="color:#66d9ef">return</span> inc
+</code></pre></div><p>A variável x está associada a função inc, em um contexto léxico.</p>
+<p>closure1 = makeInk(1)</p>
+<p>closure2 = makeInk(5)</p>
+<p>Seu valor na closure 1 é 1 e na segunda é 5.</p>
+<p>Se o conceito ainda soar estranho, não se apavore, este conceito de alterar
+uma função em tempo de execução é dado como meta programação e não é
+considerado um assunto simples.</p>
+<p>Para saber mais a respeito destes tópicos consulte <a href="https://github.com/cassiobotaro/conceitos_linguagens/blob/master/metodos.py">este arquivo</a>.</p>
+<p>Caso algo não esteja devidamente explicado, por favor reporte abrindo uma issue que farei o aprimoramento da explicação.</p>
+<p><a href="/post/conceitos-linguagem-parte-3">Clique aqui</a> para ir até a parte 3.</p>
+<p>Então é isso pessoal!</p>
+<p>Até a próxima!</p>
+<p>{}&rsquo;s</p>
+
+</div>
+
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "importnone" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </main>
+
+  <footer>
+  <div>
+    &copy; Cássio Botaro 2020
+
+    &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+    &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-59964005-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

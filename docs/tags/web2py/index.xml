@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web2py on Import None</title>
+    <link>http://cassiobotaro.dev/tags/web2py/</link>
+    <description>Recent content in web2py on Import None</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 28 Sep 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://cassiobotaro.dev/tags/web2py/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Removendo Labels</title>
+      <link>http://cassiobotaro.dev/post/removendo-labels/</link>
+      <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/removendo-labels/</guid>
+      <description>O problema Recentemente em um projeto pessoal me deparei com o seguinte problema.</description>
+    </item>
+    
+    <item>
+      <title>Mais um passo com web2py</title>
+      <link>http://cassiobotaro.dev/post/mais-um-passo-com-web2py/</link>
+      <pubDate>Tue, 07 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/mais-um-passo-com-web2py/</guid>
+      <description>Recapitulando No post anterior dei uma introdução sobre o que é o web2py e iniciamos a construção de uma aplicação, porém não através de um scaffolding (uma aplicação base).</description>
+    </item>
+    
+    <item>
+      <title>Introdução ao web2py</title>
+      <link>http://cassiobotaro.dev/post/introducao-ao-web2py/</link>
+      <pubDate>Mon, 04 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/introducao-ao-web2py/</guid>
+      <description>Sobre o web2py Framework full stack (ou seja assim como Python vem com baterias incluídas), para desenvolvimento rápido, seguro, portável e orientado a banco de dados(o que não o limita).</description>
+    </item>
+    
+  </channel>
+</rss>

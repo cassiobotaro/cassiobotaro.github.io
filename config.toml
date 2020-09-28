@@ -1,0 +1,77 @@
+baseURL = "http://cassiobotaro.dev/"
+DefaultContentLanguage = "pt-br"
+publishDir = "docs"
+theme = "soho"
+title = "Import None"
+enableInlineShortcodes = true
+summarylength = 10
+enableEmoji = true
+paginate = 5
+disqusShortname = "importnone"
+googleAnalytics = "UA-59964005-1"
+
+[params]
+title = "Import None"
+description = "..."
+themeColor = "#333333"
+author = "Cássio Botaro"
+images = ["images/profile.png"]
+profilePicture = "images/profile.png"
+copyright = "Cássio Botaro"
+license = "CC BY-SA 4.0"
+licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
+builtWith = true
+mainSections = ["post"]
+
+  [[params.socialIcons]]
+  icon = "fa-linkedin"
+  title = "Linkedin"
+  url = "https://www.linkedin.com/in/c%C3%A1ssio-botaro-6a2043b1/"
+
+  [[params.socialIcons]]
+  icon = "fa-github"
+  title = "GitHub"
+  url = "http://github.com/cassiobotaro"
+
+  [[params.socialIcons]]
+  icon = "fa-twitter"
+  title = "Twitter"
+  url = "http://twitter.com/cassiobotaro"
+
+[taxonomies]
+  series = "series"
+  category = "categories"
+  tag = "tags"
+
+[menu]
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 100
+  identifier = "posts"
+  url = "/posts/"
+
+  [[menu.main]]
+  name = "Categories"
+  weight = 200
+  identifier = "categories"
+  url = "/categories/"
+
+  [[menu.main]]
+  name = "Tags"
+  weight = 200
+  identifier = "tags"
+  url = "/tags/"
+
+[markup]
+
+  [markup.highlight]
+  codeFences = true
+  guessSyntax = false
+  hl_Lines = ""
+  lineNoStart = 1
+  lineNos = false
+  lineNumbersInTable = true
+  noClasses = true
+  style = "monokai"
+  tabWidth = 4

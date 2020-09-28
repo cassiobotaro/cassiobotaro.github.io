@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tests on Import None</title>
+    <link>http://cassiobotaro.dev/tags/tests/</link>
+    <description>Recent content in tests on Import None</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 19 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://cassiobotaro.dev/tags/tests/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dublês de testes</title>
+      <link>http://cassiobotaro.dev/post/dubles-de-teste/</link>
+      <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/dubles-de-teste/</guid>
+      <description>Normalmente quando falamos de mocks, estamos nos referindo a um componente simulado de software.</description>
+    </item>
+    
+  </channel>
+</rss>

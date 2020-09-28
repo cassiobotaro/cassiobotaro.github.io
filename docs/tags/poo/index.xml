@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>POO on Import None</title>
+    <link>http://cassiobotaro.dev/tags/poo/</link>
+    <description>Recent content in POO on Import None</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 27 Jun 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://cassiobotaro.dev/tags/poo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Loop Infinito</title>
+      <link>http://cassiobotaro.dev/post/loop-infinito/</link>
+      <pubDate>Sat, 27 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/loop-infinito/</guid>
+      <description>O problema Vamos começar analisando o seguinte código:
+class Exemplo(object): def __init__(self): super(Exemplo, self).</description>
+    </item>
+    
+  </channel>
+</rss>

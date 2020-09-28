@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.74.3" />
+
+  <title>Argumentos somente por palavra chave &middot; Import None</title>
+
+  <meta name="description" content="Como um novo recurso do Python 3 te ajuda a não brincar de roleta russa com seus parâmetros." />
+
+  
+
+<meta itemprop="name" content="Argumentos somente por palavra chave">
+<meta itemprop="description" content="Como um novo recurso do Python 3 te ajuda a não brincar de roleta russa com seus parâmetros.">
+<meta itemprop="datePublished" content="2015-03-28T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2015-03-28T00:00:00+00:00" />
+<meta itemprop="wordCount" content="315">
+<meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
+
+
+
+<meta itemprop="keywords" content="python,python3," />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://cassiobotaro.dev/images/profile.png"/>
+
+<meta name="twitter:title" content="Argumentos somente por palavra chave"/>
+<meta name="twitter:description" content="Como um novo recurso do Python 3 te ajuda a não brincar de roleta russa com seus parâmetros."/>
+
+
+<meta property="og:title" content="Argumentos somente por palavra chave" />
+<meta property="og:description" content="Como um novo recurso do Python 3 te ajuda a não brincar de roleta russa com seus parâmetros." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cassiobotaro.dev/post/argumentos-somente-por-palavra-chave/" />
+<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="article:published_time" content="2015-03-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-03-28T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+<style type="text/css">
+  .sidebar {
+    background-color: #333333;
+  }
+
+  .read-more-link a {
+    border-color: #333333;
+  }
+
+  .pagination li a {
+    color: #333333;
+    border: 1px solid #333333;
+  }
+
+  .pagination li.active a {
+    background-color: #333333;
+  }
+
+  .pagination li a:hover {
+    background-color: #333333;
+    opacity: 0.75;
+  }
+
+  footer a,
+  .content a,
+  .related-posts li a:hover {
+    color: #333333;
+  }
+</style>
+
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>Import None</h1>
+
+      
+      <p class="lead">...</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="http://cassiobotaro.dev/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/categories/">Categories</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/c%C3%A1ssio-botaro-6a2043b1/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="http://github.com/cassiobotaro" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="http://twitter.com/cassiobotaro" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>Argumentos somente por palavra chave</h1>
+
+  <div class="post-date">
+    <time datetime="2015-03-28T00:00:00Z">Mar 28, 2015</time> &middot; 2 min read
+  </div>
+
+  <h2 id="por-que-falar-sobre-isto">Por que falar sobre isto?</h2>
+<p>Python 3 ainda possui uma névoa sobre ele, e o movimento de resistência ainda é grande. Mas isto não quer dizer que desbravadores já não o estejam explorando. Já escrevi um <a href="http://cassiobotaro.github.io/porque-python-3.html">post</a> sobre a nova versão da linguagem, porém ainda tem vários recursos que podem ser demonstrados. Um deles é a capacidade de aceitar somente palavras chaves como argumento. Eu até coloquei isto nos slides da Python Brasil 10, porém senti que ao apresentar faltou uma boa explicação.</p>
+<h2 id="talk-is-cheap-show-me-the-code">Talk is cheap. Show me the code!</h2>
+<p>Tentarei dar um exemplo utilizando código, explicarei utilizando os comentários</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#75715e"># vamos iniciar com a seguinte função</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">funcao</span>(arg1, arg2, kill<span style="color:#f92672">=</span>False):
+    <span style="color:#66d9ef">if</span> kill:
+        shutil<span style="color:#f92672">.</span>rmtree(<span style="color:#e6db74">&#39;/&#39;</span>)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#75715e"># realiza operacao</span>
+    <span style="color:#f92672">...</span>
+
+<span style="color:#75715e"># e por algum algum descuido...</span>
+funcao(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)
+<span style="color:#75715e"># o que acontece?</span>
+<span style="color:#75715e"># possivelmente você acaba de ser demitido</span>
+
+<span style="color:#75715e"># Agora vamos corrigir isto utilizando python3</span>
+<span style="color:#75715e"># lembre-se que daqui pra baixo, a sintáxe não é compativel com python 2</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">funcao</span>(arg1, arg2, <span style="color:#f92672">*</span>, kill<span style="color:#f92672">=</span>False):
+    <span style="color:#66d9ef">if</span> kill:
+        shutil<span style="color:#f92672">.</span>rmtree(<span style="color:#e6db74">&#39;/&#39;</span>)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#75715e"># realiza operacao</span>
+    <span style="color:#f92672">...</span>
+
+<span style="color:#75715e"># Basta colocar um * e pronto</span>
+<span style="color:#75715e"># agora se cometer um erro o python 3 te alerta</span>
+funcao(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)
+<span style="color:#75715e"># TypeError: funcao() takes 2 positional arguments but 3 were given</span>
+
+<span style="color:#75715e"># Mas o que é esse asterico, é igual o args?</span>
+<span style="color:#75715e"># Na verdade é similar, porém o interpretador sabe que se não foi definido o</span>
+<span style="color:#75715e"># &#34;args&#34; um erro deve ser lançado</span>
+
+<span style="color:#75715e">#Mas e se eu definir o args?</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">funcao</span>(arg1, arg2, <span style="color:#f92672">*</span>args, kill<span style="color:#f92672">=</span>False):
+    <span style="color:#66d9ef">if</span> kill:
+        shutil<span style="color:#f92672">.</span>rmtree(<span style="color:#e6db74">&#39;/&#39;</span>)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#75715e"># realiza operacao</span>
+    <span style="color:#f92672">...</span>
+
+<span style="color:#75715e"># acontece que agora, todo parâmetro passado além dos dois obrigatórios(positionals), será armazenado em args, e kill só sera atribuido quando</span>
+<span style="color:#75715e"># utilizado palavra chave</span>
+<span style="color:#75715e">#Ex: funcao(0, 0, kill=True)</span>
+
+</code></pre></div><h2 id="considerações-finais">Considerações finais</h2>
+<p>Não pense que exemplo é exagerado, pode acontecer a qualquer hora com você.
+Não brinque mais de roleta russa com seus argumentos.</p>
+<p><img src="/images/programming-motherfucker.jpg" alt="programming-motherfucker"></p>
+<p>Então é isso pessoal!</p>
+<p>Até a próxima!</p>
+<p>{}&rsquo;s</p>
+
+</div>
+
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "importnone" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </main>
+
+  <footer>
+  <div>
+    &copy; Cássio Botaro 2020
+
+    &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+    &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-59964005-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

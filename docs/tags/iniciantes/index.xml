@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iniciantes on Import None</title>
+    <link>http://cassiobotaro.dev/tags/iniciantes/</link>
+    <description>Recent content in iniciantes on Import None</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 11 Feb 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://cassiobotaro.dev/tags/iniciantes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Corrigindo o vim bootstrap</title>
+      <link>http://cassiobotaro.dev/post/corrigindo-vim-bootstrap/</link>
+      <pubDate>Thu, 11 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/corrigindo-vim-bootstrap/</guid>
+      <description>Introdução O intuito deste post é trazer problemas que tive durante a instalação do vim-bootstrap e a solução dos mesmos.</description>
+    </item>
+    
+    <item>
+      <title>Conceitos de linguagem de programação - Parte 4</title>
+      <link>http://cassiobotaro.dev/post/conceitos-linguagem-parte-4/</link>
+      <pubDate>Mon, 14 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/conceitos-linguagem-parte-4/</guid>
+      <description>Introdução Este post está relacionado a uma palestra ministrada no XVI encontro da comunidade mineira de Python, e aqui foi divida em partes para evitar que fique massante e cansativa.</description>
+    </item>
+    
+    <item>
+      <title>Conceitos de linguagem de programação - Parte 3</title>
+      <link>http://cassiobotaro.dev/post/conceitos-linguagem-parte-3/</link>
+      <pubDate>Sun, 06 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/conceitos-linguagem-parte-3/</guid>
+      <description>Introdução Este post está relacionado a uma palestra ministrada no XVI encontro da comunidade mineira de Python, e aqui foi divida em partes para evitar que fique massante e cansativa.</description>
+    </item>
+    
+    <item>
+      <title>Conceitos de linguagem de programação - Parte 2</title>
+      <link>http://cassiobotaro.dev/post/conceitos-linguagem-parte-2/</link>
+      <pubDate>Sun, 29 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/conceitos-linguagem-parte-2/</guid>
+      <description>Introdução Este post está relacionado a uma palestra ministrada no XVI encontro da comunidade mineira de Python, e aqui foi divida em partes para evitar que fique massante e cansativa.</description>
+    </item>
+    
+    <item>
+      <title>Conceitos de linguagem de programação - Parte 1</title>
+      <link>http://cassiobotaro.dev/post/conceitos-linguagem-parte-1/</link>
+      <pubDate>Sun, 22 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/conceitos-linguagem-parte-1/</guid>
+      <description>Introdução Este post está relacionado a uma palestra ministrada no XVI encontro da comunidade mineira de Python, e aqui foi divida em partes para evitar que fique massante e cansativa.</description>
+    </item>
+    
+    <item>
+      <title>Mais um passo com web2py</title>
+      <link>http://cassiobotaro.dev/post/mais-um-passo-com-web2py/</link>
+      <pubDate>Tue, 07 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/mais-um-passo-com-web2py/</guid>
+      <description>Recapitulando No post anterior dei uma introdução sobre o que é o web2py e iniciamos a construção de uma aplicação, porém não através de um scaffolding (uma aplicação base).</description>
+    </item>
+    
+    <item>
+      <title>Introdução ao web2py</title>
+      <link>http://cassiobotaro.dev/post/introducao-ao-web2py/</link>
+      <pubDate>Mon, 04 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/introducao-ao-web2py/</guid>
+      <description>Sobre o web2py Framework full stack (ou seja assim como Python vem com baterias incluídas), para desenvolvimento rápido, seguro, portável e orientado a banco de dados(o que não o limita).</description>
+    </item>
+    
+    <item>
+      <title>Por que Python 3?</title>
+      <link>http://cassiobotaro.dev/post/porque-python-3/</link>
+      <pubDate>Tue, 10 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/porque-python-3/</guid>
+      <description>Um pouco de história O Python 3.0 foi uma decisão tomada em 2008, e decidiu-se assim por causa da incompatibilidade de alguns novos recursos com a versão 2.</description>
+    </item>
+    
+    <item>
+      <title>Hello Python!</title>
+      <link>http://cassiobotaro.dev/post/hello-world/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/hello-world/</guid>
+      <description>FAQ Como algumas perguntas são recorrentes nas listas de discussões, nos grupos do Facebook e outros meios de comunicação e nossa comunidade gosta de receber bem os iniciantes, listei aqui aquelas dúvidas que são constantes.</description>
+    </item>
+    
+  </channel>
+</rss>
