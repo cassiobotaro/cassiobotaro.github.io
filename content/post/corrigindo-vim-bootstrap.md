@@ -82,7 +82,7 @@ autocmd FileType jinja set commentstring={#\ %s\ #}
 
 Espero ter ajudado, quem tiver interesse em ver todas as minhas configurações elas estão públicas neste [repositório](https://github.com/cassiobotaro/botaro-toolbelt).
 
-Também não podia deixar de falar no excelente [vimbook](https://github.com/cassiobotaro/vimbook.git), em pt-br, que estou portando para o gitbook, para que em breve tenhamos uma versão .epub, .mobi e .pdf.
+Também não podia deixar de falar no excelente [vimbook](https://github.com/cassiobotaro/vimbook.git), em pt-br, que estou portando para o `gitbook`, para que em breve tenhamos uma versão .epub, .mobi e .pdf.
 
 Então é isso pessoal!
 
