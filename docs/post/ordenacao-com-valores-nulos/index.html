@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.74.3" />
+
+  <title>Ordenação com valores nulos &middot; Import None</title>
+
+  <meta name="description" content="Ordene uma lista de valores, colocando os valores nulos no fim." />
+
+  
+
+<meta itemprop="name" content="Ordenação com valores nulos">
+<meta itemprop="description" content="Ordene uma lista de valores, colocando os valores nulos no fim.">
+<meta itemprop="datePublished" content="2016-07-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-07-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="561">
+<meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
+
+
+
+<meta itemprop="keywords" content="dicas,ordenação,iniciantes," />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://cassiobotaro.dev/images/profile.png"/>
+
+<meta name="twitter:title" content="Ordenação com valores nulos"/>
+<meta name="twitter:description" content="Ordene uma lista de valores, colocando os valores nulos no fim."/>
+
+
+<meta property="og:title" content="Ordenação com valores nulos" />
+<meta property="og:description" content="Ordene uma lista de valores, colocando os valores nulos no fim." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cassiobotaro.dev/post/ordenacao-com-valores-nulos/" />
+<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="article:published_time" content="2016-07-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-07-21T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+<style type="text/css">
+  .sidebar {
+    background-color: #333333;
+  }
+
+  .read-more-link a {
+    border-color: #333333;
+  }
+
+  .pagination li a {
+    color: #333333;
+    border: 1px solid #333333;
+  }
+
+  .pagination li.active a {
+    background-color: #333333;
+  }
+
+  .pagination li a:hover {
+    background-color: #333333;
+    opacity: 0.75;
+  }
+
+  footer a,
+  .content a,
+  .related-posts li a:hover {
+    color: #333333;
+  }
+</style>
+
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>Import None</h1>
+
+      
+      <p class="lead">...</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="http://cassiobotaro.dev/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/categories/">Categories</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/c%C3%A1ssio-botaro-6a2043b1/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="http://github.com/cassiobotaro" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="http://twitter.com/cassiobotaro" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>Ordenação com valores nulos</h1>
+
+  <div class="post-date">
+    <time datetime="2016-07-21T00:00:00Z">Jul 21, 2016</time> &middot; 3 min read
+  </div>
+
+  <p><img src="%7Bstatic%7D/images/sort.jpg" alt="ordenacao" title="Ordenação"></p>
+<p>Dado uma lista de elementos de mesmo tipo e valores nulos, ordene-os considerando que elementos nulos devem ir para o fim da lista.</p>
+<p>Por exemplo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#75715e"># Considere uma lista com valores inteiros e nulos</span>
+lista1 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, None, <span style="color:#ae81ff">6</span>, None, <span style="color:#ae81ff">3</span>]
+
+<span style="color:#75715e"># A ordenação correta seria</span>
+<span style="color:#66d9ef">assert</span> lista1 <span style="color:#f92672">==</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>, None, None]
+
+<span style="color:#75715e"># Considere também uma lista de strings</span>
+lista2 <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>, None, None, <span style="color:#e6db74">&#39;f&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>]
+
+<span style="color:#75715e"># A ordenação correta seria</span>
+<span style="color:#66d9ef">assert</span> lista2 <span style="color:#f92672">==</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>, None, None]
+
+<span style="color:#75715e"># O mesmo problema aparece em lista de dicionários ou objetos</span>
+lista3 <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;João&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: None}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Carla&#39;</span>}]
+
+<span style="color:#75715e"># A ordenação correta seria</span>
+<span style="color:#66d9ef">assert</span> lista3 <span style="color:#f92672">==</span> [{<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Carla&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;João&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: None}]
+</code></pre></div><h2 id="discussão-sobre-o-problema">Discussão sobre o problema</h2>
+<p>A lista possui um método para ordenação que se chama <code>sort</code>. Sua assinatura nos permite ordenar qualquer tipo de objeto, desde que este seja iterável e seus elementos sejam comparáveis.</p>
+<p>Mas o que significa ser comparável? Em termos práticos, significa que se eu comparar um elemento com o adjacente da lista eu consigo obter um resultado booleano. Em termos mais técnicos, eu possuo implementado o <em>dunder</em> método utilizado na comparação para o tipo do elemento adjacente.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">(<span style="color:#ae81ff">3</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">is</span> True
+
+(<span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;z&#39;</span>) <span style="color:#f92672">is</span> False
+</code></pre></div><p>Ordenar uma lista de inteiros ou strings, é simples como <code>lista.sort()</code>. Porém o problema induz elementos nulos na lista e 	quando o método <em>sort</em> tenta comparar um elemento e nulo, uma exceção <em>TypeError</em> é lançada. A mensagem nos diz o problema: &quot; unorderable types: int() &gt; NoneType() &ldquo;.</p>
+<pre><code>&gt;&gt;&gt; 3 &gt; None
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: unorderable types: int() &gt; NoneType()
+</code></pre><p>O método sort, possui o parâmetro  key, que por padrão assume o valor None. Este parâmetro é um callable(por exemplo uma função) que durante a ordenação irá receber como parâmetro um elemento e retorna um valor que deve ser utilizado para a comparação.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># define uma lista de listas</span>
+lista <span style="color:#f92672">=</span> [[], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>]]
+
+<span style="color:#75715e"># ordena considerando o tamanho de cada lista</span>
+lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span>len)
+
+<span style="color:#75715e"># A ordenação correta seria</span>
+<span style="color:#66d9ef">assert</span> lista <span style="color:#f92672">==</span> [[], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]]
+
+<span style="color:#75715e"># Para uma lista de dicionários</span>
+lista <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;João&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Maria&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Carla&#39;</span>}]
+
+<span style="color:#75715e"># uma chave poderia ser utilizada pra ordenar.</span>
+lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> dict_: dict_[<span style="color:#e6db74">&#39;nome&#39;</span>])
+
+<span style="color:#75715e"># resultaria em</span>
+<span style="color:#66d9ef">assert</span> lista <span style="color:#f92672">==</span> [{<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Carla&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;João&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Maria&#39;</span>}]
+</code></pre></div><p>Uma possível solução para nosso problema é conferir através da função que será utilizada em key, se o valor for nulo(None) e caso seja retorna o maior valor possível.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Para uma lista de inteiros por exemplo poderiamos fazer:</span>
+lista1<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: x <span style="color:#f92672">or</span> <span style="color:#ae81ff">9999</span>)
+
+<span style="color:#75715e"># Mas isto faria surgir uma constante aleatória no código e isto não é legal.</span>
+</code></pre></div><h2 id="a-solução">A solução</h2>
+<p>A melhor solução é através de uma tupla. Quando comparada, o primeiro elemento é comparado ao primeiro da outra tupla, caso sejam valores similares, o segundo valor é comparado e assim por diante.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># para uma lista de inteiro ou string:</span>
+lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> elemento: (elemento <span style="color:#f92672">is</span> None, elemento))
+
+<span style="color:#75715e"># para uma lista de dicionário</span>
+lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> dict_: (dict_[<span style="color:#e6db74">&#39;key&#39;</span>] <span style="color:#f92672">is</span> None, dict_[<span style="color:#e6db74">&#39;key&#39;</span>]))
+</code></pre></div><p>A solução é simples e elegante, lembrando que False pode ser entendido como 0 e True como 1, logo se o elemnto for None, o primeiro elemento da tupla será True e irá ser ordenado ao fim da lista.</p>
+<p>Então é isso pessoal!</p>
+<p>Até a próxima!</p>
+<p>{}&rsquo;s</p>
+
+</div>
+
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "importnone" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </main>
+
+  <footer>
+  <div>
+    &copy; Cássio Botaro 2020
+
+    &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+    &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-59964005-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>
