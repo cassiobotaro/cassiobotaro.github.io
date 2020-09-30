@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Ordenação com valores nulos</title>
+      <link>http://cassiobotaro.dev/post/ordenacao-com-valores-nulos/</link>
+      <pubDate>Thu, 21 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/ordenacao-com-valores-nulos/</guid>
+      <description>Dado uma lista de elementos de mesmo tipo e valores nulos, ordene-os considerando que elementos nulos devem ir para o fim da lista.</description>
+    </item>
+    
+    <item>
       <title>Corrigindo o vim bootstrap</title>
       <link>http://cassiobotaro.dev/post/corrigindo-vim-bootstrap/</link>
       <pubDate>Thu, 11 Feb 2016 00:00:00 +0000</pubDate>
