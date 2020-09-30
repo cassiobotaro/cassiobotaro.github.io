@@ -7,7 +7,7 @@ categories: ["python"]
 aliases: ["ordenacao-com-valores-nulos"]
 ---
 
-![ordenacao]({static}/images/sort.jpg "Ordenação")
+![ordenacao](/images/sort.jpg "Ordenação")
 
 
 Dado uma lista de elementos de mesmo tipo e valores nulos, ordene-os considerando que elementos nulos devem ir para o fim da lista.
