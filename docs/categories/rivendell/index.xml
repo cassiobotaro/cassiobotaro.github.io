@@ -5,10 +5,19 @@
     <link>http://cassiobotaro.dev/categories/rivendell/</link>
     <description>Recent content in rivendell on Import None</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 20 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://cassiobotaro.dev/categories/rivendell/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ordenando dicionário por valores</title>
+      <link>http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/</link>
+      <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/</guid>
+      <description>Dado um dicionário, eu quero ordenar seus elementos de acordo com seus valores, não por sua chave.</description>
+    </item>
     
     <item>
       <title>Amor Programador</title>
