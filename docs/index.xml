@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Mergulhando em Rust</title>
+      <link>http://cassiobotaro.dev/post/mergulhando-em-rust/</link>
+      <pubDate>Thu, 21 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/mergulhando-em-rust/</guid>
+      <description>O workshop No dia 9 de Dezembro, aconteceu o primeiro workshop da linguagem Rust em Belo Horizonte.</description>
+    </item>
+    
+    <item>
       <title>Armadilha de nomes em variáveis de funções</title>
       <link>http://cassiobotaro.dev/post/armadilha-de-nomes-em-variaveis-de-funcoes/</link>
       <pubDate>Sat, 13 Aug 2016 00:00:00 +0000</pubDate>

@@ -48,12 +48,27 @@
   </url>
   
   <url>
-    <loc>http://cassiobotaro.dev/post/armadilha-de-nomes-em-variaveis-de-funcoes/</loc>
-    <lastmod>2016-08-13T00:00:00+00:00</lastmod>
+    <loc>http://cassiobotaro.dev/tags/iniciantes/</loc>
+    <lastmod>2017-12-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://cassiobotaro.dev/tags/iniciantes/</loc>
+    <loc>http://cassiobotaro.dev/post/mergulhando-em-rust/</loc>
+    <lastmod>2017-12-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cassiobotaro.dev/tags/rust/</loc>
+    <lastmod>2017-12-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cassiobotaro.dev/categories/rust/</loc>
+    <lastmod>2017-12-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cassiobotaro.dev/post/armadilha-de-nomes-em-variaveis-de-funcoes/</loc>
     <lastmod>2016-08-13T00:00:00+00:00</lastmod>
   </url>
   
