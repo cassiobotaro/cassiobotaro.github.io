@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Armadilha de nomes em variáveis de funções</title>
+      <link>http://cassiobotaro.dev/post/armadilha-de-nomes-em-variaveis-de-funcoes/</link>
+      <pubDate>Sat, 13 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/armadilha-de-nomes-em-variaveis-de-funcoes/</guid>
+      <description>Vamos analisar os seguintes cenários, eu tenho uma função onde ocorre uma importação dentro de uma função.</description>
+    </item>
+    
+    <item>
       <title>Ordenação com valores nulos</title>
       <link>http://cassiobotaro.dev/post/ordenacao-com-valores-nulos/</link>
       <pubDate>Thu, 21 Jul 2016 00:00:00 +0000</pubDate>

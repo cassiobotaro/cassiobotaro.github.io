@@ -48,12 +48,27 @@
   </url>
   
   <url>
-    <loc>http://cassiobotaro.dev/tags/dicas/</loc>
-    <lastmod>2016-07-21T00:00:00+00:00</lastmod>
+    <loc>http://cassiobotaro.dev/post/armadilha-de-nomes-em-variaveis-de-funcoes/</loc>
+    <lastmod>2016-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://cassiobotaro.dev/tags/iniciantes/</loc>
+    <lastmod>2016-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cassiobotaro.dev/categories/python/</loc>
+    <lastmod>2016-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cassiobotaro.dev/tags/python3/</loc>
+    <lastmod>2016-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cassiobotaro.dev/tags/dicas/</loc>
     <lastmod>2016-07-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -64,11 +79,6 @@
   
   <url>
     <loc>http://cassiobotaro.dev/post/ordenacao-com-valores-nulos/</loc>
-    <lastmod>2016-07-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cassiobotaro.dev/categories/python/</loc>
     <lastmod>2016-07-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -89,11 +99,6 @@
   
   <url>
     <loc>http://cassiobotaro.dev/post/conceitos-linguagem-parte-4/</loc>
-    <lastmod>2015-12-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cassiobotaro.dev/tags/python3/</loc>
     <lastmod>2015-12-14T00:00:00+00:00</lastmod>
   </url>
   

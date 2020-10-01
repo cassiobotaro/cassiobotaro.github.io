@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.74.3" />
+
+  <title>Armadilha de nomes em variáveis de funções &middot; Import None</title>
+
+  <meta name="description" content="Variável referenciada antes de ser atribuída? Entenda o que acontece com nomes dentro de uma função." />
+
+  
+
+<meta itemprop="name" content="Armadilha de nomes em variáveis de funções">
+<meta itemprop="description" content="Variável referenciada antes de ser atribuída? Entenda o que acontece com nomes dentro de uma função.">
+<meta itemprop="datePublished" content="2016-08-13T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-08-13T00:00:00+00:00" />
+<meta itemprop="wordCount" content="451">
+<meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
+
+
+
+<meta itemprop="keywords" content="python,python3,iniciantes," />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://cassiobotaro.dev/images/profile.png"/>
+
+<meta name="twitter:title" content="Armadilha de nomes em variáveis de funções"/>
+<meta name="twitter:description" content="Variável referenciada antes de ser atribuída? Entenda o que acontece com nomes dentro de uma função."/>
+
+
+<meta property="og:title" content="Armadilha de nomes em variáveis de funções" />
+<meta property="og:description" content="Variável referenciada antes de ser atribuída? Entenda o que acontece com nomes dentro de uma função." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cassiobotaro.dev/post/armadilha-de-nomes-em-variaveis-de-funcoes/" />
+<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="article:published_time" content="2016-08-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-08-13T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+<style type="text/css">
+  .sidebar {
+    background-color: #333333;
+  }
+
+  .read-more-link a {
+    border-color: #333333;
+  }
+
+  .pagination li a {
+    color: #333333;
+    border: 1px solid #333333;
+  }
+
+  .pagination li.active a {
+    background-color: #333333;
+  }
+
+  .pagination li a:hover {
+    background-color: #333333;
+    opacity: 0.75;
+  }
+
+  footer a,
+  .content a,
+  .related-posts li a:hover {
+    color: #333333;
+  }
+</style>
+
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>Import None</h1>
+
+      
+      <p class="lead">...</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="http://cassiobotaro.dev/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/categories/">Categories</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/c%C3%A1ssio-botaro-6a2043b1/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="http://github.com/cassiobotaro" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="http://twitter.com/cassiobotaro" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>Armadilha de nomes em variáveis de funções</h1>
+
+  <div class="post-date">
+    <time datetime="2016-08-13T00:00:00Z">Aug 13, 2016</time> &middot; 3 min read
+  </div>
+
+  <p><img src="/images/fragile.jpg" alt="fragile" title="Importação Frágil"></p>
+<p>Vamos analisar os seguintes cenários, eu tenho uma função onde ocorre uma importação dentro de uma função.</p>
+<p>Porém temos duas coisas ocorrendo, uma é que a condicional é falsa, logo o math não vai ser importado.</p>
+<p>Mas como já havia sido previamente importado no início do arquivo, o que esperar?</p>
+<p>No segundo caso, temos a declaração da variável de forma global, novamente temos uma condicional onde a variavel é redefinida de forma local.</p>
+<p>Porém como a condicional é falsa, esta não será redefinida.</p>
+<p>Quando a execução chega no ponto onde há a chamada do método append, o que ocorre?</p>
+<p>Será que em ambos os casos a variável global será utilizada?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#f92672">import</span> math
+
+<span style="color:#75715e"># Importação condicional</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">import_dentro_da_funcao</span>():
+    <span style="color:#66d9ef">if</span> False:
+        <span style="color:#f92672">import</span> math
+    <span style="color:#f92672">...</span>
+    math<span style="color:#f92672">.</span>sin(<span style="color:#ae81ff">30</span>)
+
+<span style="color:#75715e"># Atribuição condicional</span>
+variavel <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exemplo_variavel</span>():
+    <span style="color:#66d9ef">if</span> False:
+        variavel <span style="color:#f92672">=</span> []
+    variavel<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;erro&#39;</span>)
+</code></pre></div><h2 id="discussão-sobre-o-problema">Discussão sobre o problema</h2>
+<p>Somos levados a acreditar que em uma função, a análise de nomes será feita primeiramente em nível local(locals()) e em seguida em nível global(globals()).</p>
+<p>Isto nos faz pensar que ambos os casos apresentados funcionarão utilizando o escopo global.</p>
+<p>Mas o que ocorre na verdade é um erro, e o mais interessante, somente durante a execução do programa.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> variavel <span style="color:#f92672">=</span> []
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exemplo_variavel</span>():
+<span style="color:#f92672">...</span>     <span style="color:#66d9ef">if</span> False:
+<span style="color:#f92672">...</span>         variavel <span style="color:#f92672">=</span> []
+<span style="color:#f92672">...</span>     variavel<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;erro&#39;</span>)
+<span style="color:#f92672">...</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> exemplo_variavel()
+Traceback (most recent call last):
+  File <span style="color:#e6db74">&#34;&lt;stdin&gt;&#34;</span>, line <span style="color:#ae81ff">1</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+  File <span style="color:#e6db74">&#34;&lt;stdin&gt;&#34;</span>, line <span style="color:#ae81ff">4</span>, <span style="color:#f92672">in</span> exemplo_variavel
+<span style="color:#a6e22e">UnboundLocalError</span>: local variable <span style="color:#e6db74">&#39;variavel&#39;</span> referenced before assignment
+</code></pre></div><p>WAT!</p>
+<p>Quando uma função é definida, o interpretador já analisa seu corpo e define o espaço de nomes locais para aquela função.</p>
+<p>Ou seja, a função já sabe quais serão os nomes utilizados em seu escopo local.</p>
+<p>Isto pode ser verificado da seguinte maneira:</p>
+<p><code>funcao.__code__.co_varnames</code></p>
+<p>Porém o resultado inesperado é durante a execução do programa.</p>
+<p>No primeiro caso, ao atingir <code>math.sin(30)</code>, o interpretador espera que o nome <code>math</code> esteja referenciando algum objeto, mas dado que a condicional é falsa, durante a execução isto não ocorre e uma exceção é lançada, dizendo que a variável é referenciada antes de ter sido atribuída.</p>
+<p>O mesmo é valido para o segundo caso, embora não se trate de uma importação, mas sim de uma variável.</p>
+<h2 id="a-solução">A solução</h2>
+<p>Este é um erro perigoso, pois só ocorre em tempo de execução e embora aqui apresentado de forma simplificada pode aparecer de maneiras mais complexas.</p>
+<p>A prevenção é tentar manter a PEP8, importando sempre no topo do arquivo(salvo em raras exceções), cuidado também com a inicialização de variáveis dentro de condicionais.</p>
+<p>Fecho este post com a lembrança do zen do python: &ldquo;Special cases aren&rsquo;t special enough to break the rules&rdquo;, lembrem-se disto ao achar que seu caso é especial.</p>
+<p>Então é isso pessoal!</p>
+<p>Até a próxima!</p>
+<p>{}&rsquo;s</p>
+
+</div>
+
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "importnone" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </main>
+
+  <footer>
+  <div>
+    &copy; Cássio Botaro 2020
+
+    &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+    &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-59964005-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>
