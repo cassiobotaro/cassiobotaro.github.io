@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Somatório</title>
+      <link>http://cassiobotaro.dev/post/somatorio/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/somatorio/</guid>
+      <description>O somatório é um operador matemático, utilizado para representar a soma de termos, mesmo em uma sequência infinita.</description>
+    </item>
+    
+    <item>
       <title>Mergulhando em Rust</title>
       <link>http://cassiobotaro.dev/post/mergulhando-em-rust/</link>
       <pubDate>Thu, 21 Dec 2017 00:00:00 +0000</pubDate>
