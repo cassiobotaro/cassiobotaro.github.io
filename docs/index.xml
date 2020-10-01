@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Ordenando dicionário por valores</title>
+      <link>http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/</link>
+      <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/</guid>
+      <description>Dado um dicionário, eu quero ordenar seus elementos de acordo com seus valores, não por sua chave.</description>
+    </item>
+    
+    <item>
       <title>Amor Programador</title>
       <link>http://cassiobotaro.dev/post/amor-programador/</link>
       <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
