@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.75.1" />
 
   <title>Amor Programador &middot; Import None</title>
 
@@ -220,7 +220,7 @@
 <p>Primeira mudança, é a junção de todas as colunas de uma linha, assim nossa antiga matriz passa a ser somente uma lista.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-    matriz.append(linha)
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+    matriz.append(&#34;&#34;.join(linha))
-</span></code></pre></div><p>As linhas agora irão parecer como &quot;          &hellip;&rdquo; ou &quot;  ❤❤❤❤❤&hellip;&rdquo;.</p>
+</span></code></pre></div><p>As linhas agora irão parecer como &quot;          &hellip;&quot; ou &quot;  ❤❤❤❤❤&hellip;&quot;.</p>
 <p>A próxima mudança é realizar a junção das linhas separando-ascom uma quebra de linha.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">- print(matriz)
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+ print(&#34;\n&#34;.join(matriz))

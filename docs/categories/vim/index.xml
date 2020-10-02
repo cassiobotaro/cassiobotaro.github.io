@@ -5,11 +5,7 @@
     <link>http://cassiobotaro.dev/categories/vim/</link>
     <description>Recent content in vim on Import None</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 11 Feb 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://cassiobotaro.dev/categories/vim/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 11 Feb 2016 00:00:00 +0000</lastBuildDate><atom:link href="http://cassiobotaro.dev/categories/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Corrigindo o vim bootstrap</title>
       <link>http://cassiobotaro.dev/post/corrigindo-vim-bootstrap/</link>
