@@ -13,7 +13,7 @@ Normalmente quando falamos de _mocks_, estamos nos referindo a um componente sim
 
 > ⚠️ Os códigos deste post utilizam `pytest-mock` e `requests` que são libs de terceiros. Certifique-se de tê-las instaladas caso decida rodar os códigos.
 
-Como base para nossos testes, vamos definir a seguinte função que realiza uma requisição web e retorna o conteúdo de sua resposta. Porém caso alguém erro ocorra, deve retornar um conteúdo vazio e imprimir um alerta com o erro ocorrido.
+Como base para nossos testes, vamos definir a seguinte função que realiza uma requisição web e retorna o conteúdo de sua resposta. Porém caso algum erro ocorra, deve retornar um conteúdo vazio e imprimir um alerta com o erro ocorrido.
 
 ```python
 import requests
