@@ -5,7 +5,16 @@
     <link>http://cassiobotaro.dev/</link>
     <description>Recent content on Import None</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 19 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://cassiobotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://cassiobotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contribuindo com Open Source</title>
+      <link>http://cassiobotaro.dev/post/contribuindo-com-open-source/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/contribuindo-com-open-source/</guid>
+      <description>O mês de outubro é conhecido como o mês da hacktoberfest e a promoção da contribuição com projetos open sources.</description>
+    </item>
+    
     <item>
       <title>Dublês de testes</title>
       <link>http://cassiobotaro.dev/post/dubles-de-teste/</link>
