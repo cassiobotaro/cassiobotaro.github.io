@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>oop on Import None</title>
+    <link>http://cassiobotaro.dev/tags/oop/</link>
+    <description>Recent content in oop on Import None</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://cassiobotaro.dev/tags/oop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Programação Orientada a Objetos - Canal do Regis do Python</title>
+      <link>http://cassiobotaro.dev/post/poop-canal-do-regis/</link>
+      <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/poop-canal-do-regis/</guid>
+      <description>Recentemente tenho feito estudos a respeito da orientação a objeto e ontem tive o prazer de poder compartilhar este conhecimento no canal de um grande amigo da comunidade que é o Regis.</description>
+    </item>
+    
+  </channel>
+</rss>
