@@ -1,288 +1,177 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>http://cassiobotaro.dev/categories/</loc>
-    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://cassiobotaro.dev/</loc>
-    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/oop/</loc>
-    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/</loc>
-    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cassiobotaro.dev/post/poop-canal-do-regis-parte-2/</loc>
+    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cassiobotaro.dev/tags/python/</loc>
+    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cassiobotaro.dev/tags/</loc>
+    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cassiobotaro.dev/categories/talks/</loc>
+    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/poop-canal-do-regis/</loc>
     <lastmod>2021-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cassiobotaro.dev/tags/python/</loc>
-    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cassiobotaro.dev/tags/</loc>
-    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cassiobotaro.dev/categories/talks/</loc>
-    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/devday-2020/</loc>
     <lastmod>2020-12-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/open-source/</loc>
     <lastmod>2020-12-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/vim/</loc>
     <lastmod>2020-12-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/contribuindo-com-open-source/</loc>
     <lastmod>2020-10-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/dubles/</loc>
     <lastmod>2020-09-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/dubles-de-teste/</loc>
     <lastmod>2020-09-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/tests/</loc>
     <lastmod>2020-09-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/categories/tests/</loc>
     <lastmod>2020-09-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/</loc>
     <lastmod>2019-03-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/categories/rivendell/</loc>
     <lastmod>2019-03-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/amor-programador/</loc>
     <lastmod>2019-03-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/go/</loc>
     <lastmod>2019-03-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/somatorio/</loc>
     <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/iniciantes/</loc>
     <lastmod>2017-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/mergulhando-em-rust/</loc>
     <lastmod>2017-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/rust/</loc>
     <lastmod>2017-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/categories/rust/</loc>
     <lastmod>2017-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/armadilha-de-nomes-em-variaveis-de-funcoes/</loc>
     <lastmod>2016-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/categories/python/</loc>
     <lastmod>2016-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/python3/</loc>
     <lastmod>2016-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/dicas/</loc>
     <lastmod>2016-07-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/ordena%C3%A7%C3%A3o/</loc>
     <lastmod>2016-07-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/ordenacao-com-valores-nulos/</loc>
     <lastmod>2016-07-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/corrigindo-vim-bootstrap/</loc>
     <lastmod>2016-02-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/categories/vim/</loc>
     <lastmod>2016-02-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/conceitos-linguagem-parte-4/</loc>
     <lastmod>2015-12-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/conceitos-linguagem-parte-3/</loc>
     <lastmod>2015-12-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/conceitos-linguagem-parte-2/</loc>
     <lastmod>2015-11-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/conceitos-linguagem-parte-1/</loc>
     <lastmod>2015-11-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/forms/</loc>
     <lastmod>2015-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/removendo-labels/</loc>
     <lastmod>2015-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/web2py/</loc>
     <lastmod>2015-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/categories/web2py/</loc>
     <lastmod>2015-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/instalando-pillow/</loc>
     <lastmod>2015-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/ubuntu/</loc>
     <lastmod>2015-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/mito/</loc>
     <lastmod>2015-07-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/mito-ou-verdade-destrutor/</loc>
     <lastmod>2015-07-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/verdade/</loc>
     <lastmod>2015-07-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/mais-um-passo-com-web2py/</loc>
     <lastmod>2015-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/loop-infinito/</loc>
     <lastmod>2015-06-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/poo/</loc>
     <lastmod>2015-06-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/mito-ou-verdade-importacao/</loc>
     <lastmod>2015-06-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/introducao-ao-web2py/</loc>
     <lastmod>2015-05-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/argumentos-somente-por-palavra-chave/</loc>
     <lastmod>2015-03-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/categories/python3/</loc>
     <lastmod>2015-03-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/porque-python-3/</loc>
     <lastmod>2015-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/post/hello-world/</loc>
     <lastmod>2015-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/tags/index/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://cassiobotaro.dev/series/</loc>
   </url>
-  
 </urlset>

@@ -5,7 +5,16 @@
     <link>http://cassiobotaro.dev/post/</link>
     <description>Recent content in Posts on Import None</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://cassiobotaro.dev/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://cassiobotaro.dev/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Programação Orientada a Objetos - Canal do Regis do Python</title>
+      <link>http://cassiobotaro.dev/post/poop-canal-do-regis-parte-2/</link>
+      <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://cassiobotaro.dev/post/poop-canal-do-regis-parte-2/</guid>
+      <description>Após uma primeira parte onde definimos vários conceitos da programação orientada a objetos, como instâncias, classes, abstração, encapsulamento, herança, composição.</description>
+    </item>
+    
     <item>
       <title>Programação Orientada a Objetos - Canal do Regis do Python</title>
       <link>http://cassiobotaro.dev/post/poop-canal-do-regis/</link>
