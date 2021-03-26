@@ -1,7 +1,7 @@
 ---
-title: "Programação Orientada a Objetos - Canal do Regis do Python"
+title: "Programação Orientada a Objetos - Canal do Regis do Python - Parte 2"
 date: "2021-03-26"
-description: "Programação orientada a objetos com Python"
+description: "Programação orientada a objetos com Python - II"
 tags: ["oop", "oop", "python"]
 categories: ["talks"]
 aliases: ["poop-canal-do-regis-parte-2"]
