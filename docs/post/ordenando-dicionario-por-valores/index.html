@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.68.3" />
 
   <title>Ordenando dicionário por valores &middot; Import None</title>
 
@@ -12,9 +12,14 @@
   
 
 <meta itemprop="name" content="Ordenando dicionário por valores">
-<meta itemprop="description" content="Dado um dicionário, como ordená-lo utilizando os valores."><meta itemprop="datePublished" content="2019-03-23T00:00:00&#43;00:00" />
+<meta itemprop="description" content="Dado um dicionário, como ordená-lo utilizando os valores.">
+<meta itemprop="datePublished" content="2019-03-23T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-23T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="416"><meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta itemprop="wordCount" content="416">
+<meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
+
+
+
 <meta itemprop="keywords" content="python," />
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -27,10 +32,107 @@
 <meta property="og:title" content="Ordenando dicionário por valores" />
 <meta property="og:description" content="Dado um dicionário, como ordená-lo utilizando os valores." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/" /><meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-03-23T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2019-03-23T00:00:00&#43;00:00" /><meta property="og:site_name" content="Import None" />
+<meta property="og:url" content="http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/" />
+<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="article:published_time" content="2019-03-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-03-23T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
 
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "http://cassiobotaro.dev/#author",
+      "name": "Cássio Botaro",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "http://cassiobotaro.dev/images/profile.png"
+        
+      },
+      "description": "..."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "http://cassiobotaro.dev/#website",
+      "url": "http://cassiobotaro.dev/",
+      "name": "Import None",
+      "description": "...",
+      "publisher": {
+        "@id": "http://cassiobotaro.dev/#author"
+      },
+      "inLanguage": ""
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://cassiobotaro.dev/images/profile.png",
+      "caption": "Import None"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/#webpage",
+      "url": "http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/",
+      "name": "Ordenando dicionário por valores",
+      "isPartOf": {
+        "@id": "http://cassiobotaro.dev/#website"
+      },
+      "about": {
+         "@id": "http://cassiobotaro.dev/#author"
+      },
+      "datePublished": "2019-03-23T00:00:00+00:00",
+      "dateModified": "2019-03-23T00:00:00+00:00",
+      "description": "Dado um dicionário, como ordená-lo utilizando os valores.",
+      "inLanguage": "",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/#webpage"
+      },
+      "headline": "Ordenando dicionário por valores",
+      "datePublished": "2019-03-23T00:00:00+00:00",
+      "dateModified": "2019-03-23T00:00:00+00:00",
+      "publisher": {
+        "@id": "http://cassiobotaro.dev/#author"
+      },
+      "keywords": [
+        "python"
+      ],
+      "articleSection": [
+        "rivendell"
+      ],
+      "inLanguage": "",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 
 
@@ -55,6 +157,10 @@
 
   .read-more-link a {
     border-color: #333333;
+  }
+
+  .read-more-link a:hover {
+    background-color: #333333;
   }
 
   .pagination li a {
@@ -105,7 +211,9 @@
       
         
         <div class="author-image">
-          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          <a href="http://cassiobotaro.dev/">
+            <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
         </div>
         
       
@@ -153,12 +261,14 @@
 
   <main class="content container">
   <div class="post">
-  <h1>Ordenando dicionário por valores</h1>
+  <h1 class="title">Ordenando dicionário por valores</h1>
+  
 
   <div class="post-date">
-    <time datetime="2019-03-23T00:00:00Z">Mar 23, 2019</time> &middot; 2 min read
+    <time datetime="2019-03-23T00:00:00Z">Mar 23, 2019</time> <span class="readtime">&middot; 2 min read</span>
   </div>
 
+  <div>
   <p><img src="/images/dict.png" alt="dict" title="associação de chaves e valores"></p>
 <p>Dado um dicionário, eu quero ordenar seus elementos de acordo com seus valores, não por sua chave.</p>
 <p>Por exemplo o dicionário <code>{1: &quot;b&quot;, 2: &quot;a&quot;}</code> se torna <code>{2: &quot;a&quot;, 1: &quot;b&quot;}</code> pois &ldquo;a&rdquo; &lt; &ldquo;b&rdquo; .</p>
@@ -173,7 +283,7 @@
     <span style="color:#66d9ef">print</span>(tupla_chave_valor)
 </code></pre></div><p>Essa estrutura se assemelha a uma lista de tuplas, em que cada tupla possui dois valores, a chave e o valor associado aquela chave.</p>
 <p><code>dict_items([(1, &quot;b&quot;), (2, &quot;a&quot;)])</code></p>
-<p>Porém ainda que eu tenha os dois valores, ainda tenho um problema que é &ldquo;como ordenar essa lista?&rdquo;.</p>
+<p>Porém ainda que eu tenha os dois valores, ainda tenho um problema que é &ldquo;como ordenar essa lista?&quot;.</p>
 <p>O método sorted, ordena os elementos de forma ascendente, e no nosso caso, quando eu comparo as tuplas, o primeiro valor é levado em conta e somente caso ocorra uma igualdade segundo valor será utilizado.</p>
 <p>Porém o método aceita um parâmetro chamado key, que é uma função aplicada a cada elemento antes da comparação.</p>
 <p>Se eu defino por exemplo a função <code>len</code> como key em um método sort, os elementos serão ordenados pelo tamanho.</p>
@@ -196,12 +306,57 @@ ordered <span style="color:#f92672">=</span> dict(sorted(original<span style="co
 </code></pre></div><p>Lembrando que esta solução é somente válida para versões acima da 3.6, anteriores a isto devem utilizar <code>OrderedDict</code> no lugar de dict.</p>
 <p>Então é isso pessoal!</p>
 <p>Até a próxima!</p>
-<p>{}&rsquo;s</p>
+<p>{}&lsquo;s</p>
 
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="http://cassiobotaro.dev/tags/python/" class="tag-link">python</a>
+  </li>
+  </ul>
 </div>
 
-<h2>Comments</h2>
-<div id="disqus_thread"></div>
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/"
+     data-text="Ordenando dicionário por valores"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/"
+     data-text="Ordenando dicionário por valores"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/"
+     data-text="Ordenando dicionário por valores"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/"
+     data-text="Ordenando dicionário por valores"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/"
+     data-text="Ordenando dicionário por valores"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
 <script type="application/javascript">
     var disqus_config = function () {
     
@@ -221,15 +376,19 @@ ordered <span style="color:#f92672">=</span> dict(sorted(original<span style="co
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
   </main>
 
   <footer>
   <div>
-    &copy; Cássio Botaro 2021
+    <p>
+      &copy; Cássio Botaro 2022
 
-    &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 
-    &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+      &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    </p>
   </div>
 </footer>
 
@@ -237,6 +396,10 @@ ordered <span style="color:#f92672">=</span> dict(sorted(original<span style="co
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
           integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
           crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
 
   
 

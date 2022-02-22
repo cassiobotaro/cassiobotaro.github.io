@@ -5,7 +5,11 @@
     <link>http://cassiobotaro.dev/categories/python3/</link>
     <description>Recent content in python3 on Import None</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 28 Mar 2015 00:00:00 +0000</lastBuildDate><atom:link href="http://cassiobotaro.dev/categories/python3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Mar 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://cassiobotaro.dev/categories/python3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Argumentos somente por palavra chave</title>
       <link>http://cassiobotaro.dev/post/argumentos-somente-por-palavra-chave/</link>

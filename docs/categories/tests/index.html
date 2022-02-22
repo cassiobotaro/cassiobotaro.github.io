@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.68.3" />
 
   <title>tests &middot; Import None</title>
 
@@ -24,8 +24,70 @@
 <meta property="og:title" content="tests" />
 <meta property="og:description" content="..." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://cassiobotaro.dev/categories/tests/" /><meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/><meta property="og:site_name" content="Import None" />
+<meta property="og:url" content="http://cassiobotaro.dev/categories/tests/" />
+<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="og:updated_time" content="2020-09-19T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
 
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "http://cassiobotaro.dev/#author",
+      "name": "Cássio Botaro",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "http://cassiobotaro.dev/images/profile.png"
+        
+      },
+      "description": "..."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "http://cassiobotaro.dev/#website",
+      "url": "http://cassiobotaro.dev/",
+      "name": "Import None",
+      "description": "...",
+      "publisher": {
+        "@id": "http://cassiobotaro.dev/#author"
+      },
+      "inLanguage": ""
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://cassiobotaro.dev/images/profile.png",
+      "caption": "Import None"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "http://cassiobotaro.dev/categories/tests/#webpage",
+      "url": "http://cassiobotaro.dev/categories/tests/",
+      "name": "tests",
+      "isPartOf": {
+        "@id": "http://cassiobotaro.dev/#website"
+      },
+      "about": {
+         "@id": "http://cassiobotaro.dev/#author"
+      },
+      "dateModified": "2020-09-19T00:00:00+00:00",
+      "description": "...",
+      "inLanguage": "",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "http://cassiobotaro.dev/categories/tests/"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 
 
@@ -50,6 +112,10 @@
 
   .read-more-link a {
     border-color: #333333;
+  }
+
+  .read-more-link a:hover {
+    background-color: #333333;
   }
 
   .pagination li a {
@@ -101,7 +167,9 @@
       
         
         <div class="author-image">
-          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          <a href="http://cassiobotaro.dev/">
+            <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
         </div>
         
       
@@ -151,21 +219,23 @@
   <ul class="posts">
   <h1>Category: tests</h1>
   <li>
-    <span>
-        <a href="http://cassiobotaro.dev/post/dubles-de-teste/">Dublês de testes</a>
-        <time class="pull-right post-list" datetime="2020-09-19T00:00:00Z">Sep 19, 2020</time>
-    </span>
+    <div class="flex">
+      <a href="http://cassiobotaro.dev/post/dubles-de-teste/" class="truncate">Dublês de testes</a>
+      <time class="nowrap" datetime="2020-09-19T00:00:00Z">Sep 19, 2020</time>
+    </div>
   </li>
 </ul>
   </main>
 
   <footer>
   <div>
-    &copy; Cássio Botaro 2021
+    <p>
+      &copy; Cássio Botaro 2022
 
-    &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 
-    &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+      &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    </p>
   </div>
 </footer>
 
@@ -173,6 +243,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
           integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
           crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
 
   
 

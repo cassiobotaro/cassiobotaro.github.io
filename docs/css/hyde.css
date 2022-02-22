@@ -69,7 +69,8 @@ html {
   }
 
   footer {
-    padding-left: 18rem;
+    margin-left: 19rem !important;
+    margin-right: 1rem !important;
   }
 }
 
@@ -109,8 +110,8 @@ a.sidebar-nav-item:focus {
  */
 
 .content {
-  padding-top:    2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   min-height: 50%;
 }
 
@@ -125,23 +126,19 @@ footer {
   font-size: .7rem;
   text-align: center;
   height: 40px;
+  padding: 1rem 0;
+  margin: 0 1rem;
+  border-top: 1px solid #e0e0e0;
 }
 
 
 @media (min-width: 48em) {
   .content {
-    max-width: 38rem;
+    max-width: 40rem;
     margin-left: 20rem;
     margin-right: 2rem;
     margin-bottom: -40px;
     min-height: 100%;
-  }
-}
-
-@media (min-width: 64em) {
-  .content {
-    margin-left: 22rem;
-    margin-right: 4rem;
   }
 }
 
@@ -190,6 +187,8 @@ footer a,
 
 .read-more-link a:hover {
   text-decoration: none;
+  color: #fff;
+  background-color: #49757a;
 }
 
 .pull-right {
@@ -198,11 +197,35 @@ footer a,
 
 ul.posts {
   list-style: none;
+  padding: 0 1rem;
 }
 
 .social-icons,
 .sidebar nav {
   margin-top: 1rem;
+}
+
+ul.posts li,
+.sidebar nav li {
+  font-size: 1.2rem;
+  padding: 0.25rem 0;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  padding: 0.2rem;
+}
+
+@media (min-width: 58rem) {
+  .social-icons a {
+    font-size: 1.2rem;
+  }
+
+  ul.posts li,
+  .sidebar nav li {
+    font-size: inherit;
+    padding: 0;
+  }
 }
 
 .social-icons a,
@@ -273,4 +296,78 @@ ul.posts {
 .pagination li:last-child a {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
+}
+
+.share-buttons {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.share-buttons a {
+  padding: 0 0.6rem;
+}
+
+.share-buttons a:hover {
+  opacity: 0.75;
+}
+
+ul.tags {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+ul.tags li {
+  display: inline-block;
+  margin: 0.25rem 0;
+}
+
+a.tag-link {
+  background-color: #f2f2f2;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: #757575 !important;
+}
+
+a.tag-link:hover {
+  text-decoration: none;
+}
+
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+figure > img {
+  margin: 0 auto;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 80%;
+}
+
+.tagline {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+  font-weight: 400;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
