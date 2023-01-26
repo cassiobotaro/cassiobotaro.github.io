@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.110.0">
 
   <title>Mito ou Verdade: Destrutor &middot; Import None</title>
 
@@ -12,14 +12,9 @@
   
 
 <meta itemprop="name" content="Mito ou Verdade: Destrutor">
-<meta itemprop="description" content="Utilizei o `del` para apagar um objeto removendo-o da memória. Verdade ou mito?">
-<meta itemprop="datePublished" content="2015-07-25T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-07-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="815">
-<meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
-
-
-
+<meta itemprop="description" content="Utilizei o `del` para apagar um objeto removendo-o da memória. Verdade ou mito?"><meta itemprop="datePublished" content="2015-07-25T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2015-07-25T00:00:00+00:00" />
+<meta itemprop="wordCount" content="815"><meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
 <meta itemprop="keywords" content="python,mito,verdade," />
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -32,8 +27,7 @@
 <meta property="og:title" content="Mito ou Verdade: Destrutor" />
 <meta property="og:description" content="Utilizei o `del` para apagar um objeto removendo-o da memória. Verdade ou mito?" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cassiobotaro.dev/post/mito-ou-verdade-destrutor/" />
-<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="og:url" content="http://cassiobotaro.dev/post/mito-ou-verdade-destrutor/" /><meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-07-25T00:00:00+00:00" />
 <meta property="article:modified_time" content="2015-07-25T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
 
@@ -277,122 +271,122 @@
 <p>Python desde o seu início possui um mecanismo simples de alocação e desalocação, é o mecanismo de contador de referencia.</p>
 <p>Sempre que um novo objeto é referenciado(alguém passa apontar para aquele objeto), o contador é incrementado e quando deixa de apontar, este contador é decrementado. Chegando a 0 este contador aquele espaço de memória está livre.</p>
 <p>Até aqui tudo certo, isto quer então que quando realizo <code>del &lt;objeto&gt;</code>, meu objeto é desalocado?</p>
-<pre><code>lista = []
+<pre tabindex="0"><code>lista = []
 lista.append(lista)
 del lista
 </code></pre><p>Aparentemente tudo ok, mas tenho péssimas notícias para lhe dar, o rótulo lista pode até não estar mais referenciando aquele espaço de memória, porém aquele espaço de memória ainda continua ocupado.</p>
 <h2 id="discussão-sobre-o-problema">Discussão sobre o problema</h2>
 <p>Vamos uma demonstração que mostra que aquele objeto ainda estava na memória.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> gc
-<span style="color:#75715e"># Primeiro definiramos que o nível de debug do</span>
-<span style="color:#75715e"># coletor de lixo é DEBUG_LEAK para</span>
-<span style="color:#75715e"># poder ver os objetos coletados pelo coletor</span>
-gc<span style="color:#f92672">.</span>set_debug(gc<span style="color:#f92672">.</span>DEBUG_LEAK)
-<span style="color:#75715e"># vamos definir uma lista e verificar qual o seu endereço de memória</span>
-lista <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">print</span>(hex(id(lista)))
-<span style="color:#75715e"># repetimos o código anterior</span>
-<span style="color:#75715e"># adicionando lista a ela mesmo</span>
-lista<span style="color:#f92672">.</span>append(lista)
-<span style="color:#75715e"># apaga a lista</span>
-<span style="color:#66d9ef">del</span> lista
-gc<span style="color:#f92672">.</span>collect()
-<span style="color:#75715e"># Repare que um dos elementos coletados foi a</span>
-<span style="color:#75715e"># lista que achamos já ter sido removida</span>
-</code></pre></div><p>Agora que já foi provado, vamos entender melhor como funciona o coletor de lixo do Python.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> gc
-<span style="color:#75715e"># Definiramos que o nível de debug do</span>
-<span style="color:#75715e"># coletor de lixo é DEBUG_LEAK para</span>
-<span style="color:#75715e"># poder ver os objetos coletados pelo coletor</span>
-gc<span style="color:#f92672">.</span>set_debug(gc<span style="color:#f92672">.</span>DEBUG_LEAK)
-<span style="color:#75715e"># Primeira coisa a saber é que nem todos os objetos provocam o</span>
-<span style="color:#75715e"># comportamento visto acima</span>
-variavel <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
-<span style="color:#75715e"># obs: Tudo em Python é objeto</span>
-<span style="color:#66d9ef">del</span> variavel
-gc<span style="color:#f92672">.</span>colect()
-<span style="color:#75715e"># não foi coletado pelo coletor como a lista</span>
-</code></pre></div><p>O que acontece é que nem todos os objetos em Python precisam ser monitorados, pois possuem atomicidade em sua construção.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> gc
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Primeiro definiramos que o nível de debug do</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># coletor de lixo é DEBUG_LEAK para</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># poder ver os objetos coletados pelo coletor</span>
+</span></span><span style="display:flex;"><span>gc<span style="color:#f92672">.</span>set_debug(gc<span style="color:#f92672">.</span>DEBUG_LEAK)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># vamos definir uma lista e verificar qual o seu endereço de memória</span>
+</span></span><span style="display:flex;"><span>lista <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>print(hex(id(lista)))
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># repetimos o código anterior</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># adicionando lista a ela mesmo</span>
+</span></span><span style="display:flex;"><span>lista<span style="color:#f92672">.</span>append(lista)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># apaga a lista</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">del</span> lista
+</span></span><span style="display:flex;"><span>gc<span style="color:#f92672">.</span>collect()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Repare que um dos elementos coletados foi a</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># lista que achamos já ter sido removida</span>
+</span></span></code></pre></div><p>Agora que já foi provado, vamos entender melhor como funciona o coletor de lixo do Python.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> gc
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Definiramos que o nível de debug do</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># coletor de lixo é DEBUG_LEAK para</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># poder ver os objetos coletados pelo coletor</span>
+</span></span><span style="display:flex;"><span>gc<span style="color:#f92672">.</span>set_debug(gc<span style="color:#f92672">.</span>DEBUG_LEAK)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Primeira coisa a saber é que nem todos os objetos provocam o</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># comportamento visto acima</span>
+</span></span><span style="display:flex;"><span>variavel <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># obs: Tudo em Python é objeto</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">del</span> variavel
+</span></span><span style="display:flex;"><span>gc<span style="color:#f92672">.</span>colect()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># não foi coletado pelo coletor como a lista</span>
+</span></span></code></pre></div><p>O que acontece é que nem todos os objetos em Python precisam ser monitorados, pois possuem atomicidade em sua construção.
 A maneira de verificar se um objeto está sendo monitorado é a seguinte:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> gc
-gc<span style="color:#f92672">.</span>set_debug(gc<span style="color:#f92672">.</span>DEBUG_LEAK)
-variavel <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
-lista <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">print</span>(gc<span style="color:#f92672">.</span>is_tracked(variavel))
-<span style="color:#75715e"># False</span>
-<span style="color:#66d9ef">print</span>(gc<span style="color:#f92672">.</span>is_tracked(lista))
-<span style="color:#75715e"># True</span>
-</code></pre></div><p>Como dito a atomicidade de certos objetos o previnem da geração de ciclos, porém outros podem gerar ciclos e isto faz com que o número de referencias nunca caia a 0.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> gc
+</span></span><span style="display:flex;"><span>gc<span style="color:#f92672">.</span>set_debug(gc<span style="color:#f92672">.</span>DEBUG_LEAK)
+</span></span><span style="display:flex;"><span>variavel <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>lista <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>print(gc<span style="color:#f92672">.</span>is_tracked(variavel))
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># False</span>
+</span></span><span style="display:flex;"><span>print(gc<span style="color:#f92672">.</span>is_tracked(lista))
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># True</span>
+</span></span></code></pre></div><p>Como dito a atomicidade de certos objetos o previnem da geração de ciclos, porém outros podem gerar ciclos e isto faz com que o número de referencias nunca caia a 0.</p>
 <h2 id="entendendo-o-del">Entendendo o <code>del</code></h2>
 <p>Relembrando, Python tem um sistema de contador de referências, e quando não há mais referências a um objeto seu espaço de memória é desalocado.</p>
 <p>Mas porque isso não ocorreu quando eu fiz a lista referenciar a si próprio?</p>
 <p>A instrução <code>del</code> não pede a desalocação da memória, apenas faz com o contador de referências seja decrementado e associação do rótulo com o espaço de memória desfeita.</p>
 <h2 id="mais-exemplos-pois-isto-não-ocorre-somente-em-listas">Mais exemplos pois isto não ocorre somente em listas</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> gc
-gc<span style="color:#f92672">.</span>set_debug(gc<span style="color:#f92672">.</span>DEBUG_LEAK)
-
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Exemplo</span>:
-
-    <span style="color:#66d9ef">def</span> __init__(self, ref<span style="color:#f92672">=</span>None):
-        self<span style="color:#f92672">.</span>alguma_referencia <span style="color:#f92672">=</span> ref
-
-ref1 <span style="color:#f92672">=</span> Exemplo()
-ref2 <span style="color:#f92672">=</span> Exemplo(ref1)
-ref1<span style="color:#f92672">.</span>alguma_referencia <span style="color:#f92672">=</span> ref2
-<span style="color:#75715e"># repare que aqui temos um ciclo, ou seja, objetos se referenciam mutualmente</span>
-<span style="color:#66d9ef">del</span> ref1, ref2
-<span style="color:#75715e"># os rótulos ref1 e ref2 não se referem mais a nada</span>
-<span style="color:#75715e"># o contador de referências é decrementado</span>
-<span style="color:#75715e"># mas o espaço de memória ainda não foi desalocado</span>
-<span style="color:#75715e"># perceba que cada objeto ainda possui uma referência</span>
-gc<span style="color:#f92672">.</span>collect()
-<span style="color:#75715e"># gc: collectable &lt;Example 0x7f0f59646780&gt;</span>
-<span style="color:#75715e"># gc: collectable &lt;Example 0x7f0f59646b38&gt;</span>
-<span style="color:#75715e"># Podemos ver que agora há a desalocação do objeto</span>
-</code></pre></div><h2 id="mas-e-sobre-o-destrutor">Mas e sobre o destrutor?</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> gc
+</span></span><span style="display:flex;"><span>gc<span style="color:#f92672">.</span>set_debug(gc<span style="color:#f92672">.</span>DEBUG_LEAK)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Exemplo</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, ref<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>alguma_referencia <span style="color:#f92672">=</span> ref
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ref1 <span style="color:#f92672">=</span> Exemplo()
+</span></span><span style="display:flex;"><span>ref2 <span style="color:#f92672">=</span> Exemplo(ref1)
+</span></span><span style="display:flex;"><span>ref1<span style="color:#f92672">.</span>alguma_referencia <span style="color:#f92672">=</span> ref2
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># repare que aqui temos um ciclo, ou seja, objetos se referenciam mutualmente</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">del</span> ref1, ref2
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># os rótulos ref1 e ref2 não se referem mais a nada</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># o contador de referências é decrementado</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># mas o espaço de memória ainda não foi desalocado</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># perceba que cada objeto ainda possui uma referência</span>
+</span></span><span style="display:flex;"><span>gc<span style="color:#f92672">.</span>collect()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># gc: collectable &lt;Example 0x7f0f59646780&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># gc: collectable &lt;Example 0x7f0f59646b38&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Podemos ver que agora há a desalocação do objeto</span>
+</span></span></code></pre></div><h2 id="mas-e-sobre-o-destrutor">Mas e sobre o destrutor?</h2>
 <p>O destrutor, ou finalizador é um método chamado quando um objeto está para ser desalocado.
 Em python é o método <em>dunder</em> del <code>__del__</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> gc
-
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Exemplo</span>:
-
-    <span style="color:#66d9ef">def</span> __init__(self, ref<span style="color:#f92672">=</span>None):
-        self<span style="color:#f92672">.</span>alguma_referencia <span style="color:#f92672">=</span> ref
-    <span style="color:#66d9ef">def</span> __del__(self):
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Poderia estar fazendo algo&#34;</span>)
-
-ref1 <span style="color:#f92672">=</span> Exemplo()
-
-<span style="color:#66d9ef">del</span> ref1
-<span style="color:#75715e"># deve aparecer em tela &#34;Poderia estar fazendo algo&#34;</span>
-<span style="color:#75715e"># Mas e se ocorrer um cilo?</span>
-
-ref1 <span style="color:#f92672">=</span> Exemplo()
-ref2 <span style="color:#f92672">=</span> Exemplo()
-ref1<span style="color:#f92672">.</span>alguma_referencia <span style="color:#f92672">=</span> ref2
-ref2<span style="color:#f92672">.</span>alguma_referencia <span style="color:#f92672">=</span> ref1
-
-<span style="color:#66d9ef">del</span> ref1, ref2
-<span style="color:#75715e"># sim! O finalizador ainda não foi chamado, pois por causa do ciclo</span>
-<span style="color:#75715e"># ainda não finalizado</span>
-gc<span style="color:#f92672">.</span>collect()
-<span style="color:#75715e"># agora sim o finalizador é invocado</span>
-</code></pre></div><h2 id="últimas-considerações">Últimas considerações</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> gc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Exemplo</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, ref<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>alguma_referencia <span style="color:#f92672">=</span> ref
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __del__(self):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Poderia estar fazendo algo&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ref1 <span style="color:#f92672">=</span> Exemplo()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">del</span> ref1
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># deve aparecer em tela &#34;Poderia estar fazendo algo&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mas e se ocorrer um cilo?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ref1 <span style="color:#f92672">=</span> Exemplo()
+</span></span><span style="display:flex;"><span>ref2 <span style="color:#f92672">=</span> Exemplo()
+</span></span><span style="display:flex;"><span>ref1<span style="color:#f92672">.</span>alguma_referencia <span style="color:#f92672">=</span> ref2
+</span></span><span style="display:flex;"><span>ref2<span style="color:#f92672">.</span>alguma_referencia <span style="color:#f92672">=</span> ref1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">del</span> ref1, ref2
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># sim! O finalizador ainda não foi chamado, pois por causa do ciclo</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ainda não finalizado</span>
+</span></span><span style="display:flex;"><span>gc<span style="color:#f92672">.</span>collect()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># agora sim o finalizador é invocado</span>
+</span></span></code></pre></div><h2 id="últimas-considerações">Últimas considerações</h2>
 <p>O coletor de lixo é automático, aqui foi utilizado de forma manual somente para efeito explicativo. E como saber quando ele ocorre?</p>
 <p>O Python monitora cada alocação e desalocação que ocorre, e quando a diferença de alocações e desalocações atinge um limite, o coletor de lixo é chamado.</p>
 <p>Este limite por padrão é de 700.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> gc
-<span style="color:#66d9ef">print</span>(gc<span style="color:#f92672">.</span>get_threshold())
-</code></pre></div><p>Um importante detalhe, este artigo foi escrito em python 3.4. Antes disso o coletor de lixo mantinha os objetos contendo ciclos, classificando-os como <em>não coletáveis</em>, estes vazamentos de memória são colocados em <code>gc.garbage</code> e necessitam ser tratados manualmente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> gc
+</span></span><span style="display:flex;"><span>print(gc<span style="color:#f92672">.</span>get_threshold())
+</span></span></code></pre></div><p>Um importante detalhe, este artigo foi escrito em python 3.4. Antes disso o coletor de lixo mantinha os objetos contendo ciclos, classificando-os como <em>não coletáveis</em>, estes vazamentos de memória são colocados em <code>gc.garbage</code> e necessitam ser tratados manualmente.</p>
 <h2 id="conclusão">Conclusão</h2>
 <p>Como vimos há uma certa complexidade envolvida em uma instrução del, e dado isso não podemos garantir que o comando del realmente desaloque o espaço de memória naquele instante.</p>
 <p>Logo, Mito foi derrubado!</p>
 <p><img src="/images/busted.jpg" alt="busted"></p>
 <p>Então é isso pessoal!</p>
 <p>Até a próxima!</p>
-<p>{}&lsquo;s</p>
+<p>{}&rsquo;s</p>
 
   </div>
 
@@ -452,7 +446,7 @@ gc<span style="color:#f92672">.</span>collect()
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -477,7 +471,7 @@ gc<span style="color:#f92672">.</span>collect()
   <footer>
   <div>
     <p>
-      &copy; Cássio Botaro 2022
+      &copy; Cássio Botaro 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 
@@ -498,16 +492,5 @@ gc<span style="color:#f92672">.</span>collect()
   
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-59964005-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 </body>
 </html>

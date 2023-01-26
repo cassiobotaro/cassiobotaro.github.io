@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.110.0">
 
   <title>Dublês de testes &middot; Import None</title>
 
@@ -12,14 +12,9 @@
   
 
 <meta itemprop="name" content="Dublês de testes">
-<meta itemprop="description" content="Escrevendo dublês para seus testes.">
-<meta itemprop="datePublished" content="2020-09-19T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-09-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1235">
-<meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
-
-
-
+<meta itemprop="description" content="Escrevendo dublês para seus testes."><meta itemprop="datePublished" content="2020-09-19T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-09-19T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1235"><meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
 <meta itemprop="keywords" content="python,tests,dubles," />
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -32,8 +27,7 @@
 <meta property="og:title" content="Dublês de testes" />
 <meta property="og:description" content="Escrevendo dublês para seus testes." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cassiobotaro.dev/post/dubles-de-teste/" />
-<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="og:url" content="http://cassiobotaro.dev/post/dubles-de-teste/" /><meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-09-19T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-09-19T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
 
@@ -277,20 +271,20 @@
 <p>⚠️ Os códigos deste post utilizam <code>pytest-mock</code> e <code>requests</code> que são libs de terceiros. Certifique-se de tê-las instaladas caso decida rodar os códigos.</p>
 </blockquote>
 <p>Como base para nossos testes, vamos definir a seguinte função que realiza uma requisição web e retorna o conteúdo de sua resposta. Porém caso algum erro ocorra, deve retornar um conteúdo vazio e imprimir um alerta com o erro ocorrido.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-<span style="color:#f92672">from</span> logging <span style="color:#f92672">import</span> warning
-
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_page_content</span>(url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
-    <span style="color:#66d9ef">try</span>:
-        response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, timeout<span style="color:#f92672">=</span>timeout)
-        response<span style="color:#f92672">.</span>raise_for_status()
-    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">IOError</span> <span style="color:#66d9ef">as</span> exc:
-        warning(exc)
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
-    <span style="color:#66d9ef">else</span>:
-        <span style="color:#66d9ef">return</span> response<span style="color:#f92672">.</span>text
-</code></pre></div><p>Vamos conceituar cada um dos tipos de dublês de teste e como poderiam ser utilizados para testar a função apresentada acima.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> logging <span style="color:#f92672">import</span> warning
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_page_content</span>(url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, timeout<span style="color:#f92672">=</span>timeout)
+</span></span><span style="display:flex;"><span>        response<span style="color:#f92672">.</span>raise_for_status()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">IOError</span> <span style="color:#66d9ef">as</span> exc:
+</span></span><span style="display:flex;"><span>        warning(exc)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> response<span style="color:#f92672">.</span>text
+</span></span></code></pre></div><p>Vamos conceituar cada um dos tipos de dublês de teste e como poderiam ser utilizados para testar a função apresentada acima.</p>
 <blockquote>
 <p>💡 As definições em inglês foram retiradas de: <a href="https://martinfowler.com/bliki/TestDouble.html">https://martinfowler.com/bliki/TestDouble.html</a>.</p>
 </blockquote>
@@ -305,203 +299,203 @@
 </blockquote>
 <p>São objetos falsos, com implementações concretas, porém simplificadas. Um bom exemplo são objetos que representam bancos de dados ou arquivos, porém com implementações em memória.</p>
 <p>Para utilização da técnica de objetos <em>fakes</em>, vamos primeiro fazer uma inversão de dependência no código de modo a receber o objeto responsável por realizar as requisições como parâmetro.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-<span style="color:#f92672">from</span> logging <span style="color:#f92672">import</span> warning
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">requests_fetcher</span>(url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
-    response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, timeout<span style="color:#f92672">=</span>timeout)
-    response<span style="color:#f92672">.</span>raise_for_status()
-    <span style="color:#66d9ef">return</span> response
-
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_page_content</span>(fetcher, url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
-    <span style="color:#66d9ef">try</span>:
-        response <span style="color:#f92672">=</span> fetcher(url, timeout)
-    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">IOError</span> <span style="color:#66d9ef">as</span> exc:
-        warning(exc)
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
-    <span style="color:#66d9ef">else</span>:
-        <span style="color:#66d9ef">return</span> response<span style="color:#f92672">.</span>text
-</code></pre></div><p>Nos testes podemos substituir a função <code>fetcher</code>, por uma função <em>fake</em> com uma implementação simplificada.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestFetchPageContentFake</span>:
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_request_is_ok</span>(self):
-        <span style="color:#75715e"># preparamos nosso teste definindo o retorno esperado</span>
-        expected_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;page_content&#34;</span>
-
-        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fake_fetcher</span>(url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
-            <span style="color:#75715e"># definimos uma função falsa que substituirá a requisição real</span>
-
-            <span style="color:#75715e"># definimos objeto de resposta falso com o coonteúdo definido</span>
-            <span style="color:#75715e"># como conteúdo esperado</span>
-            <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FakeResponse</span>:
-                <span style="color:#66d9ef">def</span> __init__(self):
-                    self<span style="color:#f92672">.</span>text <span style="color:#f92672">=</span> expected_content
-            <span style="color:#75715e"># a função retornará este objeto como resposta quando invocada</span>
-            <span style="color:#66d9ef">return</span> FakeResponse()
-
-        <span style="color:#75715e"># por fim fazemos a afirmação do nosso teste</span>
-        <span style="color:#75715e"># verificamos se o resultado da função é igual ao contepudo esperado</span>
-        <span style="color:#66d9ef">assert</span> (
-            fetch_page_content(fake_fetcher, <span style="color:#e6db74">&#34;dummy url&#34;</span>) <span style="color:#f92672">==</span> expected_content
-        )
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_request_fail</span>(self):
-        <span style="color:#75715e"># em nossa preparação estamos definindo que o retorno esperado</span>
-        <span style="color:#75715e"># é uma string vazia</span>
-        expected_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-
-        <span style="color:#75715e"># nossa função fake agora é simplificada lançando uma exceção</span>
-        <span style="color:#75715e"># pois esse é o comportamento esperado se essa requisição fosse real</span>
-        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fake_fetcher</span>(url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
-            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">IOError</span>(<span style="color:#e6db74">&#34;Failure on request&#34;</span>)
-        <span style="color:#75715e"># por fim comparamos se o resultado obtido foi o mesmo do esperado</span>
-        <span style="color:#66d9ef">assert</span> (
-            fetch_page_content(fake_fetcher, <span style="color:#e6db74">&#34;dummy url&#34;</span>) <span style="color:#f92672">==</span> expected_content
-        )
-</code></pre></div><h2 id="stub">Stub</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> logging <span style="color:#f92672">import</span> warning
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">requests_fetcher</span>(url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>    response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, timeout<span style="color:#f92672">=</span>timeout)
+</span></span><span style="display:flex;"><span>    response<span style="color:#f92672">.</span>raise_for_status()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> response
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_page_content</span>(fetcher, url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> fetcher(url, timeout)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">IOError</span> <span style="color:#66d9ef">as</span> exc:
+</span></span><span style="display:flex;"><span>        warning(exc)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> response<span style="color:#f92672">.</span>text
+</span></span></code></pre></div><p>Nos testes podemos substituir a função <code>fetcher</code>, por uma função <em>fake</em> com uma implementação simplificada.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestFetchPageContentFake</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_request_is_ok</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># preparamos nosso teste definindo o retorno esperado</span>
+</span></span><span style="display:flex;"><span>        expected_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;page_content&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fake_fetcher</span>(url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># definimos uma função falsa que substituirá a requisição real</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># definimos objeto de resposta falso com o coonteúdo definido</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># como conteúdo esperado</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FakeResponse</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>                    self<span style="color:#f92672">.</span>text <span style="color:#f92672">=</span> expected_content
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># a função retornará este objeto como resposta quando invocada</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> FakeResponse()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># por fim fazemos a afirmação do nosso teste</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># verificamos se o resultado da função é igual ao contepudo esperado</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> (
+</span></span><span style="display:flex;"><span>            fetch_page_content(fake_fetcher, <span style="color:#e6db74">&#34;dummy url&#34;</span>) <span style="color:#f92672">==</span> expected_content
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_request_fail</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># em nossa preparação estamos definindo que o retorno esperado</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># é uma string vazia</span>
+</span></span><span style="display:flex;"><span>        expected_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># nossa função fake agora é simplificada lançando uma exceção</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># pois esse é o comportamento esperado se essa requisição fosse real</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fake_fetcher</span>(url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">IOError</span>(<span style="color:#e6db74">&#34;Failure on request&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># por fim comparamos se o resultado obtido foi o mesmo do esperado</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> (
+</span></span><span style="display:flex;"><span>            fetch_page_content(fake_fetcher, <span style="color:#e6db74">&#34;dummy url&#34;</span>) <span style="color:#f92672">==</span> expected_content
+</span></span><span style="display:flex;"><span>        )
+</span></span></code></pre></div><h2 id="stub">Stub</h2>
 <blockquote>
 <p>Stubs provide canned answers to calls made during the test, usually not responding at all to anything outside what&rsquo;s programmed in for the test.</p>
 </blockquote>
 <p>São substitutos que fornecem respostas previamente definidas, simulando assim o comportamento esperado.</p>
 <p>Considerando novamente nossa função original:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-<span style="color:#f92672">from</span> logging <span style="color:#f92672">import</span> warning
-
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_page_content</span>(url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
-    <span style="color:#66d9ef">try</span>:
-        response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, timeout<span style="color:#f92672">=</span>timeout)
-        response<span style="color:#f92672">.</span>raise_for_status()
-    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">IOError</span> <span style="color:#66d9ef">as</span> exc:
-        warning(exc)
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
-    <span style="color:#66d9ef">else</span>:
-        <span style="color:#66d9ef">return</span> response<span style="color:#f92672">.</span>text
-</code></pre></div><p>Nosso teste substituirá o método get da biblioteca requests, retornando respostas programadas e em alguns casos lançando uma exceção.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestFetchPageContentStub</span>:
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_request_is_ok</span>(self, mocker):
-        <span style="color:#75715e"># preparamos nosso teste definindo o retorno esperado</span>
-        expected_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;page_content&#34;</span>
-
-        <span style="color:#75715e"># substituimos o método get da biblioteca requests por um stub</span>
-        <span style="color:#75715e"># o parâmetro autospec garante que caso cometemos</span>
-        <span style="color:#75715e"># algum erro de digitação</span>
-        <span style="color:#75715e"># a especificação da função será respeitado</span>
-        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch<span style="color:#f92672">.</span>object(requests, <span style="color:#e6db74">&#34;get&#34;</span>, autospec<span style="color:#f92672">=</span>True)
-        <span style="color:#75715e"># definimos que o objeto retornado possuirá código de status 200</span>
-        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>status_code <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>
-        <span style="color:#75715e"># o objeto retornado possuirá o texto esperado</span>
-        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>text <span style="color:#f92672">=</span> expected_content
-
-        <span style="color:#75715e"># comparamos o retorno esperado e o obtido</span>
-        <span style="color:#66d9ef">assert</span> fetch_page_content(<span style="color:#e6db74">&#34;dummy url&#34;</span>) <span style="color:#f92672">==</span> expected_content
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_request_fail</span>(self, mocker):
-        <span style="color:#75715e"># em nossa preparação estamos definindo que o retorno esperado</span>
-        <span style="color:#75715e"># é uma string vazia</span>
-        expected_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-
-        <span style="color:#75715e"># substituimos o método get por um stub</span>
-        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch<span style="color:#f92672">.</span>object(requests, <span style="color:#e6db74">&#34;get&#34;</span>, autospec<span style="color:#f92672">=</span>True)
-        <span style="color:#75715e"># quando invocado o método raise_for_status do retorno do nosso stub</span>
-        <span style="color:#75715e"># uma exceção será lançada</span>
-        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>raise_for_status<span style="color:#f92672">.</span>side_effect <span style="color:#f92672">=</span> (
-            requests<span style="color:#f92672">.</span>HTTPError()
-        )
-
-        <span style="color:#75715e"># por fim comparamos se o resultado obtido foi o mesmo do esperado</span>
-        <span style="color:#66d9ef">assert</span> fetch_page_content(<span style="color:#e6db74">&#34;dummy url&#34;</span>) <span style="color:#f92672">==</span> expected_content
-</code></pre></div><h2 id="mocks">Mocks</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> logging <span style="color:#f92672">import</span> warning
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_page_content</span>(url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, timeout<span style="color:#f92672">=</span>timeout)
+</span></span><span style="display:flex;"><span>        response<span style="color:#f92672">.</span>raise_for_status()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">IOError</span> <span style="color:#66d9ef">as</span> exc:
+</span></span><span style="display:flex;"><span>        warning(exc)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> response<span style="color:#f92672">.</span>text
+</span></span></code></pre></div><p>Nosso teste substituirá o método get da biblioteca requests, retornando respostas programadas e em alguns casos lançando uma exceção.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestFetchPageContentStub</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_request_is_ok</span>(self, mocker):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># preparamos nosso teste definindo o retorno esperado</span>
+</span></span><span style="display:flex;"><span>        expected_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;page_content&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># substituimos o método get da biblioteca requests por um stub</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># o parâmetro autospec garante que caso cometemos</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># algum erro de digitação</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># a especificação da função será respeitado</span>
+</span></span><span style="display:flex;"><span>        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch<span style="color:#f92672">.</span>object(requests, <span style="color:#e6db74">&#34;get&#34;</span>, autospec<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># definimos que o objeto retornado possuirá código de status 200</span>
+</span></span><span style="display:flex;"><span>        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>status_code <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># o objeto retornado possuirá o texto esperado</span>
+</span></span><span style="display:flex;"><span>        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>text <span style="color:#f92672">=</span> expected_content
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># comparamos o retorno esperado e o obtido</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> fetch_page_content(<span style="color:#e6db74">&#34;dummy url&#34;</span>) <span style="color:#f92672">==</span> expected_content
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_request_fail</span>(self, mocker):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># em nossa preparação estamos definindo que o retorno esperado</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># é uma string vazia</span>
+</span></span><span style="display:flex;"><span>        expected_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># substituimos o método get por um stub</span>
+</span></span><span style="display:flex;"><span>        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch<span style="color:#f92672">.</span>object(requests, <span style="color:#e6db74">&#34;get&#34;</span>, autospec<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># quando invocado o método raise_for_status do retorno do nosso stub</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># uma exceção será lançada</span>
+</span></span><span style="display:flex;"><span>        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>raise_for_status<span style="color:#f92672">.</span>side_effect <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>            requests<span style="color:#f92672">.</span>HTTPError()
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># por fim comparamos se o resultado obtido foi o mesmo do esperado</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> fetch_page_content(<span style="color:#e6db74">&#34;dummy url&#34;</span>) <span style="color:#f92672">==</span> expected_content
+</span></span></code></pre></div><h2 id="mocks">Mocks</h2>
 <blockquote>
 <p>Mocks are pre-programmed with expectations which form a specification of the calls they are expected to receive. They can throw an exception if they receive a call they don&rsquo;t expect and are checked during verification to ensure they got all the calls they were expecting.</p>
 </blockquote>
 <p>A preocupação de mocks é verificar se o comportamento do dublê foi o esperado, fazendo asserções se o <em>mock</em> foi invocado, se os parâmetros na invocação foram corretos e o número de vezes em que foi invocado. Não há intenção de simular o retorno de valores, mas somente verificar o comportamento.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestFetchPageContentMock</span>:
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_timeout_is_not_passed</span>(self, mocker):
-        <span style="color:#e6db74">&#39;&#39;&#39;when invoked, default timeout should be considered&#39;&#39;&#39;</span>
-        <span style="color:#75715e"># preparamos nosso teste modificando o método get por um mock</span>
-        dummy_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dummy url&#34;</span>
-        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch<span style="color:#f92672">.</span>object(requests, <span style="color:#e6db74">&#34;get&#34;</span>, autospec<span style="color:#f92672">=</span>True)
-
-        <span style="color:#75715e"># invocamos nossa função</span>
-        fetch_page_content(dummy_url)
-
-        <span style="color:#75715e"># a asserção é feita verificando se o método foi chamado</span>
-        <span style="color:#75715e"># com os parâmetros corretos</span>
-        <span style="color:#75715e"># ou seja, verificamos o comportamento do método</span>
-        mocked_get<span style="color:#f92672">.</span>assert_called_once_with(dummy_url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_called_verify_if_status_code_is_ok</span>(self, mocker):
-        <span style="color:#75715e"># preparamos nosso teste modificando o método get por um mock</span>
-        dummy_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dummy url&#34;</span>
-        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch<span style="color:#f92672">.</span>object(requests, <span style="color:#e6db74">&#34;get&#34;</span>, autospec<span style="color:#f92672">=</span>True)
-
-        <span style="color:#75715e"># invocamos nossa função</span>
-        fetch_page_content(dummy_url)
-
-        <span style="color:#75715e"># a asserção é feita verificando se o método raise_for_status</span>
-        <span style="color:#75715e"># do retorno do nosso método</span>
-        <span style="color:#75715e"># foi invocado somente uma vez</span>
-        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>raise_for_status<span style="color:#f92672">.</span>assert_called_once()
-</code></pre></div><h2 id="spies">Spies</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestFetchPageContentMock</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_timeout_is_not_passed</span>(self, mocker):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;&#39;&#39;when invoked, default timeout should be considered&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># preparamos nosso teste modificando o método get por um mock</span>
+</span></span><span style="display:flex;"><span>        dummy_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dummy url&#34;</span>
+</span></span><span style="display:flex;"><span>        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch<span style="color:#f92672">.</span>object(requests, <span style="color:#e6db74">&#34;get&#34;</span>, autospec<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># invocamos nossa função</span>
+</span></span><span style="display:flex;"><span>        fetch_page_content(dummy_url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># a asserção é feita verificando se o método foi chamado</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># com os parâmetros corretos</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># ou seja, verificamos o comportamento do método</span>
+</span></span><span style="display:flex;"><span>        mocked_get<span style="color:#f92672">.</span>assert_called_once_with(dummy_url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_called_verify_if_status_code_is_ok</span>(self, mocker):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># preparamos nosso teste modificando o método get por um mock</span>
+</span></span><span style="display:flex;"><span>        dummy_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dummy url&#34;</span>
+</span></span><span style="display:flex;"><span>        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch<span style="color:#f92672">.</span>object(requests, <span style="color:#e6db74">&#34;get&#34;</span>, autospec<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># invocamos nossa função</span>
+</span></span><span style="display:flex;"><span>        fetch_page_content(dummy_url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># a asserção é feita verificando se o método raise_for_status</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># do retorno do nosso método</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># foi invocado somente uma vez</span>
+</span></span><span style="display:flex;"><span>        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>raise_for_status<span style="color:#f92672">.</span>assert_called_once()
+</span></span></code></pre></div><h2 id="spies">Spies</h2>
 <blockquote>
 <p>Spies are stubs that also record some information based on how they were called. One form of this might be an email service that records how many messages it was sent.</p>
 </blockquote>
 <p>São stubs mas &ldquo;espionam&rdquo; como são invocados e mantém isto como informação a ser utilizada nas asserções.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestFetchPageContentSpy</span>:
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_request_is_ok</span>(self, mocker):
-        <span style="color:#75715e"># preparamos os testes definindo os estados esperados</span>
-        expected_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;page_content&#34;</span>
-
-        <span style="color:#75715e"># definimos um espião para substituir a função get</span>
-        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch(
-            <span style="color:#e6db74">&#34;requests.get&#34;</span>, MagicMock(wraps<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get)
-        )
-        <span style="color:#75715e"># assim como um stub, definimos os valores a serem retornados</span>
-        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>status_code <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>
-        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>text <span style="color:#f92672">=</span> expected_content
-        <span style="color:#75715e"># verificamos se o valor retornado é o mesmo do esperado</span>
-        <span style="color:#66d9ef">assert</span> fetch_page_content(<span style="color:#e6db74">&#34;dummy url&#34;</span>) <span style="color:#f92672">==</span> expected_content
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_request_fail</span>(self, mocker):
-        <span style="color:#75715e"># Como estamos testando estados, até aqui temos nosso substituto</span>
-        <span style="color:#75715e"># como um stub</span>
-        expected_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-
-        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch(
-            <span style="color:#e6db74">&#34;requests.get&#34;</span>, MagicMock(wraps<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get)
-        )
-        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>raise_for_status<span style="color:#f92672">.</span>side_effect <span style="color:#f92672">=</span> (
-            requests<span style="color:#f92672">.</span>HTTPError()
-        )
-
-        <span style="color:#66d9ef">assert</span> fetch_page_content(<span style="color:#e6db74">&#34;dummy url&#34;</span>) <span style="color:#f92672">==</span> expected_content
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_timeout_is_not_passed</span>(self, mocker):
-        <span style="color:#e6db74">&#34;&#34;&#34;when invoked, default timeout should be considered&#34;&#34;&#34;</span>
-        <span style="color:#75715e"># a diferença está aqui, pois podemos utilizar nosso espião</span>
-        <span style="color:#75715e"># para verificar como ele foi invocado</span>
-        <span style="color:#75715e"># e quais parâmetros foram utilizados</span>
-        dummy_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://example.com&#34;</span>
-
-        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch(
-            <span style="color:#e6db74">&#34;requests.get&#34;</span>, MagicMock(wraps<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get)
-        )
-        <span style="color:#75715e"># se não passarmos um retorno,</span>
-        <span style="color:#75715e"># o espião se comportará como a função original</span>
-        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>status_code <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>
-
-        fetch_page_content(dummy_url)
-
-        <span style="color:#75715e"># a asserção verifica como a função se comporta</span>
-        <span style="color:#75715e"># ou seja espiões são stubs mas &#34;espionam&#34; o comportamento</span>
-        mocked_get<span style="color:#f92672">.</span>assert_called_once_with(dummy_url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><h2 id="conclusão">Conclusão</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestFetchPageContentSpy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_request_is_ok</span>(self, mocker):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># preparamos os testes definindo os estados esperados</span>
+</span></span><span style="display:flex;"><span>        expected_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;page_content&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># definimos um espião para substituir a função get</span>
+</span></span><span style="display:flex;"><span>        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch(
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;requests.get&#34;</span>, MagicMock(wraps<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get)
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># assim como um stub, definimos os valores a serem retornados</span>
+</span></span><span style="display:flex;"><span>        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>status_code <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>text <span style="color:#f92672">=</span> expected_content
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># verificamos se o valor retornado é o mesmo do esperado</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> fetch_page_content(<span style="color:#e6db74">&#34;dummy url&#34;</span>) <span style="color:#f92672">==</span> expected_content
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_request_fail</span>(self, mocker):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Como estamos testando estados, até aqui temos nosso substituto</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># como um stub</span>
+</span></span><span style="display:flex;"><span>        expected_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch(
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;requests.get&#34;</span>, MagicMock(wraps<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get)
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>raise_for_status<span style="color:#f92672">.</span>side_effect <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>            requests<span style="color:#f92672">.</span>HTTPError()
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> fetch_page_content(<span style="color:#e6db74">&#34;dummy url&#34;</span>) <span style="color:#f92672">==</span> expected_content
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_when_timeout_is_not_passed</span>(self, mocker):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;when invoked, default timeout should be considered&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># a diferença está aqui, pois podemos utilizar nosso espião</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># para verificar como ele foi invocado</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># e quais parâmetros foram utilizados</span>
+</span></span><span style="display:flex;"><span>        dummy_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://example.com&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        mocked_get <span style="color:#f92672">=</span> mocker<span style="color:#f92672">.</span>patch(
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;requests.get&#34;</span>, MagicMock(wraps<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get)
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># se não passarmos um retorno,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># o espião se comportará como a função original</span>
+</span></span><span style="display:flex;"><span>        mocked_get<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>status_code <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        fetch_page_content(dummy_url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># a asserção verifica como a função se comporta</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># ou seja espiões são stubs mas &#34;espionam&#34; o comportamento</span>
+</span></span><span style="display:flex;"><span>        mocked_get<span style="color:#f92672">.</span>assert_called_once_with(dummy_url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><h2 id="conclusão">Conclusão</h2>
 <p>Temos dois tipos de verificações quando utilizamos dublês. Verificações de comportamento como em mocks e verificações de estado como em stubs. Qual o tipo de dublê que será utilizado, vai depender do que você está testando.</p>
 <p>Os códigos aqui apresentados são apenas exemplos de como implementar os padrões de dublês, podendo ser implementados de forma diferente.</p>
 <p>Então é isso pessoal!</p>
 <p>Até a próxima!</p>
-<p>{}&lsquo;s</p>
+<p>{}&rsquo;s</p>
 
   </div>
 
@@ -561,7 +555,7 @@
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -586,7 +580,7 @@
   <footer>
   <div>
     <p>
-      &copy; Cássio Botaro 2022
+      &copy; Cássio Botaro 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 
@@ -607,16 +601,5 @@
   
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-59964005-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 </body>
 </html>

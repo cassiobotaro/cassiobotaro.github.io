@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.110.0">
 
   <title>Por que Python 3? &middot; Import None</title>
 
@@ -12,14 +12,9 @@
   
 
 <meta itemprop="name" content="Por que Python 3?">
-<meta itemprop="description" content="Motivos para a utilização da versão 3.0 da linguagem Python.">
-<meta itemprop="datePublished" content="2015-03-10T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-03-10T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="934">
-<meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
-
-
-
+<meta itemprop="description" content="Motivos para a utilização da versão 3.0 da linguagem Python."><meta itemprop="datePublished" content="2015-03-10T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2015-03-10T00:00:00+00:00" />
+<meta itemprop="wordCount" content="934"><meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
 <meta itemprop="keywords" content="python,python3,iniciantes," />
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -32,8 +27,7 @@
 <meta property="og:title" content="Por que Python 3?" />
 <meta property="og:description" content="Motivos para a utilização da versão 3.0 da linguagem Python." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cassiobotaro.dev/post/porque-python-3/" />
-<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="og:url" content="http://cassiobotaro.dev/post/porque-python-3/" /><meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-03-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2015-03-10T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
 
@@ -281,156 +275,156 @@ Outras mudanças foram a transformação do <em>print</em> em uma função, o qu
 <p>Se a correção de nomenclatura e inclusão de novas bibliotecas à biblioteca padrão do Python ainda não te convenceram, abaixo serão listados novos recursos e possibilidades que podem te atrair a esta nova versão.</p>
 <h2 id="fatiamento">Fatiamento</h2>
 <p>Agora é possível extrair, inicio, meio e fim de sequencias utilizando novas possibilidades de atribuições.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">head, <span style="color:#f92672">*</span>rest, tail <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">10</span>)
-<span style="color:#66d9ef">print</span>(head)
-<span style="color:#75715e"># retorna 0</span>
-<span style="color:#66d9ef">print</span>(tail)
-<span style="color:#75715e"># retorna 9</span>
-<span style="color:#66d9ef">print</span>(rest)
-<span style="color:#75715e"># retorna [1, 2, 3, 4, 5, 6, 7, 8]</span>
-<span style="color:#f92672">*</span>rest, tail <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">5</span>)
-<span style="color:#66d9ef">print</span>(rest)
-<span style="color:#75715e"># retorna [0, 1, 2, 3]</span>
-<span style="color:#66d9ef">print</span>(tail)
-<span style="color:#75715e"># retorna 4</span>
-</code></pre></div><h2 id="iteradores-em-todo-lugar">Iteradores em todo lugar!</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>head, <span style="color:#f92672">*</span>rest, tail <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>print(head)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># retorna 0</span>
+</span></span><span style="display:flex;"><span>print(tail)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># retorna 9</span>
+</span></span><span style="display:flex;"><span>print(rest)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># retorna [1, 2, 3, 4, 5, 6, 7, 8]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span>rest, tail <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>print(rest)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># retorna [0, 1, 2, 3]</span>
+</span></span><span style="display:flex;"><span>print(tail)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># retorna 4</span>
+</span></span></code></pre></div><h2 id="iteradores-em-todo-lugar">Iteradores em todo lugar!</h2>
 <p>Nada de se preocupar em otimizar memória modificando o metodo através da adição de algum prefixo como x  ou iter.
 Ou seja, nada mais de Xtudo ou iterlista no python 3.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(range(<span style="color:#ae81ff">10</span>))
-<span style="color:#75715e"># retorna range(0, 10)</span>
-<span style="color:#75715e"># não é mais uma lista</span>
-<span style="color:#75715e"># se comporta como xrange do python 2</span>
-<span style="color:#66d9ef">for</span> numero <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
-    <span style="color:#66d9ef">print</span>(numero, endp<span style="color:#f92672">=</span><span style="color:#e6db74">&#34; &#34;</span>)
-<span style="color:#75715e"># 0 1 2 3 4 5 6 7 8 9</span>
-dic <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;chaveA&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;chaveB&#34;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;chaveC&#34;</span>: <span style="color:#ae81ff">3</span>}
-dic<span style="color:#f92672">.</span>keys()
-<span style="color:#75715e"># retorna dict_keys([&#39;chaveB&#39;, &#39;chaveC&#39;, &#39;chaveA&#39;])</span>
-<span style="color:#75715e"># visão com os valores das chaves do dicionário</span>
-<span style="color:#66d9ef">for</span> (chave, valor) <span style="color:#f92672">in</span> dic<span style="color:#f92672">.</span>items():
-    <span style="color:#66d9ef">print</span>(chave, valor)
-<span style="color:#75715e"># chaveB 2</span>
-<span style="color:#75715e"># chaveC 3</span>
-<span style="color:#75715e"># chaveA 1</span>
-</code></pre></div><h2 id="tipificação-forte-em-comparadores">Tipificação forte em comparadores.</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(range(<span style="color:#ae81ff">10</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># retorna range(0, 10)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># não é mais uma lista</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># se comporta como xrange do python 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> numero <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>    print(numero, endp<span style="color:#f92672">=</span><span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 0 1 2 3 4 5 6 7 8 9</span>
+</span></span><span style="display:flex;"><span>dic <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;chaveA&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;chaveB&#34;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;chaveC&#34;</span>: <span style="color:#ae81ff">3</span>}
+</span></span><span style="display:flex;"><span>dic<span style="color:#f92672">.</span>keys()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># retorna dict_keys([&#39;chaveB&#39;, &#39;chaveC&#39;, &#39;chaveA&#39;])</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># visão com os valores das chaves do dicionário</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (chave, valor) <span style="color:#f92672">in</span> dic<span style="color:#f92672">.</span>items():
+</span></span><span style="display:flex;"><span>    print(chave, valor)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># chaveB 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># chaveC 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># chaveA 1</span>
+</span></span></code></pre></div><h2 id="tipificação-forte-em-comparadores">Tipificação forte em comparadores.</h2>
 <p>Dado que Python é uma linguagem dinâmica porém  com tipificação forte, nada mais sensato que comparadores também reclamem quando tipos distintos são comparados.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># No Python 2</span>
-<span style="color:#e6db74">&#39;abc&#39;</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>
-<span style="color:#75715e"># True</span>
-None <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>
-<span style="color:#75715e"># True</span>
-
-<span style="color:#75715e"># No Python 3</span>
-<span style="color:#e6db74">&#39;abc&#39;</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>
-<span style="color:#75715e"># TypeError: unorderable types: str() &gt; int()</span>
-None <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>
-<span style="color:#75715e"># TypeError: unorderable types: NoneType() &lt; int()</span>
-</code></pre></div><h2 id="strings-divididas-em-bytes-e-unicodes">Strings divididas em bytes e unicodes</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># No Python 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;abc&#39;</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># True</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">None</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># No Python 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;abc&#39;</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TypeError: unorderable types: str() &gt; int()</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">None</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TypeError: unorderable types: NoneType() &lt; int()</span>
+</span></span></code></pre></div><h2 id="strings-divididas-em-bytes-e-unicodes">Strings divididas em bytes e unicodes</h2>
 <p>Agora é possível utilizar de acentos, caracteres de outros alfabetos como chinês e outros caracteres especias.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># python 2</span>
-nome <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cássio&#39;</span>
-nome
-<span style="color:#75715e"># &#39;c\xc3\xa1ssio</span>
-bytes(<span style="color:#e6db74">&#39;cássio&#39;</span>)
-<span style="color:#75715e"># &#39;c\xc3\xa1ssio</span>
-<span style="color:#75715e"># bytes e strings são a mesma coisa</span>
-
-<span style="color:#75715e"># python 3</span>
-nome <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cássio&#39;</span>
-nome
-<span style="color:#75715e"># &#39;cássio&#39;</span>
-bytes(<span style="color:#e6db74">&#39;cássio&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>)
-<span style="color:#75715e"># b&#39;c\xc3\xa1ssio&#39;</span>
-<span style="color:#75715e"># bytes e strings são coisas distintas</span>
-</code></pre></div><p>E uma outra coisa permitida:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#960050;background-color:#1e0010">Σ</span>(lim_inf, lim_sup, funcao):
-    <span style="color:#e6db74">&#39;&#39;&#39;Um somatório é um operador matemático que nos permite
-</span><span style="color:#e6db74">    representar facilmente somas de um grande número de termos,
-</span><span style="color:#e6db74">    até infinitos.
-</span><span style="color:#e6db74">    É representado com a letra grega sigma ( \Sigma ).
-</span><span style="color:#e6db74">    Uma variável i chamada índice do somatório recebe como valor inicial o
-</span><span style="color:#e6db74">    limite inferior(lim_inf).A
-</span><span style="color:#e6db74">    Esta variável percorre os valores inteiros até alcançar o limite
-</span><span style="color:#e6db74">    superior(lim_sup).
-</span><span style="color:#e6db74">    A cada iteração uma função(funcao) é executada sobre o índice do
-</span><span style="color:#e6db74">    somatório.
-</span><span style="color:#e6db74">    A função de entrada (funcao) deve receber um valor de entrada e retornar
-</span><span style="color:#e6db74">    um valor de saída.
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">    Σ(1,5,lambda x:x) = 1 + 2 + 3 + 4 + 5 = 15
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">    &gt;&gt;&gt; Σ(1,5,lambda x:x)
-</span><span style="color:#e6db74">    15
-</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
-    <span style="color:#66d9ef">return</span> sum(funcao(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(lim_inf, lim_sup <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>))
-</code></pre></div><h2 id="leitura-de-dados-de-forma-segura">Leitura de dados de forma segura</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># python 2</span>
+</span></span><span style="display:flex;"><span>nome <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cássio&#39;</span>
+</span></span><span style="display:flex;"><span>nome
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;c\xc3\xa1ssio</span>
+</span></span><span style="display:flex;"><span>bytes(<span style="color:#e6db74">&#39;cássio&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;c\xc3\xa1ssio</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># bytes e strings são a mesma coisa</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># python 3</span>
+</span></span><span style="display:flex;"><span>nome <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cássio&#39;</span>
+</span></span><span style="display:flex;"><span>nome
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;cássio&#39;</span>
+</span></span><span style="display:flex;"><span>bytes(<span style="color:#e6db74">&#39;cássio&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># b&#39;c\xc3\xa1ssio&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># bytes e strings são coisas distintas</span>
+</span></span></code></pre></div><p>E uma outra coisa permitida:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Σ</span>(lim_inf, lim_sup, funcao):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;Um somatório é um operador matemático que nos permite
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    representar facilmente somas de um grande número de termos,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    até infinitos.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    É representado com a letra grega sigma ( \Sigma ).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Uma variável i chamada índice do somatório recebe como valor inicial o
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    limite inferior(lim_inf).A
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Esta variável percorre os valores inteiros até alcançar o limite
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    superior(lim_sup).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    A cada iteração uma função(funcao) é executada sobre o índice do
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    somatório.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    A função de entrada (funcao) deve receber um valor de entrada e retornar
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    um valor de saída.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Σ(1,5,lambda x:x) = 1 + 2 + 3 + 4 + 5 = 15
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; Σ(1,5,lambda x:x)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    15
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum(funcao(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(lim_inf, lim_sup <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>))
+</span></span></code></pre></div><h2 id="leitura-de-dados-de-forma-segura">Leitura de dados de forma segura</h2>
 <p>Toda leitura de dados feita do teclado é feita em forma de string  e cabe ao programa sua manipulação.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># No python 2</span>
-a <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;Comando a ser executado: &#39;</span>)
-<span style="color:#75715e"># experimente a expressão 80*&#39;-&#39; como entrada</span>
-<span style="color:#75715e"># embora no python 2 existe uma versão mais segura que é o raw_input</span>
-<span style="color:#75715e"># no python 3</span>
-input(<span style="color:#e6db74">&#34;Digite um número: &#34;</span>)
-<span style="color:#75715e"># &#39;4&#39;</span>
-<span style="color:#75715e"># o input sempre retorna string e caso precise deve ser explicitamente convertida</span>
-</code></pre></div><h2 id="python--m-modulo">python -m modulo</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># No python 2</span>
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;Comando a ser executado: &#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># experimente a expressão 80*&#39;-&#39; como entrada</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># embora no python 2 existe uma versão mais segura que é o raw_input</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># no python 3</span>
+</span></span><span style="display:flex;"><span>input(<span style="color:#e6db74">&#34;Digite um número: &#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;4&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># o input sempre retorna string e caso precise deve ser explicitamente convertida</span>
+</span></span></code></pre></div><h2 id="python--m-modulo">python -m modulo</h2>
 <p>Uma série de módulos da biblioteca padrão se utilizam do artificio de colocar uma condicional para verificar quando são executados ou importados e podem ser utilizados como ferramentas.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># criação de um ambiente virtual</span>
-python -m venv /path/to/&lt;my_venv&gt;
-<span style="color:#75715e"># ubuntu apresenta problemas, nele utilize</span>
-python -m venv --without-pip /path/to/&lt;my_venv&gt;
-<span style="color:#75715e"># ativação deste ambiente</span>
-source /path/to/&lt;my_venv&gt;/bin/activate
-
-<span style="color:#75715e"># PYTHONPATH</span>
-python -m site
-
-<span style="color:#75715e"># Servidor http python</span>
-python -m http.server <span style="color:#f92672">[</span>port<span style="color:#f92672">]</span>
-
-<span style="color:#75715e"># Documentação</span>
-python -m pydoc
-<span style="color:#75715e"># b para abrir documentação no browser</span>
-python -m pydoc -b
-<span style="color:#75715e"># ou especifique o módulo</span>
-python -m pydoc math.sin
-
-<span style="color:#75715e"># debug estilo gdb</span>
-python -m pdb &lt;nomedoprograma.py&gt;
-
-<span style="color:#75715e"># profiler</span>
-python -m profile &lt;nomedoprograma.py&gt;
-
-<span style="color:#75715e">#exibe um calendario</span>
-python -m calendar
-
-<span style="color:#75715e"># recebe entrada json e imprime</span>
-python -m json.tool
-
-<span style="color:#75715e"># codifica e decodifica um texto em base64</span>
-echo <span style="color:#e6db74">&#39;Hello World&#39;</span> | python -m base64 -e
-echo <span style="color:#e6db74">&#39;SGVsbG8gV29ybGQK&#39;</span> | python -m base64 -d
-</code></pre></div><h1 id="e-mais-uma-infinidade-de-outros-recursos">E mais uma infinidade de outros recursos</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># set comprehension</span>
-{value <span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> something}
-
-<span style="color:#75715e"># dict comprehension</span>
-{key:value <span style="color:#66d9ef">for</span> key,value <span style="color:#f92672">in</span> something}
-
-<span style="color:#75715e"># 3/2 agora retorna 1.5</span>
-
-<span style="color:#75715e"># notação para numeros em base oito e desesseis</span>
-<span style="color:#75715e"># 0o99</span>
-<span style="color:#75715e"># 0x44</span>
-
-<span style="color:#75715e"># Não dá mais pra trolar amigos</span>
-True, False <span style="color:#f92672">=</span> False,True
-<span style="color:#75715e"># SyntaxError: can&#39;t assign to keyword</span>
-
-<span style="color:#75715e"># asyncio</span>
-<span style="color:#75715e"># aqui uma utilização interessante</span>
-<span style="color:#75715e"># http://compiletoi.net/fast-scraping-in-python-with-asyncio.html</span>
-</code></pre></div><h2 id="considerações-finais">Considerações finais</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># criação de um ambiente virtual</span>
+</span></span><span style="display:flex;"><span>python -m venv /path/to/&lt;my_venv&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ubuntu apresenta problemas, nele utilize</span>
+</span></span><span style="display:flex;"><span>python -m venv --without-pip /path/to/&lt;my_venv&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ativação deste ambiente</span>
+</span></span><span style="display:flex;"><span>source /path/to/&lt;my_venv&gt;/bin/activate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># PYTHONPATH</span>
+</span></span><span style="display:flex;"><span>python -m site
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Servidor http python</span>
+</span></span><span style="display:flex;"><span>python -m http.server <span style="color:#f92672">[</span>port<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Documentação</span>
+</span></span><span style="display:flex;"><span>python -m pydoc
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># b para abrir documentação no browser</span>
+</span></span><span style="display:flex;"><span>python -m pydoc -b
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ou especifique o módulo</span>
+</span></span><span style="display:flex;"><span>python -m pydoc math.sin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># debug estilo gdb</span>
+</span></span><span style="display:flex;"><span>python -m pdb &lt;nomedoprograma.py&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># profiler</span>
+</span></span><span style="display:flex;"><span>python -m profile &lt;nomedoprograma.py&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#exibe um calendario</span>
+</span></span><span style="display:flex;"><span>python -m calendar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># recebe entrada json e imprime</span>
+</span></span><span style="display:flex;"><span>python -m json.tool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># codifica e decodifica um texto em base64</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;Hello World&#39;</span> | python -m base64 -e
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;SGVsbG8gV29ybGQK&#39;</span> | python -m base64 -d
+</span></span></code></pre></div><h1 id="e-mais-uma-infinidade-de-outros-recursos">E mais uma infinidade de outros recursos</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># set comprehension</span>
+</span></span><span style="display:flex;"><span>{value <span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> something}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dict comprehension</span>
+</span></span><span style="display:flex;"><span>{key:value <span style="color:#66d9ef">for</span> key,value <span style="color:#f92672">in</span> something}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3/2 agora retorna 1.5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># notação para numeros em base oito e desesseis</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 0o99</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 0x44</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Não dá mais pra trolar amigos</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">True</span>, <span style="color:#66d9ef">False</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>,<span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SyntaxError: can&#39;t assign to keyword</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># asyncio</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># aqui uma utilização interessante</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># http://compiletoi.net/fast-scraping-in-python-with-asyncio.html</span>
+</span></span></code></pre></div><h2 id="considerações-finais">Considerações finais</h2>
 <p>Ainda existem  várias funcionalidades que infelizmente não serão apresentadas neste <em>post</em> devido a extensão do mesmo. Espero que tenham curtido e com o crescimento do numero de bibliotecas com suporte para o Python 3, como Django, nltk, numpy e muitas outras, está esperando o que para dar suporte ao Python 3 em seu projeto?</p>
 <p><a href="http://www.diveintopython3.net/">Vamos mergulhar no Python 3?</a> Algumas ferramentas que podem te ajudar:</p>
 <ul>
@@ -440,7 +434,7 @@ True, False <span style="color:#f92672">=</span> False,True
 <p>E se tem duvida sobre suporte de alguma biblioteca, confira <a href="https://caniusepython3.com/">aqui</a>.</p>
 <p>Então é isso pessoal!</p>
 <p>Até a próxima!</p>
-<p>{}&lsquo;s</p>
+<p>{}&rsquo;s</p>
 
   </div>
 
@@ -500,7 +494,7 @@ True, False <span style="color:#f92672">=</span> False,True
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -525,7 +519,7 @@ True, False <span style="color:#f92672">=</span> False,True
   <footer>
   <div>
     <p>
-      &copy; Cássio Botaro 2022
+      &copy; Cássio Botaro 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 
@@ -546,16 +540,5 @@ True, False <span style="color:#f92672">=</span> False,True
   
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-59964005-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 </body>
 </html>

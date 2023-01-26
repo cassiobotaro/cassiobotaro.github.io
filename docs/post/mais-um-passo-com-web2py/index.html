@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.110.0">
 
   <title>Mais um passo com web2py &middot; Import None</title>
 
@@ -12,14 +12,9 @@
   
 
 <meta itemprop="name" content="Mais um passo com web2py">
-<meta itemprop="description" content="Após escrever o hello world, é hora de dar mais alguns passos com web2py.">
-<meta itemprop="datePublished" content="2015-07-07T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-07-07T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="596">
-<meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
-
-
-
+<meta itemprop="description" content="Após escrever o hello world, é hora de dar mais alguns passos com web2py."><meta itemprop="datePublished" content="2015-07-07T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2015-07-07T00:00:00+00:00" />
+<meta itemprop="wordCount" content="596"><meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
 <meta itemprop="keywords" content="web2py,iniciantes," />
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -32,8 +27,7 @@
 <meta property="og:title" content="Mais um passo com web2py" />
 <meta property="og:description" content="Após escrever o hello world, é hora de dar mais alguns passos com web2py." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cassiobotaro.dev/post/mais-um-passo-com-web2py/" />
-<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="og:url" content="http://cassiobotaro.dev/post/mais-um-passo-com-web2py/" /><meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-07-07T00:00:00+00:00" />
 <meta property="article:modified_time" content="2015-07-07T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
 
@@ -280,91 +274,89 @@
 <p>Este será então o nosso segundo <em>hello world</em>, criaremos um modelo, faremos sua exposição através da <em>view</em> e seu controle através de um controlador. Será dado uma pincelada como ter visões alternativas sobre o mesmo controlador.</p>
 <h2 id="definindo-o-modelo">Definindo o modelo</h2>
 <p>Crie um arquivo dentro do diretório <em>models</em> chamado <code>db.py</code> com o seguinte conteúdo:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">db <span style="color:#f92672">=</span> DAL(<span style="color:#e6db74">&#39;sqlite://storage.sqlite&#39;</span>)
-
-db<span style="color:#f92672">.</span>define_table(
-    <span style="color:#e6db74">&#39;marcas&#39;</span>,
-    Field(<span style="color:#e6db74">&#39;nome&#39;</span>)
-)
-
-db<span style="color:#f92672">.</span>define_table(
-    <span style="color:#e6db74">&#39;carros&#39;</span>,
-    Field(<span style="color:#e6db74">&#39;modelo&#39;</span>, notnull<span style="color:#f92672">=</span>True),
-    Field(<span style="color:#e6db74">&#39;ano&#39;</span>, notnull<span style="color:#f92672">=</span>True),
-    Field(<span style="color:#e6db74">&#39;marca&#39;</span>, <span style="color:#e6db74">&#39;reference marcas&#39;</span>),
-)
-</code></pre></div><p>Agora temos definidos dois modelos de nossa aplicação, lembrando que estes modelos serão aplicados à <a href="http://web2py.com/books/default/chapter/29/07/forms-and-validators#SQLFORM">visão</a> e a persistência de dados.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>db <span style="color:#f92672">=</span> DAL(<span style="color:#e6db74">&#39;sqlite://storage.sqlite&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>db<span style="color:#f92672">.</span>define_table(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;marcas&#39;</span>,
+</span></span><span style="display:flex;"><span>    Field(<span style="color:#e6db74">&#39;nome&#39;</span>)
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>db<span style="color:#f92672">.</span>define_table(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;carros&#39;</span>,
+</span></span><span style="display:flex;"><span>    Field(<span style="color:#e6db74">&#39;modelo&#39;</span>, notnull<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>),
+</span></span><span style="display:flex;"><span>    Field(<span style="color:#e6db74">&#39;ano&#39;</span>, notnull<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>),
+</span></span><span style="display:flex;"><span>    Field(<span style="color:#e6db74">&#39;marca&#39;</span>, <span style="color:#e6db74">&#39;reference marcas&#39;</span>),
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Agora temos definidos dois modelos de nossa aplicação, lembrando que estes modelos serão aplicados à <a href="http://web2py.com/books/default/chapter/29/07/forms-and-validators#SQLFORM">visão</a> e a persistência de dados.</p>
 <p>O que acabamos de definir é que utilizaremos o <em>sqlite</em> como banco de dados, e neste banco de dados temos duas tabelas onde serão armazenados nossos dados.</p>
 <p>Em uma delas temos uma lista de marcas, e em outra uma lista de carros associados a estas marcas. Todo carro deve possuir obrigatoriamente modelo, ano e marca.</p>
 <h2 id="populando-nossas-tabelas">Populando nossas tabelas</h2>
 <p>Ainda no arquivo <code>db.py</code> adicione as seguintes linhas:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># verifica se a tabela de marcas está vazia</span>
-<span style="color:#66d9ef">if</span> db(db<span style="color:#f92672">.</span>marcas)<span style="color:#f92672">.</span>count() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
-    db<span style="color:#f92672">.</span>marcas<span style="color:#f92672">.</span>insert(nome<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Fiat&#39;</span>)
-    db<span style="color:#f92672">.</span>marcas<span style="color:#f92672">.</span>insert(nome<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Ford&#39;</span>)
-    db<span style="color:#f92672">.</span>marcas<span style="color:#f92672">.</span>insert(nome<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Chevrolet&#39;</span>)
-    db<span style="color:#f92672">.</span>commit()
-
-<span style="color:#75715e"># verifica se a tabela de carros está vazia</span>
-<span style="color:#66d9ef">if</span> db(db<span style="color:#f92672">.</span>carros)<span style="color:#f92672">.</span>count() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
-    db<span style="color:#f92672">.</span>carros<span style="color:#f92672">.</span>insert(modelo<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Idea&#39;</span>, marca<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, ano<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;2003&#39;</span>)
-    db<span style="color:#f92672">.</span>carros<span style="color:#f92672">.</span>insert(modelo<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Ka&#39;</span>, marca<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, ano<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;2004&#39;</span>)
-    db<span style="color:#f92672">.</span>carros<span style="color:#f92672">.</span>insert(modelo<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Celta&#39;</span>, marca<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, ano<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;2005&#39;</span>)
-    db<span style="color:#f92672">.</span>commit()
-
-</code></pre></div><p>Temos 3 carros de 3 marcas distintas. Preste atenção no <code>if</code> que foi adicionado antes da inserção do carro, ele previne que a cada requisição carros repetidos sejam adicionados à tabela.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># verifica se a tabela de marcas está vazia</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> db(db<span style="color:#f92672">.</span>marcas)<span style="color:#f92672">.</span>count() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>    db<span style="color:#f92672">.</span>marcas<span style="color:#f92672">.</span>insert(nome<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Fiat&#39;</span>)
+</span></span><span style="display:flex;"><span>    db<span style="color:#f92672">.</span>marcas<span style="color:#f92672">.</span>insert(nome<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Ford&#39;</span>)
+</span></span><span style="display:flex;"><span>    db<span style="color:#f92672">.</span>marcas<span style="color:#f92672">.</span>insert(nome<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Chevrolet&#39;</span>)
+</span></span><span style="display:flex;"><span>    db<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># verifica se a tabela de carros está vazia</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> db(db<span style="color:#f92672">.</span>carros)<span style="color:#f92672">.</span>count() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>    db<span style="color:#f92672">.</span>carros<span style="color:#f92672">.</span>insert(modelo<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Idea&#39;</span>, marca<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, ano<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;2003&#39;</span>)
+</span></span><span style="display:flex;"><span>    db<span style="color:#f92672">.</span>carros<span style="color:#f92672">.</span>insert(modelo<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Ka&#39;</span>, marca<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, ano<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;2004&#39;</span>)
+</span></span><span style="display:flex;"><span>    db<span style="color:#f92672">.</span>carros<span style="color:#f92672">.</span>insert(modelo<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Celta&#39;</span>, marca<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, ano<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;2005&#39;</span>)
+</span></span><span style="display:flex;"><span>    db<span style="color:#f92672">.</span>commit()
+</span></span></code></pre></div><p>Temos 3 carros de 3 marcas distintas. Preste atenção no <code>if</code> que foi adicionado antes da inserção do carro, ele previne que a cada requisição carros repetidos sejam adicionados à tabela.</p>
 <p>Lembre-se também que essa maneira de povoar os dados é somente para desenvolvimento e teste e pode ser apagado após os registros serem adicionados ao banco de dados. Apagar estas linhas evita duas consultas desnecessárias ao banco de dados.</p>
 <h2 id="controlando-o-que-será-exibido">Controlando o que será exibido</h2>
 <p>Vamos voltar ao nosso controlador, o arquivo <code>default.py</code> (hello/controllers/default.py)</p>
 <p>Já vimos que o controlador recebe uma requisição, realiza processamento e retorna alguma resposta ao solicitante.
 Vamos então apagar o conteúdo de <em>index</em> e reescrevê-lo agora consultando os carros existentes em meu banco de dados.</p>
 <p>O código será o seguinte:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
-    <span style="color:#75715e"># pode ser traduzido como select * from carros</span>
-    <span style="color:#75715e"># ou seja, todos os carros na tabela</span>
-    carros <span style="color:#f92672">=</span> db(db<span style="color:#f92672">.</span>carros)<span style="color:#f92672">.</span>select()
-    <span style="color:#75715e"># dicionário que define as variáveis presentes no ambiente</span>
-    <span style="color:#75715e"># durante renderização da template html</span>
-    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#39;carros&#39;</span>: carros}
-</code></pre></div><p>Com essa alteração nossa visão também deve ser alterada. Para uma visualização interessante vamos fazer uma tabela.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># pode ser traduzido como select * from carros</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ou seja, todos os carros na tabela</span>
+</span></span><span style="display:flex;"><span>    carros <span style="color:#f92672">=</span> db(db<span style="color:#f92672">.</span>carros)<span style="color:#f92672">.</span>select()
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># dicionário que define as variáveis presentes no ambiente</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># durante renderização da template html</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#39;carros&#39;</span>: carros}
+</span></span></code></pre></div><p>Com essa alteração nossa visão também deve ser alterada. Para uma visualização interessante vamos fazer uma tabela.
 Edite o arquivo <code>index.html</code> (hello/views/default/index.html)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pt-br&#34;</span>&gt;
-
-&lt;<span style="color:#f92672">head</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;Carros&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-
-&lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>&gt;
-        &lt;<span style="color:#f92672">tr</span>&gt;
-            &lt;<span style="color:#f92672">th</span>&gt;Modelo&lt;/<span style="color:#f92672">th</span>&gt;
-            &lt;<span style="color:#f92672">th</span>&gt;Marca&lt;/<span style="color:#f92672">th</span>&gt;
-            &lt;<span style="color:#f92672">th</span>&gt;Ano&lt;/<span style="color:#f92672">th</span>&gt;
-        &lt;/<span style="color:#f92672">tr</span>&gt;
-        {{for carro in carros:}}
-        &lt;<span style="color:#f92672">tr</span>&gt;
-            &lt;<span style="color:#f92672">td</span>&gt;{{=carro.modelo}}&lt;/<span style="color:#f92672">td</span>&gt;
-            &lt;<span style="color:#f92672">td</span>&gt;{{=carro.marca.nome}}&lt;/<span style="color:#f92672">td</span>&gt;
-            &lt;<span style="color:#f92672">td</span>&gt;{{=carro.ano}}&lt;/<span style="color:#f92672">td</span>&gt;
-        &lt;/<span style="color:#f92672">tr</span>&gt;
-        {{pass}}
-    &lt;/<span style="color:#f92672">table</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-
-</code></pre></div><p>Um único detalhe que chamo atenção neste código é <code>{{=carro.marca.nome}}</code>, como as tabelas possuem relação o <strong>web2py</strong> irá ficar responsável por  buscar o nome do modelo de cada carro.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pt-br&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;Carros&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span>&gt;Modelo&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span>&gt;Marca&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span>&gt;Ano&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        {{for carro in carros:}}
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{=carro.modelo}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{=carro.marca.nome}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{=carro.ano}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        {{pass}}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>Um único detalhe que chamo atenção neste código é <code>{{=carro.marca.nome}}</code>, como as tabelas possuem relação o <strong>web2py</strong> irá ficar responsável por  buscar o nome do modelo de cada carro.
 Visualize através da URL: <a href="http://localhost:8000/hello/default/index.json">http://localhost:8000/hello/default/index.json</a></p>
 <h2 id="exibindo-os-mesmos-dados-de-forma-diferente">Exibindo os mesmos dados de forma diferente</h2>
 <p>Já que temos uma resposta HTML, o quão será difícil retornar um JSON
 com estes mesmos dados para uma possível comunicação entre sistemas ou até mesmo para consumo de um aplicativo móvel?</p>
 <p>Na verdade é extremamente simples. Apenas crie no mesmo diretório onde se encontra a <em>view</em> <code>index.html</code> um arquivo <code>index.json</code> com o seguinte conteúdo.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{from gluon.serializers import json}}{{=XML(json(response._vars))}}
-</code></pre></div><p>Para consultar visite a url: <a href="http://localhost:8000/hello/default/index.json">http://localhost:8000/hello/default/index.json</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{from gluon.serializers import json}}{{=XML(json(response._vars))}}
+</span></span></code></pre></div><p>Para consultar visite a url: <a href="http://localhost:8000/hello/default/index.json">http://localhost:8000/hello/default/index.json</a></p>
 <p>Então é isso pessoal!</p>
 <p>Até a próxima!</p>
-<p>{}&lsquo;s</p>
+<p>{}&rsquo;s</p>
 
   </div>
 
@@ -420,7 +412,7 @@ com estes mesmos dados para uma possível comunicação entre sistemas ou até m
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -445,7 +437,7 @@ com estes mesmos dados para uma possível comunicação entre sistemas ou até m
   <footer>
   <div>
     <p>
-      &copy; Cássio Botaro 2022
+      &copy; Cássio Botaro 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 
@@ -466,16 +458,5 @@ com estes mesmos dados para uma possível comunicação entre sistemas ou até m
   
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-59964005-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 </body>
 </html>

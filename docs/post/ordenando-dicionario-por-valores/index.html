@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.110.0">
 
   <title>Ordenando dicionário por valores &middot; Import None</title>
 
@@ -12,14 +12,9 @@
   
 
 <meta itemprop="name" content="Ordenando dicionário por valores">
-<meta itemprop="description" content="Dado um dicionário, como ordená-lo utilizando os valores.">
-<meta itemprop="datePublished" content="2019-03-23T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-03-23T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="416">
-<meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
-
-
-
+<meta itemprop="description" content="Dado um dicionário, como ordená-lo utilizando os valores."><meta itemprop="datePublished" content="2019-03-23T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-03-23T00:00:00+00:00" />
+<meta itemprop="wordCount" content="416"><meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
 <meta itemprop="keywords" content="python," />
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -32,8 +27,7 @@
 <meta property="og:title" content="Ordenando dicionário por valores" />
 <meta property="og:description" content="Dado um dicionário, como ordená-lo utilizando os valores." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/" />
-<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="og:url" content="http://cassiobotaro.dev/post/ordenando-dicionario-por-valores/" /><meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-03-23T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-03-23T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
 
@@ -276,37 +270,37 @@
 <p>Executar a função sorted sobre um dicionário tem como resultado uma lista ordenada de suas chaves.</p>
 <p>A explicação disso é que a função sorted recebe um objeto iterável, ou seja uma estrutura de dados container que pode ter seus elementos internos percorridos múltiplas vezes e retorna uma nova lista ordenada de forma ascendente.</p>
 <p>O comportamento padrão de um dicionário quando percorrido é retornar os valores de suas chaves.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#ae81ff">2</span>: <span style="color:#e6db74">&#34;a&#34;</span>}:
-    <span style="color:#66d9ef">print</span>(value)
-</code></pre></div><p>Porém dicionários possuem o método <code>items</code> que retorna uma estrutura percorrível, com o valor de suas chaves e seus valores associados.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> tupla_chave_valor <span style="color:#f92672">in</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#ae81ff">2</span>: <span style="color:#e6db74">&#34;a&#34;</span>}:
-    <span style="color:#66d9ef">print</span>(tupla_chave_valor)
-</code></pre></div><p>Essa estrutura se assemelha a uma lista de tuplas, em que cada tupla possui dois valores, a chave e o valor associado aquela chave.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#ae81ff">2</span>: <span style="color:#e6db74">&#34;a&#34;</span>}:
+</span></span><span style="display:flex;"><span>    print(value)
+</span></span></code></pre></div><p>Porém dicionários possuem o método <code>items</code> que retorna uma estrutura percorrível, com o valor de suas chaves e seus valores associados.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> tupla_chave_valor <span style="color:#f92672">in</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#ae81ff">2</span>: <span style="color:#e6db74">&#34;a&#34;</span>}:
+</span></span><span style="display:flex;"><span>    print(tupla_chave_valor)
+</span></span></code></pre></div><p>Essa estrutura se assemelha a uma lista de tuplas, em que cada tupla possui dois valores, a chave e o valor associado aquela chave.</p>
 <p><code>dict_items([(1, &quot;b&quot;), (2, &quot;a&quot;)])</code></p>
-<p>Porém ainda que eu tenha os dois valores, ainda tenho um problema que é &ldquo;como ordenar essa lista?&quot;.</p>
+<p>Porém ainda que eu tenha os dois valores, ainda tenho um problema que é &ldquo;como ordenar essa lista?&rdquo;.</p>
 <p>O método sorted, ordena os elementos de forma ascendente, e no nosso caso, quando eu comparo as tuplas, o primeiro valor é levado em conta e somente caso ocorra uma igualdade segundo valor será utilizado.</p>
 <p>Porém o método aceita um parâmetro chamado key, que é uma função aplicada a cada elemento antes da comparação.</p>
 <p>Se eu defino por exemplo a função <code>len</code> como key em um método sort, os elementos serão ordenados pelo tamanho.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> sorted([<span style="color:#e6db74">&#34;12&#34;</span>, <span style="color:#e6db74">&#34;123&#34;</span>, <span style="color:#e6db74">&#34;1&#34;</span>], key<span style="color:#f92672">=</span>len)
-[<span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#e6db74">&#34;12&#34;</span>, <span style="color:#e6db74">&#34;123&#34;</span>]
-</code></pre></div><p>Para conseguir ordenar nossa lista de tuplas pelo segundo elemento vamos recorrer a uma função do módulo <code>operator</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> sorted([<span style="color:#e6db74">&#34;12&#34;</span>, <span style="color:#e6db74">&#34;123&#34;</span>, <span style="color:#e6db74">&#34;1&#34;</span>], key<span style="color:#f92672">=</span>len)
+</span></span><span style="display:flex;"><span>[<span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#e6db74">&#34;12&#34;</span>, <span style="color:#e6db74">&#34;123&#34;</span>]
+</span></span></code></pre></div><p>Para conseguir ordenar nossa lista de tuplas pelo segundo elemento vamos recorrer a uma função do módulo <code>operator</code>.</p>
 <p>O método em questão será o <code>itemgetter</code>, ele recebe como parâmetro uma ou mais posições que serão retornadas em um iterável.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> operator <span style="color:#f92672">import</span> itemgetter
-original <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>: <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>: <span style="color:#ae81ff">1</span>}
-<span style="color:#66d9ef">print</span>(sorted(original<span style="color:#f92672">.</span>items(), key<span style="color:#f92672">=</span>itemgetter(<span style="color:#ae81ff">1</span>))))
-</code></pre></div><p>Estamos quase lá, mas agora temos uma lista, mas não um dicionário.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> operator <span style="color:#f92672">import</span> itemgetter
+</span></span><span style="display:flex;"><span>original <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>: <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>: <span style="color:#ae81ff">1</span>}
+</span></span><span style="display:flex;"><span>print(sorted(original<span style="color:#f92672">.</span>items(), key<span style="color:#f92672">=</span>itemgetter(<span style="color:#ae81ff">1</span>))))
+</span></span></code></pre></div><p>Estamos quase lá, mas agora temos uma lista, mas não um dicionário.</p>
 <p>Temos uma nova lista de tuplas ordenadas <code>[(3, 1), (1, 2), (2, 3)]</code>.</p>
 <p>Podemos fazer a conversão desta lista em um dicionário <code>dict([(3, 1), (1, 2), (2, 3)])</code></p>
 <h2 id="conclusão">Conclusão</h2>
 <p>O código final se torna:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> operator <span style="color:#f92672">import</span> itemgetter
-original <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>: <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>: <span style="color:#ae81ff">1</span>}
-ordered <span style="color:#f92672">=</span> dict(sorted(original<span style="color:#f92672">.</span>items(), key<span style="color:#f92672">=</span>itemgetter(<span style="color:#ae81ff">1</span>)))
-<span style="color:#66d9ef">print</span>(ordered)
-</code></pre></div><p>Lembrando que esta solução é somente válida para versões acima da 3.6, anteriores a isto devem utilizar <code>OrderedDict</code> no lugar de dict.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> operator <span style="color:#f92672">import</span> itemgetter
+</span></span><span style="display:flex;"><span>original <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>: <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>: <span style="color:#ae81ff">1</span>}
+</span></span><span style="display:flex;"><span>ordered <span style="color:#f92672">=</span> dict(sorted(original<span style="color:#f92672">.</span>items(), key<span style="color:#f92672">=</span>itemgetter(<span style="color:#ae81ff">1</span>)))
+</span></span><span style="display:flex;"><span>print(ordered)
+</span></span></code></pre></div><p>Lembrando que esta solução é somente válida para versões acima da 3.6, anteriores a isto devem utilizar <code>OrderedDict</code> no lugar de dict.</p>
 <p>Então é isso pessoal!</p>
 <p>Até a próxima!</p>
-<p>{}&lsquo;s</p>
+<p>{}&rsquo;s</p>
 
   </div>
 
@@ -358,7 +352,7 @@ ordered <span style="color:#f92672">=</span> dict(sorted(original<span style="co
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -383,7 +377,7 @@ ordered <span style="color:#f92672">=</span> dict(sorted(original<span style="co
   <footer>
   <div>
     <p>
-      &copy; Cássio Botaro 2022
+      &copy; Cássio Botaro 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 
@@ -404,16 +398,5 @@ ordered <span style="color:#f92672">=</span> dict(sorted(original<span style="co
   
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-59964005-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.110.0">
 
   <title>Ordenação com valores nulos &middot; Import None</title>
 
@@ -12,14 +12,9 @@
   
 
 <meta itemprop="name" content="Ordenação com valores nulos">
-<meta itemprop="description" content="Ordene uma lista de valores, colocando os valores nulos no fim.">
-<meta itemprop="datePublished" content="2016-07-21T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2016-07-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="561">
-<meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
-
-
-
+<meta itemprop="description" content="Ordene uma lista de valores, colocando os valores nulos no fim."><meta itemprop="datePublished" content="2016-07-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-07-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="561"><meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
 <meta itemprop="keywords" content="dicas,ordenação,iniciantes," />
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -32,8 +27,7 @@
 <meta property="og:title" content="Ordenação com valores nulos" />
 <meta property="og:description" content="Ordene uma lista de valores, colocando os valores nulos no fim." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cassiobotaro.dev/post/ordenacao-com-valores-nulos/" />
-<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="og:url" content="http://cassiobotaro.dev/post/ordenacao-com-valores-nulos/" /><meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2016-07-21T00:00:00+00:00" />
 <meta property="article:modified_time" content="2016-07-21T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
 
@@ -274,69 +268,69 @@
   <p><img src="/images/sort.jpg" alt="ordenacao" title="Ordenação"></p>
 <p>Dado uma lista de elementos de mesmo tipo e valores nulos, ordene-os considerando que elementos nulos devem ir para o fim da lista.</p>
 <p>Por exemplo:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-<span style="color:#75715e"># Considere uma lista com valores inteiros e nulos</span>
-lista1 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, None, <span style="color:#ae81ff">6</span>, None, <span style="color:#ae81ff">3</span>]
-
-<span style="color:#75715e"># A ordenação correta seria</span>
-<span style="color:#66d9ef">assert</span> lista1 <span style="color:#f92672">==</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>, None, None]
-
-<span style="color:#75715e"># Considere também uma lista de strings</span>
-lista2 <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>, None, None, <span style="color:#e6db74">&#39;f&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>]
-
-<span style="color:#75715e"># A ordenação correta seria</span>
-<span style="color:#66d9ef">assert</span> lista2 <span style="color:#f92672">==</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>, None, None]
-
-<span style="color:#75715e"># O mesmo problema aparece em lista de dicionários ou objetos</span>
-lista3 <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;João&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: None}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Carla&#39;</span>}]
-
-<span style="color:#75715e"># A ordenação correta seria</span>
-<span style="color:#66d9ef">assert</span> lista3 <span style="color:#f92672">==</span> [{<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Carla&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;João&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: None}]
-</code></pre></div><h2 id="discussão-sobre-o-problema">Discussão sobre o problema</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Considere uma lista com valores inteiros e nulos</span>
+</span></span><span style="display:flex;"><span>lista1 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">None</span>, <span style="color:#ae81ff">6</span>, <span style="color:#66d9ef">None</span>, <span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># A ordenação correta seria</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assert</span> lista1 <span style="color:#f92672">==</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>, <span style="color:#66d9ef">None</span>, <span style="color:#66d9ef">None</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Considere também uma lista de strings</span>
+</span></span><span style="display:flex;"><span>lista2 <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#66d9ef">None</span>, <span style="color:#66d9ef">None</span>, <span style="color:#e6db74">&#39;f&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># A ordenação correta seria</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assert</span> lista2 <span style="color:#f92672">==</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>, <span style="color:#66d9ef">None</span>, <span style="color:#66d9ef">None</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># O mesmo problema aparece em lista de dicionários ou objetos</span>
+</span></span><span style="display:flex;"><span>lista3 <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;João&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#66d9ef">None</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Carla&#39;</span>}]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># A ordenação correta seria</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assert</span> lista3 <span style="color:#f92672">==</span> [{<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Carla&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;João&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#66d9ef">None</span>}]
+</span></span></code></pre></div><h2 id="discussão-sobre-o-problema">Discussão sobre o problema</h2>
 <p>A lista possui um método para ordenação que se chama <code>sort</code>. Sua assinatura nos permite ordenar qualquer tipo de objeto, desde que este seja iterável e seus elementos sejam comparáveis.</p>
 <p>Mas o que significa ser comparável? Em termos práticos, significa que se eu comparar um elemento com o adjacente da lista eu consigo obter um resultado booleano. Em termos mais técnicos, eu possuo implementado o <em>dunder</em> método utilizado na comparação para o tipo do elemento adjacente.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">(<span style="color:#ae81ff">3</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">is</span> True
-
-(<span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;z&#39;</span>) <span style="color:#f92672">is</span> False
-</code></pre></div><p>Ordenar uma lista de inteiros ou strings, é simples como <code>lista.sort()</code>. Porém o problema induz elementos nulos na lista e 	quando o método <em>sort</em> tenta comparar um elemento e nulo, uma exceção <em>TypeError</em> é lançada. A mensagem nos diz o problema: &quot; unorderable types: int() &gt; NoneType() &ldquo;.</p>
-<pre><code>&gt;&gt;&gt; 3 &gt; None
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>(<span style="color:#ae81ff">3</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">is</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;z&#39;</span>) <span style="color:#f92672">is</span> <span style="color:#66d9ef">False</span>
+</span></span></code></pre></div><p>Ordenar uma lista de inteiros ou strings, é simples como <code>lista.sort()</code>. Porém o problema induz elementos nulos na lista e 	quando o método <em>sort</em> tenta comparar um elemento e nulo, uma exceção <em>TypeError</em> é lançada. A mensagem nos diz o problema: &quot; unorderable types: int() &gt; NoneType() &ldquo;.</p>
+<pre tabindex="0"><code>&gt;&gt;&gt; 3 &gt; None
 Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+  File &#34;&lt;stdin&gt;&#34;, line 1, in &lt;module&gt;
 TypeError: unorderable types: int() &gt; NoneType()
 </code></pre><p>O método sort, possui o parâmetro  key, que por padrão assume o valor None. Este parâmetro é um callable(por exemplo uma função) que durante a ordenação irá receber como parâmetro um elemento e retorna um valor que deve ser utilizado para a comparação.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># define uma lista de listas</span>
-lista <span style="color:#f92672">=</span> [[], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>]]
-
-<span style="color:#75715e"># ordena considerando o tamanho de cada lista</span>
-lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span>len)
-
-<span style="color:#75715e"># A ordenação correta seria</span>
-<span style="color:#66d9ef">assert</span> lista <span style="color:#f92672">==</span> [[], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]]
-
-<span style="color:#75715e"># Para uma lista de dicionários</span>
-lista <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;João&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Maria&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Carla&#39;</span>}]
-
-<span style="color:#75715e"># uma chave poderia ser utilizada pra ordenar.</span>
-lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> dict_: dict_[<span style="color:#e6db74">&#39;nome&#39;</span>])
-
-<span style="color:#75715e"># resultaria em</span>
-<span style="color:#66d9ef">assert</span> lista <span style="color:#f92672">==</span> [{<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Carla&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;João&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Maria&#39;</span>}]
-</code></pre></div><p>Uma possível solução para nosso problema é conferir através da função que será utilizada em key, se o valor for nulo(None) e caso seja retorna o maior valor possível.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Para uma lista de inteiros por exemplo poderiamos fazer:</span>
-lista1<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: x <span style="color:#f92672">or</span> <span style="color:#ae81ff">9999</span>)
-
-<span style="color:#75715e"># Mas isto faria surgir uma constante aleatória no código e isto não é legal.</span>
-</code></pre></div><h2 id="a-solução">A solução</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># define uma lista de listas</span>
+</span></span><span style="display:flex;"><span>lista <span style="color:#f92672">=</span> [[], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>]]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ordena considerando o tamanho de cada lista</span>
+</span></span><span style="display:flex;"><span>lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span>len)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># A ordenação correta seria</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assert</span> lista <span style="color:#f92672">==</span> [[], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Para uma lista de dicionários</span>
+</span></span><span style="display:flex;"><span>lista <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;João&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Maria&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Carla&#39;</span>}]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># uma chave poderia ser utilizada pra ordenar.</span>
+</span></span><span style="display:flex;"><span>lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> dict_: dict_[<span style="color:#e6db74">&#39;nome&#39;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># resultaria em</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assert</span> lista <span style="color:#f92672">==</span> [{<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Carla&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;João&#39;</span>}, {<span style="color:#e6db74">&#39;nome&#39;</span>: <span style="color:#e6db74">&#39;Maria&#39;</span>}]
+</span></span></code></pre></div><p>Uma possível solução para nosso problema é conferir através da função que será utilizada em key, se o valor for nulo(None) e caso seja retorna o maior valor possível.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Para uma lista de inteiros por exemplo poderiamos fazer:</span>
+</span></span><span style="display:flex;"><span>lista1<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: x <span style="color:#f92672">or</span> <span style="color:#ae81ff">9999</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mas isto faria surgir uma constante aleatória no código e isto não é legal.</span>
+</span></span></code></pre></div><h2 id="a-solução">A solução</h2>
 <p>A melhor solução é através de uma tupla. Quando comparada, o primeiro elemento é comparado ao primeiro da outra tupla, caso sejam valores similares, o segundo valor é comparado e assim por diante.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># para uma lista de inteiro ou string:</span>
-lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> elemento: (elemento <span style="color:#f92672">is</span> None, elemento))
-
-<span style="color:#75715e"># para uma lista de dicionário</span>
-lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> dict_: (dict_[<span style="color:#e6db74">&#39;key&#39;</span>] <span style="color:#f92672">is</span> None, dict_[<span style="color:#e6db74">&#39;key&#39;</span>]))
-</code></pre></div><p>A solução é simples e elegante, lembrando que False pode ser entendido como 0 e True como 1, logo se o elemnto for None, o primeiro elemento da tupla será True e irá ser ordenado ao fim da lista.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># para uma lista de inteiro ou string:</span>
+</span></span><span style="display:flex;"><span>lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> elemento: (elemento <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>, elemento))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># para uma lista de dicionário</span>
+</span></span><span style="display:flex;"><span>lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> dict_: (dict_[<span style="color:#e6db74">&#39;key&#39;</span>] <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>, dict_[<span style="color:#e6db74">&#39;key&#39;</span>]))
+</span></span></code></pre></div><p>A solução é simples e elegante, lembrando que False pode ser entendido como 0 e True como 1, logo se o elemnto for None, o primeiro elemento da tupla será True e irá ser ordenado ao fim da lista.</p>
 <p>Então é isso pessoal!</p>
 <p>Até a próxima!</p>
-<p>{}&lsquo;s</p>
+<p>{}&rsquo;s</p>
 
   </div>
 
@@ -396,7 +390,7 @@ lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -421,7 +415,7 @@ lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</
   <footer>
   <div>
     <p>
-      &copy; Cássio Botaro 2022
+      &copy; Cássio Botaro 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 
@@ -442,16 +436,5 @@ lista<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</
   
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-59964005-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 </body>
 </html>

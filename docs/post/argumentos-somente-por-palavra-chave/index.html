@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.110.0">
 
   <title>Argumentos somente por palavra chave &middot; Import None</title>
 
@@ -12,14 +12,9 @@
   
 
 <meta itemprop="name" content="Argumentos somente por palavra chave">
-<meta itemprop="description" content="Como um novo recurso do Python 3 te ajuda a não brincar de roleta russa com seus parâmetros.">
-<meta itemprop="datePublished" content="2015-03-28T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-03-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="315">
-<meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
-
-
-
+<meta itemprop="description" content="Como um novo recurso do Python 3 te ajuda a não brincar de roleta russa com seus parâmetros."><meta itemprop="datePublished" content="2015-03-28T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2015-03-28T00:00:00+00:00" />
+<meta itemprop="wordCount" content="315"><meta itemprop="image" content="http://cassiobotaro.dev/images/profile.png"/>
 <meta itemprop="keywords" content="python,python3," />
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -32,8 +27,7 @@
 <meta property="og:title" content="Argumentos somente por palavra chave" />
 <meta property="og:description" content="Como um novo recurso do Python 3 te ajuda a não brincar de roleta russa com seus parâmetros." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cassiobotaro.dev/post/argumentos-somente-por-palavra-chave/" />
-<meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/>
+<meta property="og:url" content="http://cassiobotaro.dev/post/argumentos-somente-por-palavra-chave/" /><meta property="og:image" content="http://cassiobotaro.dev/images/profile.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-03-28T00:00:00+00:00" />
 <meta property="article:modified_time" content="2015-03-28T00:00:00+00:00" /><meta property="og:site_name" content="Import None" />
 
@@ -274,59 +268,58 @@
 <p>Python 3 ainda possui uma névoa sobre ele, e o movimento de resistência ainda é grande. Mas isto não quer dizer que desbravadores já não o estejam explorando. Já escrevi um <a href="http://cassiobotaro.github.io/porque-python-3.html">post</a> sobre a nova versão da linguagem, porém ainda tem vários recursos que podem ser demonstrados. Um deles é a capacidade de aceitar somente palavras chaves como argumento. Eu até coloquei isto nos slides da Python Brasil 10, porém senti que ao apresentar faltou uma boa explicação.</p>
 <h2 id="talk-is-cheap-show-me-the-code">Talk is cheap. Show me the code!</h2>
 <p>Tentarei dar um exemplo utilizando código, explicarei utilizando os comentários</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-<span style="color:#75715e"># vamos iniciar com a seguinte função</span>
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">funcao</span>(arg1, arg2, kill<span style="color:#f92672">=</span>False):
-    <span style="color:#66d9ef">if</span> kill:
-        shutil<span style="color:#f92672">.</span>rmtree(<span style="color:#e6db74">&#39;/&#39;</span>)
-    <span style="color:#66d9ef">else</span>:
-        <span style="color:#75715e"># realiza operacao</span>
-    <span style="color:#f92672">...</span>
-
-<span style="color:#75715e"># e por algum algum descuido...</span>
-funcao(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)
-<span style="color:#75715e"># o que acontece?</span>
-<span style="color:#75715e"># possivelmente você acaba de ser demitido</span>
-
-<span style="color:#75715e"># Agora vamos corrigir isto utilizando python3</span>
-<span style="color:#75715e"># lembre-se que daqui pra baixo, a sintáxe não é compativel com python 2</span>
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">funcao</span>(arg1, arg2, <span style="color:#f92672">*</span>, kill<span style="color:#f92672">=</span>False):
-    <span style="color:#66d9ef">if</span> kill:
-        shutil<span style="color:#f92672">.</span>rmtree(<span style="color:#e6db74">&#39;/&#39;</span>)
-    <span style="color:#66d9ef">else</span>:
-        <span style="color:#75715e"># realiza operacao</span>
-    <span style="color:#f92672">...</span>
-
-<span style="color:#75715e"># Basta colocar um * e pronto</span>
-<span style="color:#75715e"># agora se cometer um erro o python 3 te alerta</span>
-funcao(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)
-<span style="color:#75715e"># TypeError: funcao() takes 2 positional arguments but 3 were given</span>
-
-<span style="color:#75715e"># Mas o que é esse asterico, é igual o args?</span>
-<span style="color:#75715e"># Na verdade é similar, porém o interpretador sabe que se não foi definido o</span>
-<span style="color:#75715e"># &#34;args&#34; um erro deve ser lançado</span>
-
-<span style="color:#75715e">#Mas e se eu definir o args?</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">funcao</span>(arg1, arg2, <span style="color:#f92672">*</span>args, kill<span style="color:#f92672">=</span>False):
-    <span style="color:#66d9ef">if</span> kill:
-        shutil<span style="color:#f92672">.</span>rmtree(<span style="color:#e6db74">&#39;/&#39;</span>)
-    <span style="color:#66d9ef">else</span>:
-        <span style="color:#75715e"># realiza operacao</span>
-    <span style="color:#f92672">...</span>
-
-<span style="color:#75715e"># acontece que agora, todo parâmetro passado além dos dois obrigatórios(positionals), será armazenado em args, e kill só sera atribuido quando</span>
-<span style="color:#75715e"># utilizado palavra chave</span>
-<span style="color:#75715e">#Ex: funcao(0, 0, kill=True)</span>
-
-</code></pre></div><h2 id="considerações-finais">Considerações finais</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># vamos iniciar com a seguinte função</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">funcao</span>(arg1, arg2, kill<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> kill:
+</span></span><span style="display:flex;"><span>        shutil<span style="color:#f92672">.</span>rmtree(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># realiza operacao</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># e por algum algum descuido...</span>
+</span></span><span style="display:flex;"><span>funcao(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># o que acontece?</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># possivelmente você acaba de ser demitido</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Agora vamos corrigir isto utilizando python3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># lembre-se que daqui pra baixo, a sintáxe não é compativel com python 2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">funcao</span>(arg1, arg2, <span style="color:#f92672">*</span>, kill<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> kill:
+</span></span><span style="display:flex;"><span>        shutil<span style="color:#f92672">.</span>rmtree(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># realiza operacao</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Basta colocar um * e pronto</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># agora se cometer um erro o python 3 te alerta</span>
+</span></span><span style="display:flex;"><span>funcao(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TypeError: funcao() takes 2 positional arguments but 3 were given</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mas o que é esse asterico, é igual o args?</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Na verdade é similar, porém o interpretador sabe que se não foi definido o</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#34;args&#34; um erro deve ser lançado</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Mas e se eu definir o args?</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">funcao</span>(arg1, arg2, <span style="color:#f92672">*</span>args, kill<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> kill:
+</span></span><span style="display:flex;"><span>        shutil<span style="color:#f92672">.</span>rmtree(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># realiza operacao</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># acontece que agora, todo parâmetro passado além dos dois obrigatórios(positionals), será armazenado em args, e kill só sera atribuido quando</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># utilizado palavra chave</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Ex: funcao(0, 0, kill=True)</span>
+</span></span></code></pre></div><h2 id="considerações-finais">Considerações finais</h2>
 <p>Não pense que exemplo é exagerado, pode acontecer a qualquer hora com você.
 Não brinque mais de roleta russa com seus argumentos.</p>
 <p><img src="/images/programming-motherfucker.jpg" alt="programming-motherfucker"></p>
 <p>Então é isso pessoal!</p>
 <p>Até a próxima!</p>
-<p>{}&lsquo;s</p>
+<p>{}&rsquo;s</p>
 
   </div>
 
@@ -382,7 +375,7 @@ Não brinque mais de roleta russa com seus argumentos.</p>
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -407,7 +400,7 @@ Não brinque mais de roleta russa com seus argumentos.</p>
   <footer>
   <div>
     <p>
-      &copy; Cássio Botaro 2022
+      &copy; Cássio Botaro 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 
@@ -428,16 +421,5 @@ Não brinque mais de roleta russa com seus argumentos.</p>
   
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-59964005-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 </body>
 </html>
