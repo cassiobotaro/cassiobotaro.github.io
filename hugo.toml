@@ -1,0 +1,45 @@
+baseURL = "http://cassiobotaro.dev/"
+languageCode = "pt-br"
+defaultContentLanguage = "pt-br"
+title = "cassiobotaro"
+theme = "hugo-coder"
+pagination.pagerSize = 5
+canonifyURLs = true
+enableEmoji = true
+enableGitInfo = true
+
+[taxonomies]
+category = "categories"
+series = "series"
+tag = "tags"
+
+[params]
+author = "Cássio Botaro"
+colorScheme = "dark"
+avatarURL = "images/profile.png"
+description = "Cássio Botaro's personal site and blog"
+keywords = "python,go,developer,software,engineering"
+info = "Software Developer Engineer"
+
+[[params.social]]
+name = "Github"
+icon = "fa-brands fa-github fa-2x"
+weight = 1
+url = "https://github.com/cassiobotaro/"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "fa-brands fa-linkedin fa-2x"
+weight = 2
+url = "https://www.linkedin.com/in/cassiobotaro/"
+
+[[params.social]]
+name = "RSS"
+icon = "fa fa-rss-square fa-2x"
+weight = 3
+url = "/posts/index.xml"
+
+[[menu.main]]
+name = "Blog"
+weight = 2
+url = "posts/"
