@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Iniciantes on cassiobotaro</title>
-    <link>http://localhost:1313/tags/iniciantes/</link>
+    <link>https://cassiobotaro.dev/tags/iniciantes/</link>
     <description>Recent content in Iniciantes on cassiobotaro</description>
     <generator>Hugo</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sun, 01 Mar 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/iniciantes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Sep 2024 17:03:05 -0300</lastBuildDate>
+    <atom:link href="https://cassiobotaro.dev/tags/iniciantes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello Python!</title>
-      <link>http://localhost:1313/posts/hello-python/</link>
+      <link>https://cassiobotaro.dev/posts/hello-python/</link>
       <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hello-python/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/logopython2.png&#34; alt=&#34;logo-python&#34; title=&#34;Logo Python&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;faq&#34;&gt;&#xA;  FAQ&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#faq&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link para o cabeçalho&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link para o cabeçalho&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Como algumas perguntas são recorrentes nas listas de discussões, nos grupos do &lt;em&gt;Facebook&lt;/em&gt; e outros meios de comunicação e nossa comunidade gosta de receber bem os iniciantes, listei aqui aquelas dúvidas que são constantes.&lt;/p&gt;</description>
+      <guid>https://cassiobotaro.dev/posts/hello-python/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://cassiobotaro.dev/images/logopython2.png&#34; alt=&#34;logo-python&#34; title=&#34;Logo Python&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;faq&#34;&gt;&#xA;  FAQ&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#faq&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link para o cabeçalho&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link para o cabeçalho&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Como algumas perguntas são recorrentes nas listas de discussões, nos grupos do &lt;em&gt;Facebook&lt;/em&gt; e outros meios de comunicação e nossa comunidade gosta de receber bem os iniciantes, listei aqui aquelas dúvidas que são constantes.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
