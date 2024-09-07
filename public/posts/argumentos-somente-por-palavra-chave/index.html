@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>
+  Argumentos somente por palavra chave · cassiobotaro
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Cássio Botaro">
+<meta name="description" content="Como um novo recurso do Python 3 te ajuda a não brincar de roleta russa com seus parâmetros.">
+<meta name="keywords" content="python,go,developer,software,engineering">
+<meta name="fediverse:creator" content="" />
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Argumentos somente por palavra chave">
+  <meta name="twitter:description" content="Como um novo recurso do Python 3 te ajuda a não brincar de roleta russa com seus parâmetros.">
+
+<meta property="og:url" content="https://cassiobotaro.dev/posts/argumentos-somente-por-palavra-chave/">
+  <meta property="og:site_name" content="cassiobotaro">
+  <meta property="og:title" content="Argumentos somente por palavra chave">
+  <meta property="og:description" content="Como um novo recurso do Python 3 te ajuda a não brincar de roleta russa com seus parâmetros.">
+  <meta property="og:locale" content="pt_br">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2015-03-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-09-07T17:21:53-03:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Python3">
+
+
+
+
+<link rel="canonical" href="https://cassiobotaro.dev/posts/argumentos-somente-por-palavra-chave/">
+
+
+<link rel="preload" href="https://cassiobotaro.dev/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://cassiobotaro.dev/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://cassiobotaro.dev/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="https://cassiobotaro.dev/css/coder.min.07092c1350ffd254998dc43a44ae96e617d14af4df4602626878df89189c5e1a.css" integrity="sha256-BwksE1D/0lSZjcQ6RK6W5hfRSvTfRgJiaHjfiRicXho=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="https://cassiobotaro.dev/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="https://cassiobotaro.dev/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="https://cassiobotaro.dev/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://cassiobotaro.dev/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="https://cassiobotaro.dev/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://cassiobotaro.dev/images/apple-touch-icon.png">
+
+<link rel="manifest" href="https://cassiobotaro.dev/site.webmanifest">
+<link rel="mask-icon" href="https://cassiobotaro.dev/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://cassiobotaro.dev/">
+      cassiobotaro
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="https://cassiobotaro.dev/posts/">Blog</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://cassiobotaro.dev/posts/argumentos-somente-por-palavra-chave/">
+              Argumentos somente por palavra chave
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2015-03-28T00:00:00Z">
+                março 28, 2015
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              2 minutos de leitura
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="https://cassiobotaro.dev/categories/python3/">Python3</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://cassiobotaro.dev/tags/python/">Python</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://cassiobotaro.dev/tags/python3/">Python3</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h2 id="por-que-falar-sobre-isto">
+  Por que falar sobre isto?
+  <a class="heading-link" href="#por-que-falar-sobre-isto">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link para o cabeçalho"></i>
+    <span class="sr-only">Link para o cabeçalho</span>
+  </a>
+</h2>
+<p>Python 3 ainda possui uma névoa sobre ele, e o movimento de resistência ainda é grande. Mas isto não quer dizer que desbravadores já não o estejam explorando. Já escrevi um <a href="http://cassiobotaro.github.io/porque-python-3.html"  class="external-link" target="_blank" rel="noopener">post</a> sobre a nova versão da linguagem, porém ainda tem vários recursos que podem ser demonstrados. Um deles é a capacidade de aceitar somente palavras chaves como argumento. Eu até coloquei isto nos slides da Python Brasil 10, porém senti que ao apresentar faltou uma boa explicação.</p>
+<h2 id="talk-is-cheap-show-me-the-code">
+  Talk is cheap. Show me the code!
+  <a class="heading-link" href="#talk-is-cheap-show-me-the-code">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link para o cabeçalho"></i>
+    <span class="sr-only">Link para o cabeçalho</span>
+  </a>
+</h2>
+<p>Tentarei dar um exemplo utilizando código, explicarei utilizando os comentários</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># vamos iniciar com a seguinte função</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">funcao</span>(arg1, arg2, kill<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> kill:
+</span></span><span style="display:flex;"><span>        shutil<span style="color:#f92672">.</span>rmtree(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># realiza operacao</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># e por algum algum descuido...</span>
+</span></span><span style="display:flex;"><span>funcao(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># o que acontece?</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># possivelmente você acaba de ser demitido</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Agora vamos corrigir isto utilizando python3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># lembre-se que daqui pra baixo, a sintáxe não é compativel com python 2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">funcao</span>(arg1, arg2, <span style="color:#f92672">*</span>, kill<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> kill:
+</span></span><span style="display:flex;"><span>        shutil<span style="color:#f92672">.</span>rmtree(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># realiza operacao</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Basta colocar um * e pronto</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># agora se cometer um erro o python 3 te alerta</span>
+</span></span><span style="display:flex;"><span>funcao(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TypeError: funcao() takes 2 positional arguments but 3 were given</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mas o que é esse asterico, é igual o args?</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Na verdade é similar, porém o interpretador sabe que se não foi definido o</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#34;args&#34; um erro deve ser lançado</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Mas e se eu definir o args?</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">funcao</span>(arg1, arg2, <span style="color:#f92672">*</span>args, kill<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> kill:
+</span></span><span style="display:flex;"><span>        shutil<span style="color:#f92672">.</span>rmtree(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># realiza operacao</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># acontece que agora, todo parâmetro passado além dos dois obrigatórios(positionals), será armazenado em args, e kill só sera atribuido quando</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># utilizado palavra chave</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Ex: funcao(0, 0, kill=True)</span>
+</span></span></code></pre></div><h2 id="considerações-finais">
+  Considerações finais
+  <a class="heading-link" href="#considera%c3%a7%c3%b5es-finais">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link para o cabeçalho"></i>
+    <span class="sr-only">Link para o cabeçalho</span>
+  </a>
+</h2>
+<p>Não pense que exemplo é exagerado, pode acontecer a qualquer hora com você.
+Não brinque mais de roleta russa com seus argumentos.</p>
+<p><img src="https://cassiobotaro.dev/images/programming-motherfucker.jpg" alt="programming-motherfucker"></p>
+<p>Então é isso pessoal!</p>
+<p>Até a próxima!</p>
+<p>{}&rsquo;s</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2024
+     Cássio Botaro 
+    ·
+    
+    Promovido por <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="https://cassiobotaro.dev/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

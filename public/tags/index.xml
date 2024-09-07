@@ -6,26 +6,33 @@
     <description>Recent content in Tags on cassiobotaro</description>
     <generator>Hugo</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 07 Sep 2024 17:03:05 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 07 Sep 2024 17:27:47 -0300</lastBuildDate>
     <atom:link href="https://cassiobotaro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Iniciantes</title>
-      <link>https://cassiobotaro.dev/tags/iniciantes/</link>
-      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
-      <guid>https://cassiobotaro.dev/tags/iniciantes/</guid>
+      <title>Go</title>
+      <link>https://cassiobotaro.dev/tags/go/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://cassiobotaro.dev/tags/go/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
       <link>https://cassiobotaro.dev/tags/python/</link>
-      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
       <guid>https://cassiobotaro.dev/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Iniciantes</title>
+      <link>https://cassiobotaro.dev/tags/iniciantes/</link>
+      <pubDate>Sat, 13 Aug 2016 00:00:00 +0000</pubDate>
+      <guid>https://cassiobotaro.dev/tags/iniciantes/</guid>
       <description></description>
     </item>
     <item>
       <title>Python3</title>
       <link>https://cassiobotaro.dev/tags/python3/</link>
-      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 13 Aug 2016 00:00:00 +0000</pubDate>
       <guid>https://cassiobotaro.dev/tags/python3/</guid>
       <description></description>
     </item>

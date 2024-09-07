@@ -6,8 +6,36 @@
     <description>Recent content on cassiobotaro</description>
     <generator>Hugo</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 07 Sep 2024 17:03:05 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 07 Sep 2024 17:27:47 -0300</lastBuildDate>
     <atom:link href="https://cassiobotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amor Programador</title>
+      <link>https://cassiobotaro.dev/posts/amor-programador/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://cassiobotaro.dev/posts/amor-programador/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://cassiobotaro.dev/images/coracao.jpg&#34; alt=&#34;mao-coracao&#34; title=&#34;Mãos em formato de coração&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Expressar sentimentos pode ser por muitas vezes muito difícil, e &lt;em&gt;normalmente&lt;/em&gt; pessoas que programam tem esta dificuldade.&lt;/p&gt;&#xA;&lt;p&gt;Em uma tarde qualquer, à procura de uma diversão com programação me perguntei &amp;ldquo;Como desenhar um coração com python?&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;Como pessoa programadora experiente, fui ao google e digitei esta pergunta e para minha surpresa o primeiro resultado não me levava ao stack overflow e sim ao &lt;a href=&#34;https://www.quora.com/How-can-I-draw-a-heart-using-Python&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;quora&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Armadilha de nomes em variáveis de funções</title>
+      <link>https://cassiobotaro.dev/posts/ardilha-de-nomes-em-variaveis-de-funcoes/</link>
+      <pubDate>Sat, 13 Aug 2016 00:00:00 +0000</pubDate>
+      <guid>https://cassiobotaro.dev/posts/ardilha-de-nomes-em-variaveis-de-funcoes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://cassiobotaro.dev/images/fragile.jpg&#34; alt=&#34;fragile&#34; title=&#34;Importação Frágil&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Vamos analisar os seguintes cenários, eu tenho uma função onde ocorre uma importação dentro de uma função.&lt;/p&gt;&#xA;&lt;p&gt;Porém temos duas coisas ocorrendo, uma é que a condicional é falsa, logo o math não vai ser importado.&lt;/p&gt;&#xA;&lt;p&gt;Mas como já havia sido previamente importado no início do arquivo, o que esperar?&lt;/p&gt;&#xA;&lt;p&gt;No segundo caso, temos a declaração da variável de forma global, novamente temos uma condicional onde a variavel é redefinida de forma local.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Conceitos de linguagem de programação - Parte 1</title>
+      <link>https://cassiobotaro.dev/posts/conceitos-linguagem-parte-1/</link>
+      <pubDate>Sun, 22 Nov 2015 00:00:00 +0000</pubDate>
+      <guid>https://cassiobotaro.dev/posts/conceitos-linguagem-parte-1/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://cassiobotaro.dev/images/logopython2.png&#34; alt=&#34;logo-python&#34; title=&#34;Logo Python&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introdução&#34;&gt;&#xA;  Introdução&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introdu%c3%a7%c3%a3o&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link para o cabeçalho&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link para o cabeçalho&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Este post está relacionado a uma palestra ministrada no XVI encontro da comunidade mineira de Python, e aqui foi divida em partes para evitar que fique massante e cansativa.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Argumentos somente por palavra chave</title>
+      <link>https://cassiobotaro.dev/posts/argumentos-somente-por-palavra-chave/</link>
+      <pubDate>Sat, 28 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://cassiobotaro.dev/posts/argumentos-somente-por-palavra-chave/</guid>
+      <description>&lt;h2 id=&#34;por-que-falar-sobre-isto&#34;&gt;&#xA;  Por que falar sobre isto?&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#por-que-falar-sobre-isto&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link para o cabeçalho&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link para o cabeçalho&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Python 3 ainda possui uma névoa sobre ele, e o movimento de resistência ainda é grande. Mas isto não quer dizer que desbravadores já não o estejam explorando. Já escrevi um &lt;a href=&#34;http://cassiobotaro.github.io/porque-python-3.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;post&lt;/a&gt; sobre a nova versão da linguagem, porém ainda tem vários recursos que podem ser demonstrados. Um deles é a capacidade de aceitar somente palavras chaves como argumento. Eu até coloquei isto nos slides da Python Brasil 10, porém senti que ao apresentar faltou uma boa explicação.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hello Python!</title>
       <link>https://cassiobotaro.dev/posts/hello-python/</link>
