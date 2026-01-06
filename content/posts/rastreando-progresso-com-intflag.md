@@ -53,7 +53,9 @@ class ProductTrack(models.Model):
 
     def flag_as(self, flag):
         self.flag |= flag
-        self.save()
+
+    def has_flag(self, flag):
+        return bool(self.flag & flag)
 
     def is_complete(self):
         return self.flag == ProductInfo.ALL_INFO
@@ -89,10 +91,10 @@ track.flag_as(ProductInfo.HAS_DETAIL)
 # Se flag era 1 (0001), agora é 3 (0011)
 ```
 
-Para verificar se um flag específico está ativo, você pode usar o operador `&` (AND bit a bit):
+Para verificar se um flag específico está ativo, você pode usar o método `has_flag`:
 
 ```python
-if track.flag & ProductInfo.HAS_SPECIFICATION:
+if track.has_flag(ProductInfo.HAS_SPECIFICATION):
     print("Possui especificação!")
 ```
 
