@@ -7,6 +7,8 @@ tags = ["python", "dicas", "enum", "intflag"]
 categories = ["python"]
 +++
 
+![Tracking](/images/tracking.png)
+
 ## O Problema
 
 Imagine que você está integrando um produto novo no seu sistema. Este produto deve possuir detalhes e especificações completos antes de ser publicado. Porém, essas informações são adicionadas em passos separados e não necessariamente ordenados. Como verificar que todos os passos foram completados?
