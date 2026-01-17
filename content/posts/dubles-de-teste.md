@@ -1,17 +1,26 @@
 +++
-title = "Dublês de testes"
+title = "Dublês de teste"
 date = "2020-09-19"
 description = "Escrevendo dublês para seus testes."
-tags = ["python", "tests", "dubles"]
+tags = ["python", "tests", "doubles"]
 categories = ["tests"]
-slug = "dubles-de-testes"
+slug = "dubles-de-teste"
 +++
 
 ![dublê](/images/dubles.jpg "dublês")
 
+## Test Double - O termo genérico
+
+O termo **Test Double** (dublê de teste) foi cunhado por Gerard Meszaros em seu livro "xUnit Test Patterns", como analogia aos dublês de cinema (stunt doubles). Um Test Double é qualquer objeto que substitui um objeto de produção para propósitos de teste.
+
+Assim como no cinema diferentes dublês são usados para diferentes cenas (dublês de ação, de corpo, etc.), nos testes temos diferentes tipos de dublês, cada um com seu propósito específico.
+
 Normalmente quando falamos de _mocks_, estamos nos referindo a um componente simulado de _software_. Porém existem vários tipos de simulações que podem ser feitas que podem ajudar a escrever os testes.
 
-> ⚠️ Os códigos deste post utilizam `pytest-mock` e `requests` que são libs de terceiros. Certifique-se de tê-las instaladas caso decida rodar os códigos.
+> ⚠️ Os códigos deste post utilizam `pytest-mock` e `requests` que são libs de terceiros. Instale com:
+> ```bash
+> pip install pytest-mock requests
+> ```
 
 Como base para nossos testes, vamos definir a seguinte função que realiza uma requisição web e retorna o conteúdo de sua resposta. Porém caso algum erro ocorra, deve retornar um conteúdo vazio e imprimir um alerta com o erro ocorrido.
 
@@ -41,6 +50,28 @@ Vamos conceituar cada um dos tipos de dublês de teste e como poderiam ser utili
 
 São objetos "dummy", ou seja falsos, fictícios, que serão utilizados apenas para preencher a lista de parâmetros obrigatórios, mas não serão utilizados.
 
+Para ilustrar, vamos imaginar uma versão da nossa função que recebe um logger como parâmetro, mas em certos fluxos ele não é usado:
+
+```python
+class TestFetchPageContentDummy:
+    def test_dummy_parameter_example(self, mocker):
+        """Exemplo onde passamos um objeto que nunca é usado"""
+        # Criamos um objeto dummy - será passado mas nunca usado
+        dummy_logger = mocker.MagicMock()
+        
+        # Substituímos a requisição real
+        mocked_get = mocker.patch.object(requests, "get", autospec=True)
+        mocked_get.return_value.status_code = 200
+        mocked_get.return_value.text = "content"
+        
+        # A função não usa o logger, então é um dummy
+        # Ele só está ali para satisfazer a assinatura
+        assert fetch_page_content("url") == "content"
+        
+        # Confirmamos que o dummy nunca foi chamado
+        dummy_logger.assert_not_called()
+```
+
 ## Fake
 
 > Fake objects actually have working implementations, but usually take some shortcut which makes them not suitable for production (an InMemoryTestDatabase is a good example).
@@ -52,6 +83,7 @@ Para utilização da técnica de objetos _fakes_, vamos primeiro fazer uma inver
 ```python
 import requests
 from logging import warning
+
 
 def requests_fetcher(url, timeout=1):
     response = requests.get(url, timeout=timeout)
@@ -80,7 +112,7 @@ class TestFetchPageContentFake:
         def fake_fetcher(url, timeout=1):
             # definimos uma função falsa que substituirá a requisição real
 
-            # definimos objeto de resposta falso com o coonteúdo definido
+            # definimos objeto de resposta falso com o conteúdo definido
             # como conteúdo esperado
             class FakeResponse:
                 def __init__(self):
@@ -89,7 +121,7 @@ class TestFetchPageContentFake:
             return FakeResponse()
 
         # por fim fazemos a afirmação do nosso teste
-        # verificamos se o resultado da função é igual ao contepudo esperado
+        # verificamos se o resultado da função é igual ao conteúdo esperado
         assert (
             fetch_page_content(fake_fetcher, "dummy url") == expected_content
         )
@@ -171,16 +203,80 @@ class TestFetchPageContentStub:
         assert fetch_page_content("dummy url") == expected_content
 ```
 
+## Spies
+
+> Spies are stubs that also record some information based on how they were called. One form of this might be an email service that records how many messages it was sent.
+
+São stubs mas "espionam" como são invocados e mantém isto como informação a ser utilizada nas asserções. A diferença principal é que Spies **gravam** informações sobre as chamadas para verificação posterior.
+
+```python
+from unittest.mock import MagicMock
+
+class TestFetchPageContentSpy:
+    def test_when_request_is_ok(self, mocker):
+        """Spy = Stub + gravação de informações sobre chamadas"""
+        expected_content = "page_content"
+
+        # Criamos um spy - ele vai gravar as chamadas
+        mocked_get = mocker.patch.object(requests, "get", autospec=True)
+        
+        # Também configuramos o retorno (comportamento de Stub)
+        mocked_get.return_value.status_code = 200
+        mocked_get.return_value.text = expected_content
+        
+        result = fetch_page_content("dummy url")
+        
+        # Verificamos o estado (como Stub)
+        assert result == expected_content
+        # E também verificamos como foi chamado (diferencial do Spy)
+        assert mocked_get.call_count == 1
+
+    def test_when_request_fail(self, mocker):
+        """Spy também registra chamadas em casos de erro"""
+        expected_content = ""
+
+        mocked_get = mocker.patch.object(requests, "get", autospec=True)
+        mocked_get.return_value.raise_for_status.side_effect = (
+            requests.HTTPError()
+        )
+
+        assert fetch_page_content("dummy url") == expected_content
+        # O spy registrou que houve uma tentativa de chamada
+        assert mocked_get.called
+
+    def test_when_timeout_is_not_passed(self, mocker):
+        """Spy verifica os parâmetros usados nas chamadas"""
+        dummy_url = "https://example.com"
+
+        mocked_get = mocker.patch.object(requests, "get", autospec=True)
+        mocked_get.return_value.status_code = 200
+        mocked_get.return_value.text = "content"
+
+        fetch_page_content(dummy_url)
+
+        # A asserção verifica como a função foi chamada
+        # Spies "espionam" tanto o estado quanto o comportamento
+        mocked_get.assert_called_once_with(dummy_url, timeout=1)
+```
+
+## Diferença entre Spy e Mock
+
+Antes de falarmos sobre Mocks, é importante entender a diferença conceitual:
+
+**Spy**: Registra informações sobre as chamadas para verificação **POSTERIOR**. É como ter uma câmera gravando - você analisa depois do fato acontecer.
+
+**Mock**: Define expectativas **PRÉVIAS** e pode falhar se não forem atendidas. É como ter um roteiro - o comportamento esperado já está definido antes da execução, e qualquer desvio é detectado.
+
 ## Mocks
 
 > Mocks are pre-programmed with expectations which form a specification of the calls they are expected to receive. They can throw an exception if they receive a call they don't expect and are checked during verification to ensure they got all the calls they were expecting.
 
-A preocupação de mocks é verificar se o comportamento do dublê foi o esperado, fazendo asserções se o _mock_ foi invocado, se os parâmetros na invocação foram corretos e o número de vezes em que foi invocado. Não há intenção de simular o retorno de valores, mas somente verificar o comportamento.
+A preocupação de mocks é verificar se o comportamento do dublê foi o esperado, fazendo asserções se o _mock_ foi invocado, se os parâmetros na invocação foram corretos e o número de vezes em que foi invocado. Mocks definem expectativas antes da execução.
 
 ```python
 class TestFetchPageContentMock:
     def test_when_timeout_is_not_passed(self, mocker):
-        '''when invoked, default timeout should be considered'''
+        """when invoked, default timeout should be considered"""
         # preparamos nosso teste modificando o método get por um mock
         dummy_url = "dummy url"
         mocked_get = mocker.patch.object(requests, "get", autospec=True)
@@ -207,71 +303,30 @@ class TestFetchPageContentMock:
         mocked_get.return_value.raise_for_status.assert_called_once()
 ```
 
-## Spies
+## Resumo Comparativo
 
-> Spies are stubs that also record some information based on how they were called. One form of this might be an email service that records how many messages it was sent.
+Para facilitar o entendimento, aqui está uma tabela comparativa dos tipos de dublês:
 
-São stubs mas "espionam" como são invocados e mantém isto como informação a ser utilizada nas asserções.
+| Tipo | Quando usar | Verifica | Exemplo de uso |
+|------|-------------|----------|----------------|
+| **Dummy** | Parâmetros obrigatórios não usados | Nada | Logger que não será chamado |
+| **Fake** | Implementação simplificada funcional | Estado | Banco de dados em memória |
+| **Stub** | Respostas programadas para chamadas | Estado | API que retorna dados fixos |
+| **Spy** | Stub + registro de chamadas | Estado + Comportamento | Verificar se email foi enviado |
+| **Mock** | Expectativas rigorosas de comportamento | Comportamento | Validar ordem de chamadas |
 
-```python
-class TestFetchPageContentSpy:
-    def test_when_request_is_ok(self, mocker):
-        # preparamos os testes definindo os estados esperados
-        expected_content = "page_content"
-
-        # definimos um espião para substituir a função get
-        mocked_get = mocker.patch(
-            "requests.get", MagicMock(wraps=requests.get)
-        )
-        # assim como um stub, definimos os valores a serem retornados
-        mocked_get.return_value.status_code = 200
-        mocked_get.return_value.text = expected_content
-        # verificamos se o valor retornado é o mesmo do esperado
-        assert fetch_page_content("dummy url") == expected_content
-
-    def test_when_request_fail(self, mocker):
-        # Como estamos testando estados, até aqui temos nosso substituto
-        # como um stub
-        expected_content = ""
-
-        mocked_get = mocker.patch(
-            "requests.get", MagicMock(wraps=requests.get)
-        )
-        mocked_get.return_value.raise_for_status.side_effect = (
-            requests.HTTPError()
-        )
-
-        assert fetch_page_content("dummy url") == expected_content
-
-    def test_when_timeout_is_not_passed(self, mocker):
-        """when invoked, default timeout should be considered"""
-        # a diferença está aqui, pois podemos utilizar nosso espião
-        # para verificar como ele foi invocado
-        # e quais parâmetros foram utilizados
-        dummy_url = "https://example.com"
-
-        mocked_get = mocker.patch(
-            "requests.get", MagicMock(wraps=requests.get)
-        )
-        # se não passarmos um retorno,
-        # o espião se comportará como a função original
-        mocked_get.return_value.status_code = 200
-
-        fetch_page_content(dummy_url)
-
-        # a asserção verifica como a função se comporta
-        # ou seja espiões são stubs mas "espionam" o comportamento
-        mocked_get.assert_called_once_with(dummy_url, timeout=1)
-```
+**Regra prática**: 
+- Use **Stub/Fake** para testar **ESTADOS** (o que é retornado)
+- Use **Mock/Spy** para testar **COMPORTAMENTOS** (como foi chamado)
 
 ## Conclusão
 
-Temos dois tipos de verificações quando utilizamos dublês. Verificações de comportamento como em mocks e verificações de estado como em stubs. Qual o tipo de dublê que será utilizado, vai depender do que você está testando.
+Temos dois tipos de verificações quando utilizamos dublês: **verificações de comportamento** (como em mocks e spies) e **verificações de estado** (como em stubs e fakes). Qual o tipo de dublê que será utilizado vai depender do que você está testando.
 
-Os códigos aqui apresentados são apenas exemplos de como implementar os padrões de dublês, podendo ser implementados de forma diferente.
+Os códigos aqui apresentados são apenas exemplos de como implementar os padrões de dublês, podendo ser implementados de forma diferente dependendo do framework e linguagem utilizados.
 
 Então é isso pessoal!
 
 Até a próxima!
 
-{}'s
+[]'s
