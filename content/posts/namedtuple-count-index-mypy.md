@@ -128,22 +128,6 @@ class Estatistica(NamedTuple):
 
 Esta abordagem não é recomendada porque você está ocultando um problema real e pode perder outros avisos importantes.
 
-## Outros Métodos Problemáticos
-
-Além de `count` e `index`, cuidado com outros métodos de tuple que podem causar conflitos:
-
-```python
-# Métodos de tuple que você deve evitar como nomes de campos:
-# - count
-# - index
-
-# Métodos herdados de object que também podem causar problemas:
-# - __class__
-# - __delattr__
-# - __getattribute__
-# - __setattr__
-```
-
 ## Considerações Finais
 
 Este é um exemplo clássico de como a análise estática de tipos pode revelar problemas sutis que funcionam em runtime mas podem causar confusão e bugs difíceis de detectar. Sempre execute o mypy ou outro type checker no seu código para capturar esses problemas cedo!
