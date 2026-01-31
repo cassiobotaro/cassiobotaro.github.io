@@ -34,6 +34,12 @@ weight = 2
 url = "https://www.linkedin.com/in/cassiobotaro/"
 
 [[params.social]]
+name = "YouTube"
+icon = "fa-brands fa-youtube fa-2x"
+weight = 2
+url = "https://www.youtube.com/cassiobotaro"
+
+[[params.social]]
 name = "RSS"
 icon = "fa fa-rss-square fa-2x"
 weight = 3

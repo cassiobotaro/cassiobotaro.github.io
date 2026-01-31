@@ -9,7 +9,7 @@ slug = "dsl-rolagem-dados"
 
 ![Pessoas jogando RPG](/images/rpg.png "Pessoas jogando RPG")
 
-## O Resultado Final
+## Vamos rolar os dados?
 
 Imagine poder escrever rolagens de dados de RPG de forma natural como:
 
