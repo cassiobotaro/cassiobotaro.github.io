@@ -1,6 +1,6 @@
 +++
 title = "DSL para Rolagem de Dados com Sobrecarga de Operadores"
-date = "2026-01-31"
+date = "2026-02-02"
 description = "Criando uma Domain Specific Language amigável para rolagem de dados de RPG usando sobrecarga de operadores em Python."
 tags = ["python", "dsl", "rpg", "oop"]
 categories = ["rivendell"]
