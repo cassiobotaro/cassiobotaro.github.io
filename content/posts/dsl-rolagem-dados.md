@@ -1,6 +1,6 @@
 +++
-title = "DSL para Rolagem de Dados com Sobrecarga de Operadores"
-date = "2026-02-02"
+title = "Quando Python Encontra RPG: Rolando Dados com Estilo"
+date = "2026-02-01"
 description = "Criando uma Domain Specific Language amigável para rolagem de dados de RPG usando sobrecarga de operadores em Python."
 tags = ["python", "dsl", "rpg", "oop"]
 categories = ["rivendell"]
@@ -27,7 +27,7 @@ Isso é possível em Python através da sobrecarga de operadores! Vamos criar um
 
 ## Um Pouco de Contexto
 
-Na minha adolescência, fui mestre de RPG e me divertia muito jogando Vampiro: A Máscara e Tagmar. Recentemente, fazendo um curso online de Smalltalk, me deparei com um exemplo similar de DSL para rolagem de dados. Achei a ideia brilhante e decidi implementar em Python! Foi muito divertido explorar como a sobrecarga de operadores pode criar uma interface tão natural e expressiva.
+Na minha adolescência, fui mestre de RPG e me divertia muito jogando Vampiro: A Máscara e Tagmar. Recentemente, ao fazer um curso online de Smalltalk, deparei-me com um exemplo similar de DSL para rolagem de dados. Achei a ideia brilhante e decidi implementar em Python! Foi muito divertido explorar como a sobrecarga de operadores pode criar uma interface tão natural e expressiva.
 
 ## A Implementação
 
@@ -113,11 +113,13 @@ class DieHandle:
     __rmul__ = __mul__
 ```
 
-A sobrecarga de operadores acontece através dos métodos especiais:
+A sobrecarga ocorre através dos métodos especiais:
 
 - `__add__`: Permite usar o operador `+` para combinar grupos de dados
 - `__mul__`: Permite usar `*` para multiplicar dados (ex: `3 * D6` cria três dados de 6 faces)
 - `__rmul__`: Permite a multiplicação reversa, fazendo `3 * D6` funcionar (não apenas `D6 * 3`)
+
+Note que retornamos `NotImplemented` quando o operando não é do tipo esperado, permitindo que Python tente outros métodos ou lance um erro apropriado.
 
 ### Criando Atalhos Convenientes
 
