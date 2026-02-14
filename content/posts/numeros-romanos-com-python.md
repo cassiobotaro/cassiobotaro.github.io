@@ -24,21 +24,21 @@ print(roman.MCMXC)  # 1990
 
 Simplesmente elegante, não? Sem funções, sem conversões explícitas, apenas... números romanos sendo números romanos. É como se a linguagem naturalmente entendesse esse sistema milenar.
 
-## DSLs Internas e Recepção Dinâmica
+## DSLs Internas e a Mágica do `__getattr__`
 
-Martin Fowler, em seu livro "Domain-Specific Languages", classifica DSLs em duas categorias: **externas** (com sua própria sintaxe e analisador sintático) e **internas** (construídas usando a sintaxe da linguagem hospedeira). O que estamos criando aqui é uma **DSL interna**.
+DSL (Domain-Specific Language) é basicamente uma linguagem criada para um propósito específico. Existem as **externas** (com sua própria sintaxe) e as **internas** (que aproveitam a sintaxe da linguagem que você já usa). O que vamos criar aqui é uma **DSL interna**.
 
-Se você já programou em Ruby, conhece o `method_missing` - um método especial que é chamado quando tentamos invocar um método que não existe. Fowler chama isso de padrão **Recepção Dinâmica** (Dynamic Reception): capturar chamadas indefinidas e interpretá-las dinamicamente. É uma ferramenta poderosa para criar DSLs dinâmicas e expressivas.
+Se você já programou em Ruby, deve conhecer o `method_missing` - aquele método especial que é chamado quando tentamos usar algo que não existe. É tipo um "curinga" que captura chamadas indefinidas e faz algo com elas.
 
-No livro clássico "Seven Languages in Seven Weeks" de Bruce Tate, há um exemplo fascinante de DSL para números romanos em Ruby usando exatamente essa técnica. O código responde dinamicamente a qualquer "método" que pareça um número romano válido.
+No livro "Seven Languages in Seven Weeks" de Bruce Tate, tem um exemplo bem legal de DSL para números romanos em Ruby usando essa técnica. O código responde dinamicamente quando você tenta acessar qualquer nome que pareça um número romano.
 
-Python tem algo similar: `__getattr__` - e o melhor, funciona não apenas em classes, mas também em **módulos** (a partir do Python 3.7)!
+Python tem algo parecido: `__getattr__` - e o melhor, desde o Python 3.7, funciona não só em classes, mas também em **módulos**!
 
-## A Implementação: Extensão Literal
+## A Implementação
 
-Fowler discute o padrão **Extensão Literal** (Literal Extension) - aproveitar os recursos da linguagem hospedeira para estender seu comportamento de forma natural. É exatamente o que fazemos aqui: usamos a capacidade do Python de interceptar acessos a atributos.
+A ideia é simples: vamos aproveitar a capacidade do Python de interceptar acessos a atributos que não existem.
 
-O segredo está em definir `__getattr__` no nível do módulo. Quando tentamos acessar um atributo que não existe (como `roman.XIV`), o Python chama essa função com o nome do atributo. Aqui está toda a magia:
+O truque está em definir `__getattr__` no nível do módulo. Quando você tenta acessar algo que não existe (tipo `roman.XIV`), o Python automaticamente chama essa função passando o nome do atributo. É aqui que a mágica acontece:
 
 ```python
 # roman.py
@@ -62,19 +62,19 @@ Apenas 13 linhas! A lógica é engenhosa:
 1. **Normalização**: Substitui formas subtrativas (IV, IX, XL, etc.) por formas aditivas (IIII, VIIII, XXXX, etc.)
 2. **Soma elegante**: Conta cada símbolo romano e multiplica pelo seu valor, somando tudo
 
-## Por Que Isso É Valioso?
+## Por Que Isso É Legal?
 
-Fowler enfatiza que uma boa DSL deve reduzir o "ruído sintático" e aproximar o código da **linguagem do domínio**. Compare:
+Uma boa DSL deixa o código mais limpo e próximo do que você realmente quer dizer. Olha a diferença:
 
 ```python
-# Abordagem tradicional (mais ruído):
+# Jeito tradicional:
 roman_to_int("MMXXVI")
 
-# DSL interna (linguagem do domínio):
+# Com DSL:
 roman.MMXXVI
 ```
 
-Percebe a diferença? O segundo elimina a cerimônia da chamada de função e das aspas. É mais natural, mais próximo de como pensamos. Fowler chama isso de **legibilidade**: tornar o código compreensível para especialistas do domínio, não apenas programadores.
+Viu? O segundo jeito elimina a função e as aspas. Fica mais natural, mais parecido com o que você pensou. O código fica mais fácil de ler e entender.
 
 ## Mais Exemplos
 
@@ -92,27 +92,25 @@ capitulo = roman.VIII  # 8
 seculo = roman.XXI  # 21
 ```
 
-## Compensações e Boas Práticas
+## Os Prós e Contras
 
-Fowler sempre alerta sobre as **compensações** das DSLs. A Recepção Dinâmica é poderosa, mas tem custos:
+Essa técnica é legal, mas tem seus limites:
 
-- **Depuração**: Erros de digitação não são capturados em tempo de desenvolvimento
-- **Ferramentas de desenvolvimento**: IDEs não conseguem fazer autocompletar ou análise estática
-- **Desempenho**: Há sobrecarga na interceptação dinâmica
+- **Depuração**: Se você errar a digitação, não vai pegar o erro no momento do desenvolvimento
+- **Ferramentas**: IDEs não vão conseguir fazer autocompletar ou te avisar de problemas
+- **Desempenho**: Tem um pequeno custo por causa da interceptação dinâmica
 
-Fowler sugere usar DSLs internas quando os benefícios de expressividade superam esses custos. Para números romanos em código educacional ou scripts pontuais? Vale a pena. Para APIs críticas de produção? Talvez uma função explícita seja melhor.
+Quando vale usar? Depende do contexto. Para números romanos em código educacional ou scripts? Com certeza! Para APIs críticas de produção? Talvez seja melhor usar uma função normal e explícita.
 
-O segredo é **reduzir a distância semântica** entre intenção e implementação, sem sacrificar manutenibilidade.
+O importante é encontrar o equilíbrio entre deixar o código expressivo e manter ele fácil de manter.
 
 ## Conclusão
 
-Como Fowler bem coloca: "A linguagem do domínio deve guiar o design da DSL, não o contrário". `__getattr__` em módulos é uma ferramenta poderosa para criar **DSLs internas** elegantes usando padrões como **Recepção Dinâmica** e **Extensão Literal**.
+O `__getattr__` em módulos é uma ferramenta poderosa para criar DSLs internas elegantes em Python. Inspirado por exemplos de Ruby e outras linguagens, vemos que Python oferece recursos bem legais para criar código mais expressivo e natural.
 
-Inspirado por Ruby, Bruce Tate e os princípios de Martin Fowler, vemos que Python oferece as ferramentas necessárias para criar DSLs expressivas que reduzem o ruído sintático e aproximam o código da linguagem do problema.
+Quando você for criar uma API, pense: "Como posso deixar isso mais natural e limpo?". Mas também pergunte: "Vale a pena nesse caso específico?".
 
-Da próxima vez que você pensar em criar uma API, pergunte-se: "Como posso tornar isso mais natural? Como posso remover o ruído?" Mas também: "Quais são as compensações? Vale a pena neste contexto?"
-
-Às vezes, a resposta está em um pouco de metaprogramação bem aplicada. ✨
+Às vezes, a resposta está em usar um pouco de metaprogramação na medida certa. ✨
 
 Então é isso pessoal!
 
