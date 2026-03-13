@@ -49,3 +49,16 @@ url = "/posts/index.xml"
 name = "Blog"
 weight = 2
 url = "posts/"
+
+[params.giscus]
+  repo = "cassiobotaro/cassiobotaro.github.io"
+  repoID = "R_kgDOMuDoQQ"
+  category = "General"
+  categoryID = "DIC_kwDOMuDoQc4C4UUD"
+  mapping = "pathname"
+  strict = "0"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "bottom"
+  theme = "preferred_color_scheme"
+  lang = "pt"
