@@ -13,7 +13,7 @@ categories = ["python"]
 
 Você está usando `NamedTuple` para criar suas classes de dados e decide criar um campo chamado `count` ou `index`. Tudo funciona perfeitamente em tempo de execução, mas quando você executa o mypy ou outro analisador de tipos, recebe erros estranhos. O que está acontecendo?
 
-```python
+```python {linenos=true}
 from typing import NamedTuple
 
 class Item(NamedTuple):
@@ -36,7 +36,7 @@ exemplo.py:9: error: "int" not callable
 
 `NamedTuple` herda de `tuple`, e tuplas possuem métodos nativos chamados `count()` e `index()`:
 
-```python
+```python {linenos=true}
 # Métodos nativos de tuple
 numeros = (1, 2, 3, 2, 1)
 numeros.count(2)  # Retorna 2 (quantas vezes 2 aparece)
@@ -49,7 +49,7 @@ Quando você cria um campo com esses nomes em uma `NamedTuple`, há uma colisão
 
 Veja um exemplo mais completo:
 
-```python
+```python {linenos=true}
 from typing import NamedTuple
 
 class Estatistica(NamedTuple):
@@ -83,7 +83,7 @@ Existem algumas formas de resolver este problema:
 
 A solução mais simples e clara é usar nomes diferentes:
 
-```python
+```python {linenos=true}
 from typing import NamedTuple
 
 class Estatistica(NamedTuple):
@@ -98,7 +98,7 @@ stats = Estatistica(valor="teste", quantidade=10, posicao=0)
 
 Se você realmente precisa desses nomes específicos, considere usar `dataclass` em vez de `NamedTuple`:
 
-```python
+```python {linenos=true}
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
@@ -117,7 +117,7 @@ A desvantagem é que `dataclass` não herda de `tuple`, então você perde algun
 
 Como último recurso, você pode suprimir os avisos do mypy:
 
-```python
+```python {linenos=true}
 from typing import NamedTuple
 
 class Estatistica(NamedTuple):
