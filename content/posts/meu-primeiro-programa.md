@@ -154,11 +154,11 @@ Com esses conceitos em mente, escrevi meu primeiro programa. A ideia era: o usu�
 
 Tudo isso em **Pascal**, direto no terminal. Sem interface gráfica, sem mouse. 😄
 
-Você pode experimentar o código online em: [https://www.onlinegdb.com/online_pascal_compiler](https://www.onlinegdb.com/online_pascal_compiler)
+Você pode experimentar o código online em: [https://onlinegdb.com/9Lpl7RIFN](https://onlinegdb.com/9Lpl7RIFN)
 
 O programa começa com um menu principal que mostra o símbolo do 555 desenhado em ASCII art:
 
-```pascal
+```	objectpascal
 program prog555;
 uses crt;
 var
@@ -196,7 +196,7 @@ end.
 
 O cálculo do modo astável ficou assim — repare nas fórmulas diretamente no `writeln`:
 
-```pascal
+```	objectpascal
 procedure modoastavel;
 var
   ra, rb, c1, i: real;
@@ -215,7 +215,7 @@ end;
 
 E o modo monoestável:
 
-```pascal
+```	objectpascal
 procedure modomono;
 var
   r, c, cont: real;
