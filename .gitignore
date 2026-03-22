@@ -1,1 +1,19 @@
+# Diretorios de saída (gerados pelo Hugo)
 public/
+resources/_gen/
+
+# Cache local do Hugo
+.hugo_build.lock
+
+# Arquivos de log e temporários
+hugo_stats.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+
+# Se você usa pacotes Node para processar CSS/JS
+node_modules/
+
+# Arquivos de ambiente/configurações sensíveis
+.env
