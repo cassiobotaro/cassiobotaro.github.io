@@ -62,3 +62,6 @@ url = "posts/"
   inputPosition = "bottom"
   theme = "preferred_color_scheme"
   lang = "pt"
+
+[params.googleTagManager]
+id = "G-WDYLFLXCKD"
