@@ -17,7 +17,7 @@ Há uma frase de Alan Kay que me persegue há anos:
 
 A primeira vez que ouvi sobre isso, fingi que entendi e segui escrevendo `if` e `for` como sempre. Mas a ideia não saiu da cabeça. O empurrão final veio da palestra [*Nothing is Something*](https://www.youtube.com/watch?v=OMPfEXIlTVE) da Sandi Metz, em que ela mostra como substituir `nil`, condicionais e operadores por objetos que respondem a mensagens, inclusive um `Null Object` que sabe se comportar como qualquer outro. Saí dali com uma vontade enorme de fazer uma provocação concreta ao Python: e se eu tirasse tudo que *parece* procedural, mesmo quando não é? Eu sei que `print(x)` acaba chamando `__str__` e que `len(x)` delega para `__len__`; o modelo de dados do Python é absurdamente coerente nesse aspecto. Mas a *cara* dessas chamadas é de função livre, não de mensagem para um objeto. Sem `if`, sem `for`, sem `print(x)`, sem `len(x)`. Tudo precisa *parecer* uma mensagem enviada a um objeto.
 
-O resultado é o **POOP** (*Python Object Oriented Programming*), um interpretador que executa Python "infectado" pela filosofia Smalltalk. Não é projeto de produção. É uma realização pessoal para abrir a mente sobre design de software e ver o que acontece quando o comportamento do sistema emerge puramente da comunicação entre objetos.
+O resultado é o **POOP** (*Python Object Oriented Programming*), um interpretador que executa Python "infectado" pela filosofia Smalltalk. Não é projeto de produção. É uma realização pessoal para abrir a mente sobre design de software e ver o que acontece quando o comportamento do sistema emerge exclusivamente da comunicação entre objetos.
 
 ## Como é escrever código no POOP
 
@@ -60,8 +60,6 @@ Year(2008).is_leap().print()  # true  (divisível por 4 mas não por 100)
 
 Repare como `or_` e `and_` recebem **blocos** (`lambda`) em vez de valores. Isso preserva o curto-circuito do Python (o lado direito só é avaliado se necessário), mas a sintaxe muda a forma como você pensa sobre a expressão. Não é mais "se isto e aquilo"; é "este booleano, recebendo a mensagem `or_`, decide se executa o próximo bloco".
 
-Depois de algumas horas escrevendo POOP, você começa a ler Python diferente. Cada `if` parece uma confissão de que a hierarquia de classes não está fazendo o trabalho dela.
-
 ## O que aprendi escrevendo com IA como copiloto
 
 Esse foi meu primeiro projeto conduzido **do zero** usando IA como copiloto desde o primeiro commit. Alguns aprendizados já mudaram a forma como trabalho:
@@ -90,7 +88,7 @@ Existe uma frase no `INFECTIONS.md` que virou o critério mestre do projeto:
 
 > O critério central de uma infecção não é "isso existe em Smalltalk?" e sim "isso parece um objeto recebendo uma mensagem?".
 
-Operadores como `-x`, `~x` e free functions como `len(x)`, `abs(x)` já são, por baixo dos panos, chamadas de método (`__neg__`, `__invert__`, `__len__`, `__abs__`). Até `not x` chega lá: como Python não tem um `__not__`, o operador cai em `__bool__`. Tudo já é despacho de método. O que falha é a *cara* dessas chamadas, que parece procedural. No POOP, essas mesmas operações viram `x.negated()`, `x.bit_invert()`, `x.len()`, `x.abs()`, `x.not_()`. O código tem que **parecer** uma conversa entre objetos, não uma sequência de operações.
+Operadores como `-x`, `~x` e free functions como `len(x)`, `abs(x)` já são, por baixo dos panos, chamadas de método (`__neg__`, `__invert__`, `__len__`, `__abs__`). Até `not x` chega lá: como Python não tem um `__not__`, o operador cai em `__bool__`. Tudo já é despacho de método. O que falha é a *cara* dessas chamadas, que parece procedural. No POOP, essas mesmas operações viram `x.negated()`, `x.bit_invert()`, `x.len()`, `x.abs()`, `x.not_()`. A ideia é que o código **pareça** uma conversa entre objetos, não uma sequência de operações.
 
 Esse critério estético é o que mais me ensinou sobre design. Boa parte do que chamamos de "OO" em Python é, na verdade, sintaxe procedural com classes por trás. O POOP só fica óbvio quando você tira essa muleta.
 
