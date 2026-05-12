@@ -50,6 +50,11 @@ name = "Blog"
 weight = 2
 url = "posts/"
 
+[[menu.main]]
+name = "Séries"
+weight = 3
+url = "series/"
+
 [params.giscus]
   repo = "cassiobotaro/cassiobotaro.github.io"
   repoID = "R_kgDOMuDoQQ"
