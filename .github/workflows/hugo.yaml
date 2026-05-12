@@ -7,6 +7,10 @@ on:
     branches:
       - main
 
+  # Runs daily to publish scheduled posts (publishDate)
+  schedule:
+    - cron: "0 12 * * *"
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -54,7 +58,7 @@ jobs:
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
-          TZ: America/Los_Angeles
+          TZ: America/Sao_Paulo
         run: |
           hugo \
             --gc \
