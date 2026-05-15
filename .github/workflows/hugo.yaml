@@ -9,7 +9,7 @@ on:
 
   # Runs daily to publish scheduled posts (publishDate)
   schedule:
-    - cron: "0 12 * * *"
+    - cron: "0 9 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
