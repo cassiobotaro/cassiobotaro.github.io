@@ -7,7 +7,8 @@
 ### Pré-requisitos
 
 - Git
-- [Hugo extended](https://gohugo.io/installation/)
+- [Hugo](https://gohugo.io/installation/) (>= 0.146)
+- [Dart Sass](https://sass-lang.com/dart-sass/) para compilar o SCSS do tema
 
 Este projeto usa o tema `hugo-coder` como submódulo Git, então o tema precisa estar inicializado antes de subir o servidor.
 
@@ -28,13 +29,12 @@ git submodule update --init --recursive
 
 ### Instalando o Hugo
 
-Instale a versão **extended** do Hugo com o gerenciador de pacotes do seu sistema ou manualmente pela página oficial:
+Instale o Hugo (>= 0.146) e o Dart Sass com o gerenciador de pacotes do seu sistema ou manualmente pelas páginas oficiais:
 
 ```bash
 hugo version
+sass --version
 ```
-
-O comando acima deve exibir uma versão contendo `extended`.
 
 #### Ubuntu/Debian
 
@@ -43,6 +43,7 @@ Com `sudo` disponível:
 ```bash
 sudo apt update
 sudo apt install hugo
+sudo snap install dart-sass
 hugo version
 ```
 

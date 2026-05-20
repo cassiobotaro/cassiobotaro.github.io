@@ -1,5 +1,5 @@
 baseURL = "https://cassiobotaro.dev/"
-languageCode = "pt-br"
+locale = "pt-br"
 defaultContentLanguage = "pt-br"
 title = "cassiobotaro"
 theme = "hugo-coder"
