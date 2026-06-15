@@ -71,21 +71,6 @@ Algumas seções curtas costumam fechar bem o documento.
 > - Qual o SLA aceitável para atraso no pipeline? Aguardando alinhamento com Operações.
 > - O modelo deve suportar múltiplos horizontes (7, 14 e 30 dias) nesta versão?
 
-**Glossário.** Siglas e termos de domínio usados no documento, idealmente definidos antes do primeiro uso. Ajuda quem chega de outra área a ler sem tropeçar.
-
-> - **MAPE** (Mean Absolute Percentage Error): erro percentual absoluto médio das previsões; quanto menor, mais preciso o modelo.
-> - **SLA** (Service Level Agreement): prazo ou nível de serviço acordado, como o horário-limite de entrega das recomendações.
-> - **SKU** (Stock Keeping Unit): identificador único de um produto no catálogo.
-> - **ERP** (Enterprise Resource Planning): sistema de gestão usado hoje para os pedidos de reposição.
-> - **Ruptura de estoque:** ausência de um item disponível para venda quando existe demanda por ele.
-> - **Cold start:** previsão para produtos novos, sem histórico de vendas suficiente.
-> - **Feature store:** repositório centralizado de features para reúso entre modelos.
-
-💡 **Dicas:**
-
-- Não precisa virar um dicionário. Liste apenas o que pode confundir quem é de fora do time.
-- Quando possível, defina o termo já na primeira aparição e use o glossário como referência rápida de consulta.
-
 ## Até a próxima
 
 Com isso o conteúdo do documento está completo. Na **parte 4** saímos do "o que escrever" e olhamos para o processo: o ciclo de vida do design doc, quando *não* vale a pena escrever um e outros tipos de documento que convivem com ele.

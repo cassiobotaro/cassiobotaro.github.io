@@ -2,7 +2,7 @@
 title = "Design docs, parte 1: o que são e o início do documento"
 date = "2026-06-01"
 publishDate = "2026-06-01"
-description = "O que é um design doc, por que vale a pena escrever e como montar o início do documento: cabeçalhos, visão geral, escopo e contexto, objetivos e fora de escopo."
+description = "O que é um design doc, por que vale a pena escrever e como montar o início do documento: cabeçalhos, visão geral, glossário, escopo e contexto, objetivos e fora de escopo."
 slug = "design-docs-parte-1"
 tags = ["design-docs", "arquitetura", "documentação"]
 categories = ["engenharia-de-software"]
@@ -75,6 +75,23 @@ Um texto breve e de alto nível sobre o que o documento trata. Serve para dizer 
 - Não coloque detalhes aqui. Eles ficam nas seções seguintes.
 - Alguém sem contexto deve conseguir entender do que se trata.
 
+## Glossário
+
+Siglas e termos de domínio usados ao longo do documento. Vale posicioná-lo **logo no início**: assim quem chega de outra área tem onde consultar o vocabulário antes de esbarrar com os termos no meio do texto. Idealmente, defina cada termo já na primeira aparição e use o glossário como referência rápida.
+
+> - **MAPE** (Mean Absolute Percentage Error): erro percentual absoluto médio das previsões; quanto menor, mais preciso o modelo.
+> - **SLA** (Service Level Agreement): prazo ou nível de serviço acordado, como o horário-limite de entrega das recomendações.
+> - **SKU** (Stock Keeping Unit): identificador único de um produto no catálogo.
+> - **ERP** (Enterprise Resource Planning): sistema de gestão usado hoje para os pedidos de reposição.
+> - **Ruptura de estoque:** ausência de um item disponível para venda quando existe demanda por ele.
+> - **Cold start:** previsão para produtos novos, sem histórico de vendas suficiente.
+> - **Feature store:** repositório centralizado de features para reúso entre modelos.
+
+💡 **Dicas:**
+
+- Não precisa virar um dicionário. Liste apenas o que pode confundir quem é de fora do time.
+- Defina os termos antes do primeiro uso e mantenha o glossário no topo, como referência rápida de consulta.
+
 ## Escopo e contexto
 
 Descreve o cenário em que o sistema está inserido, os motivadores da escrita do documento e informações de contexto (tecnologia atual, dívidas técnicas, etc.). Você pode assumir algum conhecimento prévio e vincular informações mais detalhadas em vez de copiá-las.
@@ -117,7 +134,7 @@ Descreve o cenário em que o sistema está inserido, os motivadores da escrita d
 
 ## Até a próxima
 
-Já temos a identificação do documento e o pano de fundo: quem escreve, do que se trata, em que cenário e o que se pretende (ou não) alcançar. Na **parte 2** entramos na seção mais importante, o design propriamente dito, com diagramas e as compensações da solução escolhida.
+Já temos a identificação do documento, um glossário para nivelar o vocabulário e o pano de fundo: quem escreve, do que se trata, em que cenário e o que se pretende (ou não) alcançar. Na **parte 2** entramos na seção mais importante, o design propriamente dito, com diagramas e as compensações da solução escolhida.
 
 Então é isso pessoal!
 
