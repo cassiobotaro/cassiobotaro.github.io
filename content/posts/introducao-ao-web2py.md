@@ -107,7 +107,7 @@ Este foi o primeiro _post_ sobre **web2py** do meu blog, quis ser breve. Se fico
 
 E já adiantando, teremos continuação para este _post_, demonstrando diversos recursos do _framework_ e também discutindo sobre suas "mágicas".
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

@@ -98,7 +98,7 @@ Caso algo não esteja devidamente explicado, por favor reporte abrindo uma issue
 
 [Clique aqui](/post/conceitos-linguagem-parte-3) para ir até a parte 3.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

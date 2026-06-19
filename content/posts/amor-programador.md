@@ -235,7 +235,7 @@ Se está no linux e deseja compilar o programa para enviar a alguém que utilize
 
 `GOOS=windows go build -ldflags="-X main.love=<name>" love.go`
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

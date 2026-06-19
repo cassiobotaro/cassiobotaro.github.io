@@ -139,7 +139,7 @@ Na verdade é extremamente simples. Apenas crie no mesmo diretório onde se enco
 
 Para consultar visite a url: [http://localhost:8000/hello/default/index.json](http://localhost:8000/hello/default/index.json)
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

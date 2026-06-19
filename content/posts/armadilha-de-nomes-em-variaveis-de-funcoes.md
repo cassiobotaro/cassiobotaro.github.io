@@ -87,7 +87,7 @@ A prevenção é tentar manter a PEP8, importando sempre no topo do arquivo(salv
 
 Fecho este post com a lembrança do zen do python: "Special cases aren't special enough to break the rules", lembrem-se disto ao achar que seu caso é especial.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

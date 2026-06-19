@@ -17,7 +17,7 @@ Obrigado Gibran e Douglas pela excelente organização e recomendo assistirem as
 
 Os slides podem ser encontrados aqui: [🧑‍💻 Open Source e você, tudo a ver](http://bit.ly/contribuindo-open-source)
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

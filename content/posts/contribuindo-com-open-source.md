@@ -15,7 +15,7 @@ O mês de outubro é conhecido como o mês da [_hacktoberfest_](https://hacktobe
 
 Os slides podem ser encontrados aqui: [🧑‍💻 Open Source e você, tudo a ver](http://bit.ly/contribuindo-open-source)
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

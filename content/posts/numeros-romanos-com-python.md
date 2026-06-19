@@ -112,7 +112,7 @@ Quando você for criar uma API, pense: "Como posso deixar isso mais natural e li
 
 Às vezes, a resposta está em usar um pouco de metaprogramação na medida certa. ✨
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

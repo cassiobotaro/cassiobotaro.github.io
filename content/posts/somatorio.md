@@ -57,7 +57,7 @@ func main() {
 }
 ```
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

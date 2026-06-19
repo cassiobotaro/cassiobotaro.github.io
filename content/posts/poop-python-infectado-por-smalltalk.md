@@ -104,7 +104,7 @@ E o `proposals.md` reúne as ideias e mudanças que ainda estão amadurecendo. S
 
 Se curtir, deixa uma estrela. 🌟
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

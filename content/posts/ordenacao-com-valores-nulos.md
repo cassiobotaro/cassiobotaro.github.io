@@ -100,7 +100,7 @@ lista.sort(key=lambda dict_: (dict_['key'] is None, dict_['key']))
 
 A solução é simples e elegante, lembrando que False pode ser entendido como 0 e True como 1, logo se o elemnto for None, o primeiro elemento da tupla será True e irá ser ordenado ao fim da lista.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

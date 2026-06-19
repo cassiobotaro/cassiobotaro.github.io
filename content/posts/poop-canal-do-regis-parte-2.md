@@ -17,7 +17,7 @@ Obrigado mais uma vez ao Regis pelo convite e espero que gostem do conteúdo!
 
 O repositório com meus estudos e anotações é este [aqui](https://github.com/cassiobotaro/poop).
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

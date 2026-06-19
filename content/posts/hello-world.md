@@ -122,7 +122,7 @@ Espero que tenha contribuído com você e meu ultimo recado é:
 
 ![learn-python](/images/keep-calm-and-learn-python.png "Keep calm and learn Python")
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

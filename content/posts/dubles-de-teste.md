@@ -325,7 +325,7 @@ Temos dois tipos de verificações quando utilizamos dublês: **verificações d
 
 Os códigos aqui apresentados são apenas exemplos de como implementar os padrões de dublês, podendo ser implementados de forma diferente dependendo do framework e linguagem utilizados.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

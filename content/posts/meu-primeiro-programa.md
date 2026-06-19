@@ -321,7 +321,7 @@ Esse é o ponto mais importante: não importa se o código é perfeito. O que im
 
 Se você está começando agora, não espere dominar a linguagem para começar a criar. Escolha um problema pequeno e real para você, e resolva-o. Mesmo que o código fique feio, o aprendizado vai ser enorme.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

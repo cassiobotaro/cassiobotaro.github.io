@@ -220,7 +220,7 @@ Ainda existem várias funcionalidades que infelizmente não serão apresentadas 
 
 E se tem duvida sobre suporte de alguma biblioteca, confira [aqui](https://caniusepython3.com/).
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

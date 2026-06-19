@@ -136,7 +136,7 @@ Descreve o cenário em que o sistema está inserido, os motivadores da escrita d
 
 Já temos a identificação do documento, um glossário para nivelar o vocabulário e o pano de fundo: quem escreve, do que se trata, em que cenário e o que se pretende (ou não) alcançar. Na **parte 2** entramos na seção mais importante, o design propriamente dito, com diagramas e as compensações da solução escolhida.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

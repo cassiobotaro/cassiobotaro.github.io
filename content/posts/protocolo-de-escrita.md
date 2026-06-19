@@ -41,7 +41,7 @@ Na linha 3, a assinatura passa a dizer exatamente o que a função faz, fica mai
 
 O trecho acima vem do [`capital_gains/cli.py`](https://github.com/cassiobotaro/capital-gains/blob/main/capital_gains/cli.py), parte de uma refatoração de um teste técnico onde explorei técnicas mais avançadas de Python. Se quiser ver o contexto completo do projeto, a [apresentação está aqui](https://github.com/cassiobotaro/capital-gains/blob/main/slides.pdf).
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

@@ -311,7 +311,7 @@ Neste artigo, vimos como Python nos oferece ferramentas que se encaixam perfeita
 
 Às vezes, não passar em um teste técnico é só o começo do aprendizado.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

@@ -123,7 +123,7 @@ class ProductInfo(IntFlag):
 
 Embora o exemplo utilize Django, a solução é genérica e pode ser aplicada em qualquer contexto Python onde você precise rastrear estados ou progresso. IntFlag é uma ferramenta poderosa que combina a eficiência de máscaras de bits com a legibilidade de enumerados.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

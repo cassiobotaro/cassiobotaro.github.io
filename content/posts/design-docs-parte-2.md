@@ -72,7 +72,7 @@ Todo design envolve trocas. Documente explicitamente os prós e contras da solu�
 
 Com a solução descrita e justificada, ainda falta mostrar o que mais foi avaliado e o que pode afetar quem está fora do time. Na **parte 3** veremos alternativas consideradas, preocupações transversais e as seções de fechamento do design.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

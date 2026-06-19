@@ -75,7 +75,7 @@ Algumas seções curtas costumam fechar bem o documento.
 
 Com isso o conteúdo do documento está completo. Na **parte 4** saímos do "o que escrever" e olhamos para o processo: o ciclo de vida do design doc, quando *não* vale a pena escrever um e outros tipos de documento que convivem com ele.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

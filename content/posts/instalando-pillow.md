@@ -57,7 +57,7 @@ Créditos para a solução e links interessantes:
 
 - [http://shortrecipes.blogspot.com.br/2014/06/python-34-and-pillow-24-with-jpeg2000.html](http://shortrecipes.blogspot.com.br/2014/06/python-34-and-pillow-24-with-jpeg2000.html)
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

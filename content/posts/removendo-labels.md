@@ -34,7 +34,7 @@ form.elements('label', replace=None)
 
 Fica aqui a dica para quem tiver o mesmo problema.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

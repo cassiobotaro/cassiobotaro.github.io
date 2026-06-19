@@ -60,7 +60,7 @@ Caso algo não esteja devidamente explicado, por favor reporte abrindo uma _issu
 
 [Clique aqui](/post/conceitos-linguagem-parte-2) para ir até a parte 2.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

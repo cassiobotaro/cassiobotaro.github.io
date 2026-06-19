@@ -175,7 +175,7 @@ Logo, Mito foi derrubado!
 
 ![busted](/images/busted.jpg)
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

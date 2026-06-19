@@ -116,7 +116,7 @@ Este assunto é melhor explicado na prática, então não perca tempo e veja [es
 
 Caso algo não esteja devidamente explicado, por favor reporte abrindo uma issue que farei o aprimoramento da explicação.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

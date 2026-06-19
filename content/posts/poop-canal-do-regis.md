@@ -19,7 +19,7 @@ Os slides podem ser encontrados aqui: [Poop 💩 - Programação orientada a obj
 
 O repositório com os códigos demonstrados na palestra se encontram [aqui](https://github.com/cassiobotaro/talks_and_articles/tree/master/codes/poop) e o repositório com meus estudos e anotações é este [aqui](https://github.com/cassiobotaro/poop).
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

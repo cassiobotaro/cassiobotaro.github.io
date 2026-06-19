@@ -103,7 +103,7 @@ Este _post_ só se tornou possível após consulta de duas fontes:
 
 [Palestra do Luciano Ramalho](https://www.youtube.com/watch?v=ULj7ejvuzI8)
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

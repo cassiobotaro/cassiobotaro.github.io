@@ -134,7 +134,7 @@ Este é um exemplo clássico de como a análise estática de tipos pode revelar 
 
 A regra geral é: se você está usando `NamedTuple`, evite usar nomes que sejam métodos de `tuple`. Quando precisar desses nomes específicos, `dataclass` é geralmente uma escolha melhor.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

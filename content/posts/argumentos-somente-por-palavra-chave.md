@@ -71,7 +71,7 @@ Não brinque mais de roleta russa com seus argumentos.
 
 ![programming-motherfucker](/images/programming-motherfucker.jpg)
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

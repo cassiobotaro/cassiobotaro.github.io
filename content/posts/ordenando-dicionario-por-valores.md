@@ -79,7 +79,7 @@ print(ordered)
 
 Lembrando que esta solução é somente válida para versões acima da 3.6, anteriores a isto devem utilizar `OrderedDict` no lugar de dict.
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 

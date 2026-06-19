@@ -164,7 +164,7 @@ A sobrecarga de operadores em Python permite criar DSLs elegantes e expressivas.
 
 O código não apenas funciona bem, mas também lê de forma natural, quase como linguagem humana. Esse exercício, inspirado pelo curso de Smalltalk, mostra como conceitos de diferentes linguagens podem ser adaptados e enriquecer nossa forma de programar em Python!
 
-Então é isso pessoal!
+Então é isso, pessoal!
 
 Até a próxima!
 
