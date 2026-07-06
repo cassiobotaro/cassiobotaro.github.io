@@ -29,7 +29,7 @@ Ver o calendário do ano no terminal:
 python -m calendar 2026
 ```
 
-Você provavelmente já usou a flag sem perceber, em comandos como `python -m venv .venv` ou `python -m pip install`. É o mesmo mecanismo: se o módulo tem um `__main__`, ele roda como programa.
+Você provavelmente já usou a flag sem perceber, em comandos como `python -m venv .venv` ou `python -m pip install`. É o mesmo mecanismo: o `-m` localiza o módulo no caminho de importação e executa ele como programa principal, com `__name__` valendo `"__main__"` (quando o alvo é um pacote, o que roda é o `__main__.py` dele).
 
 ### Quer a lista completa?
 
