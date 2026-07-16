@@ -45,15 +45,32 @@ icon = "fa fa-rss-square fa-2x"
 weight = 3
 url = "/posts/index.xml"
 
-[[menu.main]]
+[languages.pt-br]
+label = "Português"
+weight = 1
+
+[[languages.pt-br.menu.main]]
 name = "Blog"
 weight = 2
 url = "posts/"
 
-[[menu.main]]
+[[languages.pt-br.menu.main]]
 name = "Séries"
 weight = 3
 url = "series/"
+
+[languages.en]
+label = "English"
+weight = 2
+
+[languages.en.params]
+info = "Software Developer Engineer"
+description = "Cássio Botaro's articles in English"
+
+[[languages.en.menu.main]]
+name = "Blog"
+weight = 2
+url = "posts/"
 
 [params.giscus]
   repo = "cassiobotaro/cassiobotaro.github.io"
