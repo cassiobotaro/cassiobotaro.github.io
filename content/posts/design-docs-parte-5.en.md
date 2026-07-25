@@ -25,7 +25,7 @@ We've reached the last part of the series. We've already looked at what a design
 - **[Sequence Diagram](https://sequencediagram.org).** Dedicated to sequence diagrams, textual and quick.
 - **[Structurizr](https://structurizr.com).** Diagrams as code: several C4 architecture diagrams from a single model.
 
-The C4 and sequence diagrams that show up in [part 2](/posts/design-docs-parte-2/) were made with tools like these.
+The C4 and sequence diagrams that show up in [part 2](/en/posts/design-docs-part-2/) were made with tools like these.
 
 ## References to dig deeper
 

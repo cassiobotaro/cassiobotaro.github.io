@@ -11,7 +11,7 @@ series = ["design-docs"]
 
 ![Design docs (part 2)](/images/design-docs-2.png "Design docs")
 
-In [part 1](/posts/design-docs-part-1/) we put together the beginning of the design doc for our fictional case, the Inventory Replenishment Recommender: headers, overview, scope and context, goals, and non-goals. Now we get to the heart of the document.
+In [part 1](/en/posts/design-docs-part-1/) we put together the beginning of the design doc for our fictional case, the Inventory Replenishment Recommender: headers, overview, scope and context, goals, and non-goals. Now we get to the heart of the document.
 
 > ⚠️ As always, the sections here are examples and recommendations, not a mandatory template.
 

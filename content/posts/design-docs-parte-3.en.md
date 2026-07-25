@@ -11,7 +11,7 @@ series = ["design-docs"]
 
 ![Design docs (part 3)](/images/design-docs-3.png "Design docs")
 
-In [part 2](/posts/design-docs-parte-2/) we described and justified the design of the solution. But a good document also shows the paths you **didn't** take and what your solution affects beyond your own team.
+In [part 2](/en/posts/design-docs-part-2/) we described and justified the design of the solution. But a good document also shows the paths you **didn't** take and what your solution affects beyond your own team.
 
 > ⚠️ A quick reminder: the sections that follow are examples and recommendations, not a mandatory template.
 
