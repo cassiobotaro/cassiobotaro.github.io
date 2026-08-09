@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1408 768" width="1408" height="768">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="48%" r="55%">
+      <stop offset="0%" stop-color="#8c5cf0"/>
+      <stop offset="60%" stop-color="#6a3ad4"/>
+      <stop offset="100%" stop-color="#5326b0"/>
+    </radialGradient>
+
+    <!-- adaptador: bico redondo de um lado, corpo colorido, rabicho do outro -->
+    <g id="adapter">
+      <rect x="-102" y="-9" width="16" height="18" rx="5" fill="#cfc7e8" stroke="#241348" stroke-width="5"/>
+      <rect x="-90" y="-27" width="62" height="54" rx="13" fill="currentColor" stroke="#241348" stroke-width="6"/>
+      <rect x="-33" y="-14" width="35" height="28" rx="9" fill="#cfc7e8" stroke="#241348" stroke-width="5"/>
+      <circle cx="-59" cy="0" r="10" fill="#ffffff" stroke="#241348" stroke-width="4"/>
+    </g>
+
+    <g id="sparkle">
+      <path d="M0 -1 L0.28 -0.28 L1 0 L0.28 0.28 L0 1 L-0.28 0.28 L-1 0 L-0.28 -0.28 Z"/>
+    </g>
+  </defs>
+
+  <rect width="1408" height="768" fill="url(#glow)"/>
+
+  <!-- brilhos de fundo -->
+  <g fill="#ffffff" opacity="0.28">
+    <use href="#sparkle" transform="translate(392 108) scale(15)"/>
+    <use href="#sparkle" transform="translate(1016 116) scale(12)"/>
+    <use href="#sparkle" transform="translate(336 664) scale(12)"/>
+    <use href="#sparkle" transform="translate(1064 648) scale(10)"/>
+    <use href="#sparkle" transform="translate(704 128) scale(9)"/>
+  </g>
+
+  <!-- ================= CABOS ================= -->
+  <g fill="none" stroke="#241348" stroke-width="15" stroke-linecap="round">
+    <path d="M286 200 C 360 200 380 275 452 312"/>
+    <path d="M272 372 C 340 372 390 372 452 372"/>
+    <path d="M256 545 C 350 545 385 470 452 432"/>
+    <path d="M956 312 C 1028 275 1050 200 1128 200"/>
+    <path d="M956 372 C 1020 372 1070 372 1135 372"/>
+    <path d="M956 432 C 1028 470 1050 545 1126 545"/>
+  </g>
+  <g fill="none" stroke-width="7" stroke-linecap="round">
+    <path d="M286 200 C 360 200 380 275 452 312" stroke="#ffd166"/>
+    <path d="M272 372 C 340 372 390 372 452 372" stroke="#ff9f68"/>
+    <path d="M256 545 C 350 545 385 470 452 432" stroke="#ff8fab"/>
+    <path d="M956 312 C 1028 275 1050 200 1128 200" stroke="#7fe3c0"/>
+    <path d="M956 372 C 1020 372 1070 372 1135 372" stroke="#7fb3ff"/>
+    <path d="M956 432 C 1028 470 1050 545 1126 545" stroke="#c9a2ff"/>
+  </g>
+
+  <!-- ================= TRECOS DA ESQUERDA ================= -->
+  <!-- navegador -->
+  <g stroke="#241348" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="148" y="148" width="138" height="104" rx="14" fill="#ffffff"/>
+    <path d="M148 182 H286" fill="none"/>
+    <circle cx="168" cy="165" r="5.5" fill="#ff8fab" stroke="none"/>
+    <circle cx="186" cy="165" r="5.5" fill="#ffd166" stroke="none"/>
+    <circle cx="204" cy="165" r="5.5" fill="#7fe3c0" stroke="none"/>
+    <rect x="168" y="198" width="100" height="9" rx="4.5" fill="#7fb3ff" stroke="none"/>
+    <rect x="168" y="216" width="72" height="9" rx="4.5" fill="#a8ccff" stroke="none"/>
+    <rect x="168" y="234" width="88" height="9" rx="4.5" fill="#a8ccff" stroke="none"/>
+  </g>
+
+  <!-- terminal -->
+  <g stroke="#241348" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="138" y="320" width="134" height="104" rx="14" fill="#2a1a55"/>
+    <path d="M162 350 L182 366 L162 382" fill="none" stroke="#7fe3c0" stroke-width="7"/>
+    <rect x="192" y="374" width="48" height="9" rx="4.5" fill="#7fe3c0" stroke="none"/>
+  </g>
+
+  <!-- frasco de teste -->
+  <g stroke="#241348" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M198 502 V524 L166 584 Q160 596 174 596 H246 Q260 596 254 584 L222 524 V502 Z" fill="#7fe3c0"/>
+    <rect x="190" y="490" width="40" height="14" rx="7" fill="#cfc7e8"/>
+    <circle cx="192" cy="572" r="7" fill="#ffffff" stroke="none" opacity="0.85"/>
+    <circle cx="212" cy="558" r="5" fill="#ffffff" stroke="none" opacity="0.85"/>
+    <circle cx="230" cy="576" r="6" fill="#ffffff" stroke="none" opacity="0.85"/>
+  </g>
+
+  <!-- ================= TRECOS DA DIREITA ================= -->
+  <!-- banco de dados -->
+  <g stroke="#241348" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M1128 166 V232 A62 20 0 0 0 1252 232 V166 Z" fill="#7fb3ff"/>
+    <ellipse cx="1190" cy="166" rx="62" ry="20" fill="#a8ccff"/>
+    <path d="M1128 199 A62 20 0 0 0 1252 199" fill="none" stroke-width="5"/>
+  </g>
+
+  <!-- arquivo -->
+  <g stroke="#241348" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M1135 318 H1225 L1255 348 V426 H1135 Z" fill="#ffffff"/>
+    <path d="M1225 318 V348 H1255" fill="#cfc7e8" stroke-width="5"/>
+    <rect x="1155" y="368" width="76" height="9" rx="4.5" fill="#7fb3ff" stroke="none"/>
+    <rect x="1155" y="390" width="56" height="9" rx="4.5" fill="#a8ccff" stroke="none"/>
+  </g>
+
+  <!-- chip de memoria -->
+  <g stroke="#241348" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    <g fill="#cfc7e8" stroke-width="5">
+      <rect x="1124" y="509" width="20" height="12" rx="4"/>
+      <rect x="1124" y="539" width="20" height="12" rx="4"/>
+      <rect x="1124" y="569" width="20" height="12" rx="4"/>
+      <rect x="1236" y="509" width="20" height="12" rx="4"/>
+      <rect x="1236" y="539" width="20" height="12" rx="4"/>
+      <rect x="1236" y="569" width="20" height="12" rx="4"/>
+    </g>
+    <rect x="1140" y="495" width="100" height="100" rx="12" fill="#ff9f68"/>
+    <rect x="1162" y="517" width="56" height="56" rx="8" fill="#ffd166" stroke-width="5"/>
+  </g>
+
+  <!-- ================= O HEXAGONO ================= -->
+  <path d="M704 197 L856 285 L856 460 L704 547 L552 460 L552 285 Z"
+        fill="#8fe6c4" stroke="#241348" stroke-width="9" stroke-linejoin="round"/>
+
+
+  <!-- ================= PORTAS (tomadas na borda) ================= -->
+  <g stroke="#241348" stroke-width="6">
+    <circle cx="552" cy="312" r="21" fill="#2a1a55"/>
+    <circle cx="552" cy="372" r="21" fill="#2a1a55"/>
+    <circle cx="552" cy="432" r="21" fill="#2a1a55"/>
+    <circle cx="856" cy="312" r="21" fill="#2a1a55"/>
+    <circle cx="856" cy="372" r="21" fill="#2a1a55"/>
+    <circle cx="856" cy="432" r="21" fill="#2a1a55"/>
+  </g>
+
+  <!-- ================= ADAPTADORES ================= -->
+  <use href="#adapter" transform="translate(552 312)" color="#ffd166"/>
+  <use href="#adapter" transform="translate(552 372)" color="#ff9f68"/>
+  <use href="#adapter" transform="translate(552 432)" color="#ff8fab"/>
+  <use href="#adapter" transform="translate(856 312) scale(-1 1)" color="#7fe3c0"/>
+  <use href="#adapter" transform="translate(856 372) scale(-1 1)" color="#7fb3ff"/>
+  <use href="#adapter" transform="translate(856 432) scale(-1 1)" color="#c9a2ff"/>
+
+  <!-- assinatura -->
+  <use href="#sparkle" transform="translate(1332 700) scale(28)" fill="#ffffff" opacity="0.85"/>
+</svg>
