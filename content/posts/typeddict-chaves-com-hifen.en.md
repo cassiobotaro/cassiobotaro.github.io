@@ -99,7 +99,7 @@ It broke far from where the data came in. `TypedDict` describes what I expect to
 
 ## Where the example came from
 
-The example came from [`capital-gains`](https://github.com/cassiobotaro/capital-gains), a CLI that calculates taxes on stock market operations. The `Money` is the one from the article ["The Money Object"](/en/posts/the-money-object/).
+The example came from [`capital-gains`](https://github.com/cassiobotaro/capital-gains), a CLI that calculates taxes on stock market operations. It is the same project from the article ["The Money Object"](/en/posts/the-money-object/), which is where the `Money` used here comes from.
 
 That's it, folks!
 
