@@ -1,0 +1,13 @@
+{{- $src := .Get "src" | default (.Get 0) -}}
+{{- $titulo := .Get "titulo" | default (.Get 1) -}}
+<video
+  src="{{ $src | relURL }}"
+  {{ with $titulo }}title="{{ . }}" aria-label="{{ . }}"{{ end }}
+  autoplay
+  loop
+  muted
+  playsinline
+  controls
+  preload="metadata"
+  style="width: 100%; height: auto;">
+</video>
