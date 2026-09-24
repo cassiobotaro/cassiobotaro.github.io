@@ -20,6 +20,8 @@ avatarURL = "images/profile.png"
 description = "Cássio Botaro's personal site and blog"
 keywords = "python,go,developer,software,engineering"
 info = "Software Developer Engineer"
+customCSS = ["css/copiar-codigo.css"]
+customJS = ["js/copiar-codigo.js"]
 
 [[params.social]]
 name = "Github"

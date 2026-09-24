@@ -1,0 +1,38 @@
+/* Botão de copiar nos blocos de código. O fundo do chroma é escuro nos dois
+   esquemas de cor, então as cores do botão são fixas. */
+.content .highlight {
+  position: relative;
+}
+
+.content .highlight .botao-copiar {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  padding: 0.2rem 0.5rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #f8f8f2;
+  background-color: rgba(248, 248, 242, 0.1);
+  border: 1px solid rgba(248, 248, 242, 0.3);
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.content .highlight:hover .botao-copiar,
+.content .highlight .botao-copiar:focus {
+  opacity: 1;
+}
+
+.content .highlight .botao-copiar:hover {
+  background-color: rgba(248, 248, 242, 0.2);
+}
+
+/* Em telas de toque não existe hover, o botão fica sempre visível. */
+@media (hover: none) {
+  .content .highlight .botao-copiar {
+    opacity: 1;
+  }
+}
