@@ -71,7 +71,7 @@ So a `close` at the top shuts down the whole chain, and each stage only needs to
 
 What if, like in the generator, I `break` halfway through?
 
-I stopped at the first value and counted who was still alive:
+I stopped right after the first value and counted who was still alive:
 
 ```go
 for value := range double(double(numberSequence(1, 10))) {
@@ -136,6 +136,8 @@ fmt.Println("pipeline finished")
 
 A single `cancel()` and all three goroutines go away. Each one leaves through `ctx.Done()`, without depending on the next stage reading again, and closes the channel it created in the `defer`.
 
+Actually, since `main` keeps draining, sometimes the `select` picks the send, and the stage ends up leaving because its input closed. The end result is the same.
+
 It's what the article [Go Concurrency Patterns: Pipelines and cancellation](https://go.dev/blog/pipelines), by Sameer Ajmani, calls explicit cancellation.
 
 ## What about when a stage fails?
@@ -150,7 +152,7 @@ The code is in the [`pipeline`](https://github.com/cassiobotaro/concorrencia-go/
 
 Next up is fan-out. When a single stage can't keep up, several workers read from the same channel.
 
-Keep in mind that if `ctx` goes into the chain, it goes into every stage. It only takes one being left out for it to get stuck on the send.
+Keep in mind that if `ctx` goes into the chain, it goes into every stage. It only takes one being left out for that stage to get stuck on the send.
 
 That's it, folks!
 

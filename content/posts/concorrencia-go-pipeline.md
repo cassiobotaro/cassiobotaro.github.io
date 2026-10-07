@@ -17,7 +17,7 @@ E se ela fizer os dois? Lê de um canal, transforma o valor e escreve em outro.
 
 ## O que é um pipeline
 
-Um _pipeline_ é uma cadeia de estágios ligados por canais. Cada estágio (_stage_) é uma função que recebe um canal, dispara uma gorrotina para ler dele e devolve o canal onde escreve o resultado.
+Um pipeline é uma cadeia de estágios ligados por canais. Cada estágio (_stage_) é uma função que recebe um canal, dispara uma gorrotina para ler dele e devolve o canal onde escreve o resultado.
 
 Ou seja, cada estágio é trabalhador de quem vem antes e gerador para quem vem depois.
 
@@ -71,7 +71,7 @@ Logo, um `close` na ponta de cima encerra a cadeia inteira, e cada estágio só 
 
 E se, como no gerador, eu der um `break` no meio?
 
-Parei no primeiro valor e contei quem ficou vivo:
+Parei logo depois do primeiro valor e contei quem ficou vivo:
 
 ```go
 for valor := range dobro(dobro(sequenciaNumeros(1, 10))) {
@@ -87,7 +87,7 @@ fmt.Println("gorrotinas vivas:", runtime.NumGoroutine())
 
 Opa! A `main` é uma. As outras três são o gerador e os dois estágios, cada um parado em um envio que ninguém vai ler.
 
-No gerador ficava uma gorrotina para trás. Aqui fica uma por estágio, e quanto mais comprido o _pipeline_, mais gorrotinas sobram.
+No gerador ficava uma gorrotina para trás. Aqui fica uma por estágio, e quanto mais comprido o pipeline, mais gorrotinas sobram.
 
 ## A solução
 
@@ -136,6 +136,8 @@ fmt.Println("pipeline encerrado")
 
 Um único `cancelar()` e as três gorrotinas vão embora. Cada uma sai pelo `ctx.Done()`, sem depender de o estágio seguinte voltar a ler, e fecha o canal que criou no `defer`.
 
+Na verdade, como a `main` continua drenando, às vezes o `select` escolhe o envio, e o estágio acaba saindo porque a entrada dele fechou. O fim é o mesmo.
+
 É o que o artigo [Go Concurrency Patterns: Pipelines and cancellation](https://go.dev/blog/pipelines), do Sameer Ajmani, chama de cancelamento explícito.
 
 ## E quando um estágio dá erro?
@@ -148,9 +150,9 @@ Acho que depende de um erro dever ou não parar os outros estágios, e isto volt
 
 O código está na pasta [`pipeline`](https://github.com/cassiobotaro/concorrencia-go/tree/main/pipeline) do [concorrencia-go](https://github.com/cassiobotaro/concorrencia-go), com o teste que confere os dez valores multiplicados por quatro.
 
-No próximo vem o _fan-out_. Quando um estágio só não dá conta, vários trabalhadores leem do mesmo canal.
+No próximo vem o fan-out. Quando um estágio só não dá conta, vários trabalhadores leem do mesmo canal.
 
-Lembrando que se o `ctx` entra na cadeia, ele entra em todos os estágios. Basta um ficar de fora para ele ficar preso no envio.
+Lembrando que se o `ctx` entra na cadeia, ele entra em todos os estágios. Basta um ficar de fora para aquele estágio ficar preso no envio.
 
 Então é isso, pessoal!
 
