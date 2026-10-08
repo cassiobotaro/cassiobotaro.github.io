@@ -1,0 +1,3 @@
+# Google Analytics só em produção; o `hugo server` usa o ambiente development
+[googleTagManager]
+id = "G-WDYLFLXCKD"
