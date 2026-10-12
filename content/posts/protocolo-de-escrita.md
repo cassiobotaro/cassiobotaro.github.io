@@ -22,7 +22,7 @@ A partir do **Python 3.14**, o módulo `io` expõe os protocolos `Writer[T]` e `
 ```python {linenos=true}
 from typing import IO
 
-def dump_json(tax_list: list[OperationResult], output: IO[str]) -> None:
+def dump_json(tax_list: Iterable[OperationResult], output: IO[str]) -> None:
     ...
 ```
 
@@ -31,7 +31,7 @@ def dump_json(tax_list: list[OperationResult], output: IO[str]) -> None:
 ```python {linenos=true}
 from io import Writer
 
-def dump_json(tax_list: list[OperationResult], output: Writer[str]) -> None:
+def dump_json(tax_list: Iterable[OperationResult], output: Writer[str]) -> None:
     ...
 ```
 
