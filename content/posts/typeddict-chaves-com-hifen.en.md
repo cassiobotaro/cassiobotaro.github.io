@@ -70,6 +70,7 @@ I keep this type close to where the JSON is read, and right after that I convert
 
 ```python
 import json
+from decimal import Decimal
 
 
 def parse_json_line(line: str) -> list[Operation]:
@@ -77,8 +78,9 @@ def parse_json_line(line: str) -> list[Operation]:
     # Operation is the domain dataclass, not a TypedDict
     return [
         Operation(
-            operation=raw["operation"],
-            unit_cost=Money(str(raw["unit-cost"])),
+            kind=raw["operation"],
+            # str first, so the JSON float does not contaminate the Decimal
+            unit_cost=Money(Decimal(str(raw["unit-cost"]))),
             quantity=raw["quantity"],
         )
         for raw in raw_ops_list

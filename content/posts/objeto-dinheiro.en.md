@@ -37,7 +37,7 @@ The core idea of the Money pattern is treating money as a complete object: with 
 We start by defining the structure with `dataclass`. We use `frozen=True` to make the object immutable, just like in the real world, where an amount of money does not change: when you pay R$ 10.00 and get R$ 3.00 back as change, new values come into existence, the original one stays the same.
 
 ```python
-from dataclasses import dataclass, field, InitVar
+from dataclasses import dataclass
 from decimal import Decimal
 
 TWOPLACES = Decimal("0.01")
@@ -45,49 +45,55 @@ DEFAULT_CURRENCY = "BRL"
 
 @dataclass(frozen=True)
 class Money:
-    raw_amount: InitVar[Decimal | float | str]
-    amount: Decimal = field(init=False)
+    amount: Decimal
     currency: str = DEFAULT_CURRENCY
 ```
 
-We have three fields here, but each one plays a different role:
+Two fields: `amount` holds the value and `currency` holds the currency, with `"BRL"` as the default.
 
-- **`raw_amount`** is marked with `InitVar`. That means it is a constructor parameter, but it does **not** become an attribute of the object. It only exists to receive the raw value at creation time.
-- **`amount`** uses `field(init=False)`, which means it does **not** show up in the constructor. It will be computed internally, and we will see how next.
-- **`currency`** is a regular field with the default value `"BRL"`.
+Notice that `amount` only accepts `Decimal`. No `float`, no string. An earlier version of this object accepted both and converted internally with `Decimal(value)`, which looks convenient. But look at what happens with a `float`:
 
-That separation between what the user passes in (`raw_amount`) and what the object stores (`amount`) is what lets us process the value before storing it.
+```python
+>>> from decimal import Decimal
+>>> Decimal(2.675)
+Decimal('2.67499999999999982236431605997495353221893310546875')
+
+>>> Decimal("2.675")
+Decimal('2.675')
+```
+
+The `float` already arrived wrong, and no rounding after that can fix it: `2.674999...` becomes `2.67`, while `2.675` becomes `2.68`. By forcing the caller to write `Decimal("2.675")`, the precision is explicit at the point where the value enters the system. If the value came from a JSON document, for example, converting the string into a `Decimal` is the job of whoever read the JSON, not of `Money`.
 
 ## Guaranteeing Two Decimal Places
 
-The `__post_init__` method is called automatically by `dataclass` right after `__init__`. It receives the fields marked with `InitVar` as arguments, in our case `raw_amount`:
+The `__post_init__` method is called automatically by `dataclass` right after `__init__`. That is where we round the value:
 
 ```python
-def __post_init__(self, raw_amount):
-    quantized_amount = Decimal(raw_amount).quantize(TWOPLACES)
-    object.__setattr__(self, "amount", quantized_amount)
+def __post_init__(self):
+    object.__setattr__(self, "amount", self.amount.quantize(TWOPLACES))
 ```
 
-Let's go line by line:
+Let's see what happens:
 
-1. `Decimal(raw_amount)` converts the raw value to `Decimal`, which is the ideal type for working with monetary values (without the floating point problems).
-2. `.quantize(TWOPLACES)` rounds it to exactly two decimal places. The `TWOPLACES` constant is `Decimal("0.01")`, which serves as a template: "I want the same precision as 0.01".
-3. `object.__setattr__(...)` is necessary because the dataclass is `frozen`. In a frozen dataclass, direct assignments like `self.amount = value` raise a `FrozenInstanceError`. The trick is calling `__setattr__` from the base class `object`, which bypasses that protection. It is safe here because we are inside initialization.
+1. `.quantize(TWOPLACES)` rounds it to exactly two decimal places. The `TWOPLACES` constant is `Decimal("0.01")`, which serves as a template: "I want the same precision as 0.01".
+2. `object.__setattr__(...)` is necessary because the dataclass is `frozen`. In a frozen dataclass, direct assignments like `self.amount = value` raise a `FrozenInstanceError`. The trick is calling `__setattr__` from the base class `object`, which bypasses that protection. It is safe here because we are inside initialization.
 
 Here is the result:
 
 ```python
->>> Money("10.5")
+>>> Money(Decimal("10.5"))
 Money(amount=Decimal('10.50'), currency='BRL')
 
->>> Money(1)
+>>> Money(Decimal(1))
 Money(amount=Decimal('1.00'), currency='BRL')
 
->>> Money("9.999")
+>>> Money(Decimal("9.999"))
 Money(amount=Decimal('10.00'), currency='BRL')
 ```
 
-No matter what is passed in, `amount` will always have two decimal places.
+No matter how many places the `Decimal` brings in, `amount` will always have two.
+
+Keep in mind that `quantize` uses the default rounding of `Decimal`, the so-called banker's rounding: an exact tie such as `10.025` becomes `10.02`, not `10.03`, because it breaks the tie towards the even digit. If your domain asks for a different behavior, pass `rounding=` to `quantize`.
 
 ## Currency: Preventing Invalid Operations
 
@@ -106,7 +112,7 @@ This method is private (the `_` prefix) because it is an internal detail, whoeve
 If someone tries to add different currencies, the error is clear and immediate:
 
 ```python
->>> Money("10.00", "BRL") + Money("5.00", "USD")
+>>> Money(Decimal("10.00"), "BRL") + Money(Decimal("5.00"), "USD")
 ValueError: Different currencies: BRL and USD
 ```
 
@@ -116,49 +122,88 @@ Without that kind of validation, the code would silently add the values and the 
 
 Python lets objects define how they behave with operators like `+`, `-`, `*` and `/`. All it takes is implementing the corresponding special methods.
 
-For **addition and subtraction**, we operate between two `Money` objects and check the currency first:
+For **addition and subtraction**, we operate between two `Money` objects. First we check that the other side really is a `Money`, then that the currency is the same:
 
 ```python
 def __add__(self, other):
+    if not isinstance(other, Money):
+        return NotImplemented
+
     self._assert_same_currency_as(other)
     return Money(self.amount + other.amount, self.currency)
 
 def __sub__(self, other):
+    if not isinstance(other, Money):
+        return NotImplemented
+
     self._assert_same_currency_as(other)
     return Money(self.amount - other.amount, self.currency)
 ```
 
-For **multiplication and division**, the operation is between `Money` and a scalar (an integer or a decimal). It makes sense to multiply a price by a quantity, but it makes no sense to multiply a price by another price:
+Returning `NotImplemented` is Python's way of saying "I do not know how to do this operation". The interpreter then tries the other side and, if nobody knows, raises a `TypeError`:
 
 ```python
+>>> Money(Decimal("10.00")) + 10
+TypeError: unsupported operand type(s) for +: 'Money' and 'int'
+```
+
+Without that check, the error would be an `AttributeError` complaining that `int` has no `currency`, which says much less about what went wrong.
+
+Negating a value is also part of the deal, for example to turn a loss into a positive number. All it takes is `__neg__`:
+
+```python
+def __neg__(self):
+    return Money(-self.amount, self.currency)
+```
+
+For **multiplication and division**, the operation is between `Money` and a scalar. It makes sense to multiply a price by a quantity, but it makes no sense to multiply a price by another price. And, for the same reason as in the previous section, a scalar here is an `int` or a `Decimal`, never a `float`:
+
+```python
+SCALAR_TYPES = (int, Decimal)
+
 def __mul__(self, scalar):
-    return Money(self.amount * Decimal(scalar), self.currency)
+    if not isinstance(scalar, SCALAR_TYPES):
+        return NotImplemented
+
+    return Money(self.amount * scalar, self.currency)
 
 __rmul__ = __mul__
 
 def __truediv__(self, scalar):
-    return Money(self.amount / Decimal(scalar), self.currency)
+    if not isinstance(scalar, SCALAR_TYPES):
+        return NotImplemented
+
+    return Money(self.amount / scalar, self.currency)
 ```
 
-`__rmul__` deserves an explanation. When we write `Money("10.00") * 3`, Python calls `Money.__mul__(3)`. But when we flip it to `3 * Money("10.00")`, Python first tries `int.__mul__(Money(...))`, which does not know how to handle `Money` and returns `NotImplemented`. Then Python tries the right-hand side: `Money.__rmul__(3)`. Without `__rmul__`, that expression would fail. Since multiplication is commutative, pointing `__rmul__` at the same method is enough.
+`__rmul__` deserves an explanation. When we write `Money(Decimal("10.00")) * 3`, Python calls `Money.__mul__(3)`. But when we flip it to `3 * Money(Decimal("10.00"))`, Python first tries `int.__mul__(Money(...))`, which does not know how to handle `Money` and returns `NotImplemented`. Then Python tries the right-hand side: `Money.__rmul__(3)`. Without `__rmul__`, that expression would fail. Since multiplication is commutative, pointing `__rmul__` at the same method is enough.
 
 Note that each operation returns a **new** `Money` object, no operation changes the original object, which keeps immutability intact.
 
 ```python
->>> Money("10.00") + Money("5.50")
+>>> Money(Decimal("10.00")) + Money(Decimal("5.50"))
 Money(amount=Decimal('15.50'), currency='BRL')
 
->>> Money("100.00") - Money("30.00")
+>>> Money(Decimal("100.00")) - Money(Decimal("30.00"))
 Money(amount=Decimal('70.00'), currency='BRL')
 
->>> Money("25.00") * 3
+>>> -Money(Decimal("10.00"))
+Money(amount=Decimal('-10.00'), currency='BRL')
+
+>>> Money(Decimal("25.00")) * 3
 Money(amount=Decimal('75.00'), currency='BRL')
 
->>> 2 * Money("15.00")
+>>> 2 * Money(Decimal("15.00"))
 Money(amount=Decimal('30.00'), currency='BRL')
 
->>> Money("100.00") / 3
+>>> Money(Decimal("100.00")) / 3
 Money(amount=Decimal('33.33'), currency='BRL')
+
+>>> Money(Decimal("10.00")) * 0.5
+TypeError: unsupported operand type(s) for *: 'Money' and 'float'
+
+>>> Money(Decimal("10.00")) * Decimal("0.5")
+Money(amount=Decimal('5.00'), currency='BRL')
 ```
 
 ## Full Comparison with total_ordering
@@ -184,21 +229,21 @@ class Money:
         return self.amount < other.amount
 ```
 
-The `isinstance` check makes sure we only compare `Money` with `Money`. If someone tries `Money("10.00") < 42`, we return `NotImplemented`, which is Python's way of saying "I do not know how to make this comparison", letting the other side try.
+The `isinstance` check makes sure we only compare `Money` with `Money`. If someone tries `Money(Decimal("10.00")) < 42`, we return `NotImplemented`, the same protocol we used in the arithmetic, letting the other side try.
 
 The `@total_ordering` decorator finishes the job: from `__eq__` (from the dataclass) and `__lt__` (ours), it **automatically generates** the `__le__`, `__gt__` and `__ge__` methods. With two pieces, we assemble the whole puzzle:
 
 ```python
->>> Money("10.00") == Money("10.00")
+>>> Money(Decimal("10.00")) == Money(Decimal("10.00"))
 True
 
->>> Money("10.00") < Money("20.00")
+>>> Money(Decimal("10.00")) < Money(Decimal("20.00"))
 True
 
->>> Money("20.00") >= Money("15.00")
+>>> Money(Decimal("20.00")) >= Money(Decimal("15.00"))
 True
 
->>> Money("5.00") != Money("5.00", "USD")
+>>> Money(Decimal("5.00")) != Money(Decimal("5.00"), "USD")
 True
 ```
 
@@ -211,7 +256,7 @@ In many situations we need a zero value as a starting point: in accumulators, as
 ```python
 @classmethod
 def zero(cls, currency=DEFAULT_CURRENCY):
-    return cls("0.00", currency)
+    return cls(Decimal("0.00"), currency)
 ```
 
 We use `cls` instead of `Money` directly so the method also works correctly in subclasses. Here is how it looks in practice:
@@ -228,20 +273,19 @@ A very common use is as the initial value in a reduction. Imagine summing a list
 
 ```python
 >>> from functools import reduce
->>> prices = [Money("10.00"), Money("20.00"), Money("30.00")]
+>>> prices = [Money(Decimal("10.00")), Money(Decimal("20.00")), Money(Decimal("30.00"))]
 >>> reduce(lambda a, b: a + b, prices, Money.zero())
 Money(amount=Decimal('60.00'), currency='BRL')
 ```
 
-Without `Money.zero()`, we would have to write `Money("0.00")`. It works, but `Money.zero()` communicates the intent better.
+Without `Money.zero()`, we would have to write `Money(Decimal("0.00"))` every time. It works, but `Money.zero()` communicates the intent better.
 
 ## The Complete Code
 
 Here is the `Money` object in full:
 
 ```python
-from collections.abc import Sequence
-from dataclasses import InitVar, dataclass, field
+from dataclasses import dataclass
 from decimal import Decimal
 from functools import total_ordering
 
@@ -249,19 +293,17 @@ TWOPLACES = Decimal("0.01")
 DEFAULT_CURRENCY = "BRL"
 
 type Scalar = int | Decimal
-type DecimalConvertible = Decimal | float | str | tuple[int, Sequence[int], int]
+SCALAR_TYPES = (int, Decimal)
 
 
 @dataclass(frozen=True)
 @total_ordering
 class Money:
-    raw_amount: InitVar[DecimalConvertible]
-    amount: Decimal = field(init=False)
+    amount: Decimal
     currency: str = DEFAULT_CURRENCY
 
-    def __post_init__(self, raw_amount: DecimalConvertible) -> None:
-        quantized_amount = Decimal(raw_amount).quantize(TWOPLACES)
-        object.__setattr__(self, "amount", quantized_amount)
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "amount", self.amount.quantize(TWOPLACES))
 
     def _assert_same_currency_as(self, other: Money) -> None:
         if self.currency != other.currency:
@@ -270,20 +312,35 @@ class Money:
             )
 
     def __add__(self, other: Money) -> Money:
+        if not isinstance(other, Money):
+            return NotImplemented
+
         self._assert_same_currency_as(other)
         return Money(self.amount + other.amount, self.currency)
 
     def __sub__(self, other: Money) -> Money:
+        if not isinstance(other, Money):
+            return NotImplemented
+
         self._assert_same_currency_as(other)
         return Money(self.amount - other.amount, self.currency)
 
+    def __neg__(self) -> Money:
+        return Money(-self.amount, self.currency)
+
     def __mul__(self, scalar: Scalar) -> Money:
-        return Money(self.amount * Decimal(scalar), self.currency)
+        if not isinstance(scalar, SCALAR_TYPES):
+            return NotImplemented
+
+        return Money(self.amount * scalar, self.currency)
 
     __rmul__ = __mul__
 
     def __truediv__(self, scalar: Scalar) -> Money:
-        return Money(self.amount / Decimal(scalar), self.currency)
+        if not isinstance(scalar, SCALAR_TYPES):
+            return NotImplemented
+
+        return Money(self.amount / scalar, self.currency)
 
     def __lt__(self, other: object) -> bool:
         if not isinstance(other, Money):
@@ -294,7 +351,7 @@ class Money:
 
     @classmethod
     def zero(cls, currency: str = DEFAULT_CURRENCY) -> Money:
-        return cls("0.00", currency)
+        return cls(Decimal("0.00"), currency)
 ```
 
 ## Final Thoughts
@@ -304,8 +361,8 @@ The Money pattern is a great example of a *Value Object*, an object defined by i
 In this article we saw how Python offers tools that fit this pattern perfectly:
 
 - **`dataclass`** to generate the constructor, `__repr__` and `__eq__` automatically.
-- **`InitVar`** and **`__post_init__`** to process input values before storing them.
-- **Special methods** (`__add__`, `__sub__`, `__mul__`, `__truediv__`) for a natural interface with operators.
+- **`__post_init__`** to round the value before storing it, even with the dataclass frozen.
+- **Special methods** (`__add__`, `__sub__`, `__neg__`, `__mul__`, `__truediv__`) for a natural interface with operators, and `NotImplemented` to refuse operands that make no sense.
 - **`@total_ordering`** combined with the dataclass `__eq__` and a single `__lt__` to make the object fully comparable.
 - **`@classmethod`** for expressive alternative constructors like `Money.zero()`.
 
