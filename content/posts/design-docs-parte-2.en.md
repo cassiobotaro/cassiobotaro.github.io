@@ -72,8 +72,8 @@ Every design involves trade-offs. Document the pros and cons of the solution exp
 
 With the solution described and justified, we still need to show what else was evaluated and what might affect people outside the team. In **part 3** we'll look at the alternatives considered, cross-cutting concerns, and the closing sections of the design.
 
-So that's it, folks!
+That's it, folks!
 
-Until next time!
+See you next time!
 
 {}'s

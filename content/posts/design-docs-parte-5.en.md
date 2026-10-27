@@ -85,7 +85,7 @@ As Gergely Orosz puts it, *"don't outsource your thinking to AI"*. The draft is 
 
 That was the series on design docs. I hope it helps you turn technical decisions into documents that are clear, reviewable, and useful long after the code has shipped.
 
-So that's it, folks!
+That's it, folks!
 
 See you next time!
 

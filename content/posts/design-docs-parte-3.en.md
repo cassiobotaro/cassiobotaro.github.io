@@ -75,7 +75,7 @@ A few short sections tend to round out the document nicely.
 
 With that, the content of the document is complete. In **part 4** we move away from "what to write" and look at the process: the life cycle of a design doc, when it's *not* worth writing one, and other types of document that live alongside it.
 
-So that's it, folks!
+That's it, folks!
 
 See you next time!
 

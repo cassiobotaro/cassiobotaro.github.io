@@ -51,8 +51,8 @@ While the design doc is about *designing a solution* before you build it, the AD
 
 We've wrapped up both the content and the process. In **part 5**, the last one, I'll bring together the tools for writing and diagramming, the references for going deeper, and a demo of how to generate a design doc with the help of an AI agent.
 
-So that's it, folks!
+That's it, folks!
 
-Until next time!
+See you next time!
 
 {}'s
