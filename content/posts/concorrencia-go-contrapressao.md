@@ -13,7 +13,7 @@ series = ["concorrencia-go"]
 
 No [tee](/posts/concorrencia-go-tee/) um trabalhador de 250 milissegundos segurou o outro e o gerador junto, e o programa levou 2,5 segundos. Eu disse que aquilo tinha nome e que voltaria.
 
-Voltei.
+Voltou.
 
 ## O que é contrapressão
 

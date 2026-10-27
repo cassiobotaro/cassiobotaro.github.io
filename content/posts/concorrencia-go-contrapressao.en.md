@@ -11,9 +11,9 @@ series = ["go-concurrency"]
 
 {{< video src="/videos/backpressure.mp4" titulo="A bounded queue between the producer and a slow consumer" >}}
 
-In the [tee](/en/posts/go-concurrency-tee/) a 250 millisecond worker held back the other one and the generator along with it, and the program took 2.5 seconds. I said that had a name and that I'd come back to it.
+In the [tee](/en/posts/go-concurrency-tee/) a 250 millisecond worker held back the other one and the generator along with it, and the program took 2.5 seconds. I said that had a name and that it would come back.
 
-I'm back.
+Here it is.
 
 ## What backpressure is
 
