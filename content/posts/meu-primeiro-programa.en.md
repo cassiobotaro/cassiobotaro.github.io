@@ -7,7 +7,7 @@ categories = ["pascal", "python"]
 slug = "my-first-program"
 +++
 
-![555 IC with a calculator and Pascal code](/images/555.png "The NE555 IC surrounded by Pascal code — my first real program")
+![555 IC with a calculator and Pascal code](/images/555.png "The NE555 IC surrounded by Pascal code, my first real program")
 
 ## A Story from an Automation Technician
 

@@ -7,15 +7,15 @@ categories = ["pascal", "python"]
 slug = "meu-primeiro-programa"
 +++
 
-![CI 555 com calculadora e código Pascal](/images/555.png "O CI NE555 cercado de código Pascal — meu primeiro programa de verdade")
+![CI 555 com calculadora e código Pascal](/images/555.png "O CI NE555 cercado de código Pascal, meu primeiro programa de verdade")
 
 ## Uma História de Técnico em Automação
 
-Em 2010 me formei como técnico em Automação Industrial. Se você não sabe bem o que isso significa, pense em fábricas, esteiras, robôs, CLPs, sensores e uma porção de siglas que a maioria das pessoas nunca vai precisar conhecer. Foi um curso incrível, que misturava eletrônica, mecânica e — aqui começa a história — programação.
+Em 2010 me formei como técnico em Automação Industrial. Se você não sabe bem o que isso significa, pense em fábricas, esteiras, robôs, CLPs, sensores e uma porção de siglas que a maioria das pessoas nunca vai precisar conhecer. Foi um curso incrível, que misturava eletrônica, mecânica e programação. E é aqui que começa a história.
 
 Foi mais ou menos nessa época que comecei a programar de verdade. E a primeira linguagem que aprendi foi **Pascal**.
 
-Pascal é uma linguagem que hoje em dia você raramente vai encontrar sendo ensinada em cursos novos, mas durante muitos anos foi a linguagem padrão para ensinar lógica de programação. Ela é verbosa, estruturada e bastante legível — perfeita para quem está aprendendo.
+Pascal é uma linguagem que hoje em dia você raramente vai encontrar sendo ensinada em cursos novos, mas durante muitos anos foi a linguagem padrão para ensinar lógica de programação. Ela é verbosa, estruturada e bastante legível, perfeita para quem está aprendendo.
 
 Depois dos exercícios das disciplinas, comecei a pensar: _e se eu fizesse algo útil?_ Algo que pudesse realmente usar no dia a dia do curso? Foi aí que nasceu meu primeiro programa de verdade: uma **calculadora para o circuito integrado 555**.
 
@@ -25,7 +25,7 @@ Se você nunca ouviu falar do CI 555, saiba que ele é uma lenda da eletrônica.
 
 O 555 é um temporizador. Com ele, você consegue gerar pulsos elétricos, controlar tempos, piscar LEDs, acionar alarmes e fazer dezenas de outras coisas práticas com pouquíssimos componentes externos: basicamente resistores e capacitores.
 
-> **Resistor** é um componente que limita a passagem de corrente elétrica. Pense nele como uma pedra no meio de um rio — quanto maior a pedra, menos água passa.
+> **Resistor** é um componente que limita a passagem de corrente elétrica. Pense nele como uma pedra no meio de um rio. Quanto maior a pedra, menos água passa.
 > **Capacitor** é um componente que armazena energia elétrica temporariamente, como um pequeno reservatório que enche e esvazia.
 
 Veja como ele se parece em um diagrama:
@@ -61,7 +61,7 @@ O 555 pode operar de dois modos principais: **astável** e **monoestável**. É 
 
 ## Modo Astável: O Oscilador Eterno
 
-No modo astável, o 555 fica oscilando sozinho, gerando uma onda elétrica que alterna entre ligado e desligado sem parar — como um coração eletrônico que bate por conta própria.
+No modo astável, o 555 fica oscilando sozinho, gerando uma onda elétrica que alterna entre ligado e desligado sem parar, como um coração eletrônico que bate por conta própria.
 
 Isso é útil para piscar um LED, gerar um som contínuo, acionar um motor em intervalos, etc.
 
@@ -194,7 +194,7 @@ begin
 end.
 ```
 
-O cálculo do modo astável ficou assim — repare nas fórmulas diretamente no `writeln`:
+O cálculo do modo astável ficou assim. Repare nas fórmulas direto no `writeln`:
 
 ```	objectpascal
 procedure modoastavel;
@@ -234,7 +234,7 @@ O código completo está disponível em: [github.com/cassiobotaro/meu_primeiro_p
 
 ## Anos Depois: Reescrevendo em Python
 
-Algum tempo depois, já mais experiente e programando em Python, decidi reescrever o mesmo programa. Confesso que a intenção foi quase uma transcrição fiel do Pascal — não quis mudar a lógica, apenas adaptar para a sintaxe de Python.
+Algum tempo depois, já mais experiente e programando em Python, decidi reescrever o mesmo programa. Confesso que a intenção foi quase uma transcrição fiel do Pascal. Não quis mudar a lógica, apenas adaptar para a sintaxe de Python.
 
 Veja como o menu ficou em Python:
 
@@ -315,7 +315,7 @@ O código completo em Python está em: [github.com/cassiobotaro/meu_primeiro_pro
 
 ## Reflexão Final
 
-Olhando para esse código hoje, é impossível não sorrir. Era um programa simples, cheio de imperfeições — variáveis com nomes de uma letra, validações básicas, sem tratamento de erros. Mas era _meu_ programa, feito para resolver um problema real do meu curso.
+Olhando para esse código hoje, é impossível não sorrir. Era um programa simples, cheio de imperfeições: variáveis com nomes de uma letra, validações básicas, sem tratamento de erros. Mas era _meu_ programa, feito para resolver um problema real do meu curso.
 
 Esse é o ponto mais importante: não importa se o código é perfeito. O que importa é que ele resolve algo, que você aprende fazendo, e que cada programa te deixa um pouquinho melhor do que era antes.
 
