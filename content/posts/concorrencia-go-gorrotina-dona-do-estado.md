@@ -1,7 +1,7 @@
 +++
 title = "Concorrência Go - Gorrotina dona do estado"
-date = "2026-11-17"
-publishDate = "2026-11-17"
+date = "2026-11-16"
+publishDate = "2026-11-16"
 description = "Três gorrotinas escrevendo no mesmo mapa e o programa morre. Veja como uma única gorrotina dona do estado atende todo mundo por canais, quando um mutex resolve igual, e a corrida que o detector de corrida não pega."
 slug = "concorrencia-go-gorrotina-dona-do-estado"
 tags = ["go", "concorrência", "gorrotinas", "canais", "mutex", "select", "race"]

@@ -1,7 +1,7 @@
 +++
 title = "Go Concurrency - Request and response"
-date = "2026-11-12"
-publishDate = "2026-11-12"
+date = "2026-11-11"
+publishDate = "2026-11-11"
 description = "A channel is a value, so a message can carry the channel it wants the answer on. See how a goroutine becomes a service, and why one buffer slot in the reply channel separates a service that keeps going from one that freezes."
 slug = "go-concurrency-request-response"
 tags = ["go", "concurrency", "goroutines", "channels", "request-response", "buffer"]

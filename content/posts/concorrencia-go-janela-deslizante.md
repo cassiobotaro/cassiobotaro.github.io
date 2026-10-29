@@ -1,7 +1,7 @@
 +++
 title = "Concorrência Go - Janela deslizante"
-date = "2026-11-10"
-publishDate = "2026-11-10"
+date = "2026-11-09"
+publishDate = "2026-11-09"
 description = "O consumidor atrasou e o valor de quatro segundos atrás já não interessa. Veja como manter só os mais recentes descartando o mais antigo, e como um canal nil liga e desliga um case do select."
 slug = "concorrencia-go-janela-deslizante"
 tags = ["go", "concorrência", "gorrotinas", "canais", "select", "sliding-window"]

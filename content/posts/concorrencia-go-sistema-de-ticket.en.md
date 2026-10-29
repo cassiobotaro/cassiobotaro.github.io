@@ -1,7 +1,7 @@
 +++
 title = "Go Concurrency - Ticket system"
-date = "2026-11-03"
-publishDate = "2026-11-03"
+date = "2026-11-02"
+publishDate = "2026-11-02"
 description = "Ten calls per second, and not a single one more. See how a ticket booth sets the pace of a worker, why a Ticker hands out two tickets at once, and what this version leaves out."
 slug = "go-concurrency-ticket-system"
 tags = ["go", "concurrency", "goroutines", "channels", "rate-limiting", "timer"]

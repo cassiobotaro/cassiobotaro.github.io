@@ -1,7 +1,7 @@
 +++
 title = "Concorrência Go - Primeiro a responder"
-date = "2026-11-24"
-publishDate = "2026-11-24"
+date = "2026-11-23"
+publishDate = "2026-11-23"
 description = "A mesma consulta para três réplicas, e vale a primeira resposta. Veja quanto isso corta da latência de cauda, por que as perdedoras precisam ser canceladas, e o que acontece quando todas falham."
 slug = "concorrencia-go-primeiro-a-responder"
 tags = ["go", "concorrência", "gorrotinas", "canais", "context", "hedged-request", "latência"]

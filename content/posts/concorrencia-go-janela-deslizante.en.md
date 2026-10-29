@@ -1,7 +1,7 @@
 +++
 title = "Go Concurrency - Sliding window"
-date = "2026-11-10"
-publishDate = "2026-11-10"
+date = "2026-11-09"
+publishDate = "2026-11-09"
 description = "The consumer fell behind and the value from four seconds ago no longer matters. See how to keep only the most recent ones by dropping the oldest, and how a nil channel turns a select case on and off."
 slug = "go-concurrency-sliding-window"
 tags = ["go", "concurrency", "goroutines", "channels", "select", "sliding-window"]

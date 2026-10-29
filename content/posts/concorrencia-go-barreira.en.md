@@ -1,7 +1,7 @@
 +++
 title = "Go Concurrency - Barrier"
-date = "2026-11-19"
-publishDate = "2026-11-19"
+date = "2026-11-18"
+publishDate = "2026-11-18"
 description = "Four goroutines stop at one point and none moves on until the last one arrives. See how a WaitGroup where everyone calls Done and Wait does this, and the two ways to get it wrong: flipping the order and reusing the barrier."
 slug = "go-concurrency-barrier"
 tags = ["go", "concurrency", "goroutines", "waitgroup", "barrier", "sync"]

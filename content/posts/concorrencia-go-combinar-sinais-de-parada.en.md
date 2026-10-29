@@ -1,7 +1,7 @@
 +++
 title = "Go Concurrency - Combining stop signals"
-date = "2026-12-01"
-publishDate = "2026-12-01"
+date = "2026-11-30"
+publishDate = "2026-11-30"
 description = "A goroutine that needs to stop when any of several signals arrives. See why deriving contexts solves most of it, how to merge the rest into a single channel, and the two precautions without which it panics or leaks."
 slug = "go-concurrency-combining-stop-signals"
 tags = ["go", "concurrency", "goroutines", "channels", "context", "select", "or-channel"]

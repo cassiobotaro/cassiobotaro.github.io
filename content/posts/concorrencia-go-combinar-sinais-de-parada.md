@@ -1,7 +1,7 @@
 +++
 title = "Concorrência Go - Combinar sinais de parada"
-date = "2026-12-01"
-publishDate = "2026-12-01"
+date = "2026-11-30"
+publishDate = "2026-11-30"
 description = "Uma gorrotina que precisa parar quando qualquer um de vários sinais chegar. Veja por que derivar contextos resolve a maior parte, como juntar o resto em um canal só, e os dois cuidados sem os quais isso dá pânico ou vaza."
 slug = "concorrencia-go-combinar-sinais-de-parada"
 tags = ["go", "concorrência", "gorrotinas", "canais", "context", "select", "or-channel"]

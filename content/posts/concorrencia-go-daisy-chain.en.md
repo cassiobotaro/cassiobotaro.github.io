@@ -1,7 +1,7 @@
 +++
 title = "Go Concurrency - Daisy-chain"
-date = "2026-12-08"
-publishDate = "2026-12-08"
+date = "2026-12-07"
+publishDate = "2026-12-07"
 description = "Ten thousand goroutines in a row, each one adding 1 and passing it along. Nobody uses this day to day. It's there to measure how much a goroutine costs, and the answer fits in one terminal line."
 slug = "go-concurrency-daisy-chain"
 tags = ["go", "concurrency", "goroutines", "channels", "memory"]

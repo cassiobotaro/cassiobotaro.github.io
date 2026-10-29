@@ -1,7 +1,7 @@
 +++
 title = "Go Concurrency - First to respond"
-date = "2026-11-24"
-publishDate = "2026-11-24"
+date = "2026-11-23"
+publishDate = "2026-11-23"
 description = "The same query to three replicas, and the first answer wins. See how much this cuts from tail latency, why the losers need to be cancelled, and what happens when all of them fail."
 slug = "go-concurrency-first-to-respond"
 tags = ["go", "concurrency", "goroutines", "channels", "context", "hedged-request", "latency"]

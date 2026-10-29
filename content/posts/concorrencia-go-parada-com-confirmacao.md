@@ -1,7 +1,7 @@
 +++
 title = "Concorrência Go - Parada com confirmação"
-date = "2026-11-26"
-publishDate = "2026-11-26"
+date = "2026-11-25"
+publishDate = "2026-11-25"
 description = "Cancelar o contexto manda parar, mas não diz que parou. Veja o que se perde quando a main não espera, como o errgroup traz a confirmação de volta, e o que o context faz e o que ele não faz."
 slug = "concorrencia-go-parada-com-confirmacao"
 tags = ["go", "concorrência", "gorrotinas", "context", "errgroup", "cancelamento"]

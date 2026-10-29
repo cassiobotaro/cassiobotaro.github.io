@@ -1,7 +1,7 @@
 +++
 title = "Concorrência Go - Barreira"
-date = "2026-11-19"
-publishDate = "2026-11-19"
+date = "2026-11-18"
+publishDate = "2026-11-18"
 description = "Quatro gorrotinas param em um ponto e nenhuma segue até a última chegar. Veja como um WaitGroup em que todo mundo chama Done e Wait faz isso, e os dois jeitos de errar: inverter a ordem e reaproveitar a barreira."
 slug = "concorrencia-go-barreira"
 tags = ["go", "concorrência", "gorrotinas", "waitgroup", "barrier", "sync"]

@@ -1,7 +1,7 @@
 +++
 title = "Go Concurrency - Confirmed stop"
-date = "2026-11-26"
-publishDate = "2026-11-26"
+date = "2026-11-25"
+publishDate = "2026-11-25"
 description = "Cancelling the context says stop, but it doesn't say it stopped. See what gets lost when main doesn't wait, how errgroup brings the confirmation back, and what the context does and doesn't do."
 slug = "go-concurrency-confirmed-stop"
 tags = ["go", "concurrency", "goroutines", "context", "errgroup", "cancellation"]

@@ -1,7 +1,7 @@
 +++
 title = "Go Concurrency - Batch processing"
-date = "2026-11-05"
-publishDate = "2026-11-05"
+date = "2026-11-04"
+publishDate = "2026-11-04"
 description = "Items arrive one by one and the database would rather get a hundred at once. See how to group them into batches by size, by time or on demand, and why reusing the previous batch's slice corrupts what the consumer is still reading."
 slug = "go-concurrency-batch-processing"
 tags = ["go", "concurrency", "goroutines", "channels", "batch", "timer", "slice"]

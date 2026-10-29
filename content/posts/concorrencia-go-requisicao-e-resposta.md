@@ -1,7 +1,7 @@
 +++
 title = "Concorrência Go - Requisição e resposta"
-date = "2026-11-12"
-publishDate = "2026-11-12"
+date = "2026-11-11"
+publishDate = "2026-11-11"
 description = "Um canal é um valor, então uma mensagem pode carregar o canal pelo qual quer a resposta. Veja como uma gorrotina vira um serviço, e por que uma vaga de buffer no canal de resposta separa um serviço que segue de um que trava."
 slug = "concorrencia-go-requisicao-e-resposta"
 tags = ["go", "concorrência", "gorrotinas", "canais", "request-response", "buffer"]

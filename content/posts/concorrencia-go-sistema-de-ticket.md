@@ -1,7 +1,7 @@
 +++
 title = "Concorrência Go - Sistema de ticket"
-date = "2026-11-03"
-publishDate = "2026-11-03"
+date = "2026-11-02"
+publishDate = "2026-11-02"
 description = "Dez chamadas por segundo, e nem uma a mais. Veja como uma bilheteria de tickets regula o ritmo de um trabalhador, por que um Ticker entrega dois tickets de uma vez, e o que esta versão deixa de fora."
 slug = "concorrencia-go-sistema-de-ticket"
 tags = ["go", "concorrência", "gorrotinas", "canais", "rate-limiting", "timer"]

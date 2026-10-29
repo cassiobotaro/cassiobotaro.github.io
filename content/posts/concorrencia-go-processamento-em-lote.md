@@ -1,7 +1,7 @@
 +++
 title = "Concorrência Go - Processamento em lote"
-date = "2026-11-05"
-publishDate = "2026-11-05"
+date = "2026-11-04"
+publishDate = "2026-11-04"
 description = "Itens chegam um a um e o banco prefere receber cem de uma vez. Veja como juntar em lotes por tamanho, por tempo ou sob demanda, e por que reaproveitar o slice do lote anterior corrompe o que o consumidor ainda está lendo."
 slug = "concorrencia-go-processamento-em-lote"
 tags = ["go", "concorrência", "gorrotinas", "canais", "batch", "timer", "slice"]

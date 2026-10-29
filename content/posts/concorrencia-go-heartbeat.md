@@ -1,7 +1,7 @@
 +++
 title = "Concorrência Go - Heartbeat"
-date = "2026-12-03"
-publishDate = "2026-12-03"
+date = "2026-12-02"
+publishDate = "2026-12-02"
 description = "Um trabalhador demorado e um trabalhador travado parecem iguais de fora. Veja como um sinal de vida a cada intervalo separa os dois, por que esse sinal é enviado sem bloquear, e o que o supervisor pode e não pode fazer depois de declarar a morte."
 slug = "concorrencia-go-heartbeat"
 tags = ["go", "concorrência", "gorrotinas", "canais", "select", "timeout", "heartbeat"]

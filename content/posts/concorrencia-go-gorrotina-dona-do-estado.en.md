@@ -1,7 +1,7 @@
 +++
 title = "Go Concurrency - State-owning goroutine"
-date = "2026-11-17"
-publishDate = "2026-11-17"
+date = "2026-11-16"
+publishDate = "2026-11-16"
 description = "Three goroutines writing to the same map and the program dies. See how a single goroutine that owns the state serves everyone through channels, when a mutex does the job just as well, and the race the race detector doesn't catch."
 slug = "go-concurrency-state-owning-goroutine"
 tags = ["go", "concurrency", "goroutines", "channels", "mutex", "select", "race"]

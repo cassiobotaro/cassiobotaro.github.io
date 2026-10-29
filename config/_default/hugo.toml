@@ -7,6 +7,7 @@ pagination.pagerSize = 20
 canonifyURLs = true
 enableEmoji = true
 enableGitInfo = true
+timeZone = "America/Sao_Paulo"
 
 [taxonomies]
 category = "categories"

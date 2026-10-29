@@ -1,7 +1,7 @@
 +++
 title = "Go Concurrency - Heartbeat"
-date = "2026-12-03"
-publishDate = "2026-12-03"
+date = "2026-12-02"
+publishDate = "2026-12-02"
 description = "A slow worker and a stuck worker look the same from the outside. See how a sign of life on every interval tells the two apart, why that sign is sent without blocking, and what the supervisor can and can't do after declaring it dead."
 slug = "go-concurrency-heartbeat"
 tags = ["go", "concurrency", "goroutines", "channels", "select", "timeout", "heartbeat"]

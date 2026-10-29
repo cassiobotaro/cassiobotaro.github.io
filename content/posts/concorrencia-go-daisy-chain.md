@@ -1,7 +1,7 @@
 +++
 title = "Concorrência Go - Daisy-chain"
-date = "2026-12-08"
-publishDate = "2026-12-08"
+date = "2026-12-07"
+publishDate = "2026-12-07"
 description = "Dez mil gorrotinas em fila, cada uma somando 1 e passando adiante. Ninguém usa isso no dia a dia. Serve para medir quanto uma gorrotina custa, e a resposta cabe em uma linha de terminal."
 slug = "concorrencia-go-daisy-chain"
 tags = ["go", "concorrência", "gorrotinas", "canais", "memória"]
