@@ -62,6 +62,11 @@ name = "Séries"
 weight = 3
 url = "series/"
 
+[[languages.pt-br.menu.main]]
+name = "Palestras"
+weight = 4
+url = "palestras/"
+
 [languages.en]
 label = "English"
 weight = 2
