@@ -1,0 +1,21 @@
+sequenceDiagram
+    autonumber
+    participant A as API
+    participant F as Fila
+    participant W as Worker
+    participant P as Parceiro
+    participant D as Volume em disco
+    participant R as Relatório diário
+    participant G as Chat do time
+
+    A-)F: sincroniza_catalogo.delay(parceiro_id)
+    F-)+W: sincroniza_catalogo(parceiro_id)
+    W->>+P: Busca o catálogo
+    P-->>-W: Credencial recusada
+    W->>D: Grava id do parceiro em arquivo
+    deactivate W
+
+    Note over R: Uma vez por dia
+    R->>+D: Lê o arquivo
+    D-->>-R: parceiros com falha
+    R->>G: Avisa o time
